@@ -1,0 +1,136 @@
+
+{"DATASET": {"NUM_CLASSES": 12, "DATASET": "VisDA", "DATAROOT": "/disk1/domain_adaptation/visDA", "SOURCE_NAME": "train", "TARGET_NAME": "validation", "VAL_NAME": "validation"}, "MODEL": {"FEATURE_EXTRACTOR": "resnet50", "PRETRAINED": true}, "DATA_TRANSFORM": {"TYPE": "simple"}, "TRAIN": {"SOURCE_BATCH_SIZE": 128, "TARGET_BATCH_SIZE": 128, "BASE_LR": 0.001, "MOMENTUM": 0.9, "OPTIMIZER": "SGD", "WEIGHT_DECAY": 0.0001, "LR_SCHEDULE": "fix", "MAX_EPOCH": 30, "SAVING": false, "PROCESS_COUNTER": "iteration"}, "MCDALNET": {"DISTANCE_TYPE": "MDD"}, "ADAM": {"BETA1": 0.9, "BETA2": 0.999}, "INV": {"ALPHA": 10.0, "BETA": 0.75}, "TEST": {"BATCH_SIZE": 128}, "RESUME": "", "EVAL_METRIC": "accu_mean", "EXP_NAME": "logVisDA_train2validation_McDalNet_MDD", "SAVE_DIR": "./experiments/ckpt/logVisDA_train2validation_McDalNet_MDD", "NUM_WORKERS": 8, "PRINT_STEP": 3}
+
+  Train:epoch: 0:[432/432], LossCE: 0.704236, LossDA: 0.596120, LossAll: 2.648003, Auxi1: 81.014900, Auxi2: 82.338684, Task: 82.266350
+                                    Test:epoch: 0, Top1_auxi1: 0.572879, Top1_auxi2: 0.547048, Top1: 0.549427
+Class-wise Acc:1st: 0.735875,  2nd: 0.459856, 3rd: 0.612154, 4th: 0.527065, 5th: 0.590919, 6th: 0.305060, 7th: 0.884576, 8th: 0.303000, 9th: 0.813585, 10th: 0.292854, 11th: 0.917139, 12th: 0.151045      Best Acc so far: 0.572879
+  Train:epoch: 1:[432/432], LossCE: 0.249026, LossDA: 0.284942, LossAll: 1.021705, Auxi1: 92.060905, Auxi2: 92.118782, Task: 92.189308
+                                    Test:epoch: 1, Top1_auxi1: 0.580005, Top1_auxi2: 0.575079, Top1: 0.573570
+Class-wise Acc:1st: 0.805815,  2nd: 0.446619, 3rd: 0.622175, 4th: 0.604461, 5th: 0.602430, 6th: 0.260723, 7th: 0.903554, 8th: 0.364250, 9th: 0.848098, 10th: 0.310829, 11th: 0.908404, 12th: 0.205479      Best Acc so far: 0.580005
+  Train:epoch: 2:[432/432], LossCE: 0.186949, LossDA: 0.258589, LossAll: 0.818883, Auxi1: 93.860313, Auxi2: 93.929039, Task: 93.995949
+                                    Test:epoch: 2, Top1_auxi1: 0.573748, Top1_auxi2: 0.577404, Top1: 0.576820
+Class-wise Acc:1st: 0.770982,  2nd: 0.426187, 3rd: 0.632836, 4th: 0.601000, 5th: 0.662545, 6th: 0.306988, 7th: 0.870600, 8th: 0.367000, 9th: 0.852715, 10th: 0.352915, 11th: 0.932247, 12th: 0.145818
+  Train:epoch: 3:[432/432], LossCE: 0.152840, LossDA: 0.245926, LossAll: 0.710130, Auxi1: 94.806137, Auxi2: 95.014107, Task: 95.044853
+                                    Test:epoch: 3, Top1_auxi1: 0.558636, Top1_auxi2: 0.594739, Top1: 0.595502
+Class-wise Acc:1st: 0.795392,  2nd: 0.436547, 3rd: 0.705330, 4th: 0.646092, 5th: 0.707525, 6th: 0.326265, 7th: 0.874914, 8th: 0.383750, 9th: 0.842603, 10th: 0.366944, 11th: 0.911237, 12th: 0.149423      Best Acc so far: 0.595502
+  Train:epoch: 4:[432/432], LossCE: 0.128721, LossDA: 0.241746, LossAll: 0.639861, Auxi1: 95.610893, Auxi2: 95.873123, Task: 95.954498
+                                    Test:epoch: 4, Top1_auxi1: 0.541443, Top1_auxi2: 0.604195, Top1: 0.605922
+Class-wise Acc:1st: 0.784970,  2nd: 0.411799, 3rd: 0.721535, 4th: 0.644265, 5th: 0.739714, 6th: 0.326747, 7th: 0.891304, 8th: 0.462000, 9th: 0.890525, 10th: 0.339763, 11th: 0.914070, 12th: 0.144376      Best Acc so far: 0.605922
+  Train:epoch: 5:[432/432], LossCE: 0.117824, LossDA: 0.253522, LossAll: 0.624479, Auxi1: 95.719398, Auxi2: 96.173325, Task: 96.247467
+                                    Test:epoch: 5, Top1_auxi1: 0.503818, Top1_auxi2: 0.611983, Top1: 0.613717
+Class-wise Acc:1st: 0.746846,  2nd: 0.441151, 3rd: 0.735608, 4th: 0.661186, 5th: 0.732893, 6th: 0.321446, 7th: 0.911318, 8th: 0.506500, 9th: 0.860849, 10th: 0.387111, 11th: 0.907932, 12th: 0.151766      Best Acc so far: 0.613717
+  Train:epoch: 6:[432/432], LossCE: 0.107264, LossDA: 0.282350, LossAll: 0.629985, Auxi1: 96.021416, Auxi2: 96.609161, Task: 96.672455
+                                    Test:epoch: 6, Top1_auxi1: 0.542350, Top1_auxi2: 0.632146, Top1: 0.633353
+Class-wise Acc:1st: 0.827756,  2nd: 0.397410, 3rd: 0.730490, 4th: 0.731372, 5th: 0.758900, 6th: 0.451084, 7th: 0.911318, 8th: 0.541000, 9th: 0.896681, 10th: 0.367383, 11th: 0.900142, 12th: 0.086698      Best Acc so far: 0.633353
+{"DATASET": {"NUM_CLASSES": 12, "DATASET": "VisDA", "DATAROOT": "/disk1/domain_adaptation/visDA", "SOURCE_NAME": "train", "TARGET_NAME": "validation", "VAL_NAME": "validation"}, "MODEL": {"FEATURE_EXTRACTOR": "resnet50", "PRETRAINED": true}, "DATA_TRANSFORM": {"TYPE": "simple"}, "TRAIN": {"SOURCE_BATCH_SIZE": 128, "TARGET_BATCH_SIZE": 128, "BASE_LR": 0.001, "MOMENTUM": 0.9, "OPTIMIZER": "SGD", "WEIGHT_DECAY": 0.0001, "LR_SCHEDULE": "fix", "MAX_EPOCH": 30, "SAVING": false, "PROCESS_COUNTER": "iteration"}, "MCDALNET": {"DISTANCE_TYPE": "MDD"}, "ADAM": {"BETA1": 0.9, "BETA2": 0.999}, "INV": {"ALPHA": 10.0, "BETA": 0.75}, "TEST": {"BATCH_SIZE": 128}, "RESUME": "", "EVAL_METRIC": "accu_mean", "EXP_NAME": "logVisDA_train2validation_McDalNet_MDD", "SAVE_DIR": "./experiments/ckpt/logVisDA_train2validation_McDalNet_MDD", "NUM_WORKERS": 8, "PRINT_STEP": 3}
+
+  Train:epoch: 0:[432/432], LossCE: 0.691465, LossDA: 0.591847, LossAll: 2.608090, Auxi1: 81.530312, Auxi2: 82.960793, Task: 82.984306
+                                    Test:epoch: 0, Top1_auxi1: 0.566764, Top1_auxi2: 0.519359, Top1: 0.521891
+Class-wise Acc:1st: 0.705156,  2nd: 0.435108, 3rd: 0.650959, 4th: 0.545813, 5th: 0.598167, 6th: 0.172530, 7th: 0.876467, 8th: 0.194250, 9th: 0.807870, 10th: 0.227970, 11th: 0.911237, 12th: 0.137167      Best Acc so far: 0.566764
+  Train:epoch: 1:[432/432], LossCE: 0.252011, LossDA: 0.285711, LossAll: 1.034722, Auxi1: 91.836662, Auxi2: 91.896339, Task: 92.012077
+                                    Test:epoch: 1, Top1_auxi1: 0.585112, Top1_auxi2: 0.562429, Top1: 0.563305
+Class-wise Acc:1st: 0.792650,  2nd: 0.461295, 3rd: 0.668017, 4th: 0.546101, 5th: 0.635472, 6th: 0.226988, 7th: 0.890442, 8th: 0.308750, 9th: 0.839745, 10th: 0.321350, 11th: 0.910057, 12th: 0.158796      Best Acc so far: 0.585112
+  Train:epoch: 2:[432/432], LossCE: 0.187831, LossDA: 0.258727, LossAll: 0.823252, Auxi1: 93.630646, Auxi2: 93.849464, Task: 93.872978
+                                    Test:epoch: 2, Top1_auxi1: 0.562002, Top1_auxi2: 0.560142, Top1: 0.560837
+Class-wise Acc:1st: 0.743006,  2nd: 0.445468, 3rd: 0.706610, 4th: 0.615710, 5th: 0.682370, 6th: 0.203855, 7th: 0.887336, 8th: 0.304000, 9th: 0.815344, 10th: 0.271372, 11th: 0.900142, 12th: 0.154831
+  Train:epoch: 3:[432/432], LossCE: 0.150060, LossDA: 0.244298, LossAll: 0.701403, Auxi1: 94.927299, Auxi2: 95.108147, Task: 95.200378
+                                    Test:epoch: 3, Top1_auxi1: 0.557757, Top1_auxi2: 0.583008, Top1: 0.582403
+Class-wise Acc:1st: 0.797586,  2nd: 0.436547, 3rd: 0.695096, 4th: 0.570138, 5th: 0.709230, 6th: 0.269880, 7th: 0.901139, 8th: 0.364500, 9th: 0.863267, 10th: 0.326173, 11th: 0.919736, 12th: 0.135544
+{"DATASET": {"NUM_CLASSES": 12, "DATASET": "VisDA", "DATAROOT": "/disk1/domain_adaptation/visDA", "SOURCE_NAME": "train", "TARGET_NAME": "validation", "VAL_NAME": "validation"}, "MODEL": {"FEATURE_EXTRACTOR": "resnet50", "PRETRAINED": true}, "DATA_TRANSFORM": {"TYPE": "simple"}, "TRAIN": {"SOURCE_BATCH_SIZE": 128, "TARGET_BATCH_SIZE": 128, "BASE_LR": 0.001, "MOMENTUM": 0.9, "OPTIMIZER": "SGD", "WEIGHT_DECAY": 0.0001, "LR_SCHEDULE": "fix", "MAX_EPOCH": 30, "SAVING": false, "PROCESS_COUNTER": "iteration"}, "MCDALNET": {"DISTANCE_TYPE": "MDD"}, "ADAM": {"BETA1": 0.9, "BETA2": 0.999}, "INV": {"ALPHA": 10.0, "BETA": 0.75}, "TEST": {"BATCH_SIZE": 128}, "RESUME": "", "TASK": "closed", "EVAL_METRIC": "accu_mean", "EXP_NAME": "logVisDA_train2validation_McDalNet_MDD", "SAVE_DIR": "./experiments/ckpt/logVisDA_train2validation_McDalNet_MDD", "NUM_WORKERS": 8, "PRINT_STEP": 3}
+
+  Train:epoch: 0:[432/432], LossCE: 0.692458, LossDA: 0.592504, LossAll: 2.620142, Auxi1: 81.273514, Auxi2: 82.694954, Task: 83.069298
+                                    Test:epoch: 0, Top1_auxi1: 0.561312, Top1_auxi2: 0.528058, Top1: 0.532590
+Class-wise Acc:1st: 0.738892,  2nd: 0.387338, 3rd: 0.566525, 4th: 0.562446, 5th: 0.633554, 6th: 0.331084, 7th: 0.881297, 8th: 0.185750, 9th: 0.852715, 10th: 0.217887, 11th: 0.936261, 12th: 0.097332      Best Acc so far: 0.561312
+  Train:epoch: 1:[432/432], LossCE: 0.252429, LossDA: 0.286863, LossAll: 1.037913, Auxi1: 91.764320, Auxi2: 91.966873, Task: 92.039207
+                                    Test:epoch: 1, Top1_auxi1: 0.578067, Top1_auxi2: 0.549227, Top1: 0.551738
+Class-wise Acc:1st: 0.726824,  2nd: 0.385612, 3rd: 0.664606, 4th: 0.552543, 5th: 0.667448, 6th: 0.324337, 7th: 0.883368, 8th: 0.244500, 9th: 0.841504, 10th: 0.266550, 11th: 0.933428, 12th: 0.130137      Best Acc so far: 0.578067
+  Train:epoch: 2:[432/432], LossCE: 0.187168, LossDA: 0.260534, LossAll: 0.824648, Auxi1: 93.657768, Auxi2: 93.833191, Task: 93.912758
+                                    Test:epoch: 2, Top1_auxi1: 0.563251, Top1_auxi2: 0.559588, Top1: 0.562149
+Class-wise Acc:1st: 0.800055,  2nd: 0.328345, 3rd: 0.647548, 4th: 0.595039, 5th: 0.717118, 6th: 0.292048, 7th: 0.884921, 8th: 0.239500, 9th: 0.866344, 10th: 0.256905, 11th: 0.931775, 12th: 0.186193
+  Train:epoch: 3:[432/432], LossCE: 0.152744, LossDA: 0.245515, LossAll: 0.711047, Auxi1: 94.807945, Auxi2: 94.990601, Task: 95.026764
+                                    Test:epoch: 3, Top1_auxi1: 0.558854, Top1_auxi2: 0.582318, Top1: 0.582878
+Class-wise Acc:1st: 0.828305,  2nd: 0.355108, 3rd: 0.697441, 4th: 0.612441, 5th: 0.739928, 6th: 0.305060, 7th: 0.906315, 8th: 0.316000, 9th: 0.858430, 10th: 0.306445, 11th: 0.918555, 12th: 0.150505      Best Acc so far: 0.582878
+  Train:epoch: 4:[432/432], LossCE: 0.130009, LossDA: 0.241387, LossAll: 0.644079, Auxi1: 95.513237, Auxi2: 95.780891, Task: 95.856842
+                                    Test:epoch: 4, Top1_auxi1: 0.537585, Top1_auxi2: 0.586599, Top1: 0.588431
+Class-wise Acc:1st: 0.798683,  2nd: 0.334388, 3rd: 0.665458, 4th: 0.684934, 5th: 0.750586, 6th: 0.358072, 7th: 0.891822, 8th: 0.328750, 9th: 0.893823, 10th: 0.311267, 11th: 0.919736, 12th: 0.123648      Best Acc so far: 0.588431
+  Train:epoch: 5:[432/432], LossCE: 0.112724, LossDA: 0.248341, LossAll: 0.606082, Auxi1: 95.932800, Auxi2: 96.404800, Task: 96.502457
+                                    Test:epoch: 5, Top1_auxi1: 0.543385, Top1_auxi2: 0.611449, Top1: 0.614266
+Class-wise Acc:1st: 0.830773,  2nd: 0.384173, 3rd: 0.720682, 4th: 0.658110, 5th: 0.800895, 6th: 0.401928, 7th: 0.918737, 8th: 0.409750, 9th: 0.895801, 10th: 0.343709, 11th: 0.915250, 12th: 0.091384      Best Acc so far: 0.614266
+  Train:epoch: 6:[432/432], LossCE: 0.108636, LossDA: 0.277117, LossAll: 0.629611, Auxi1: 95.873123, Auxi2: 96.562141, Task: 96.636284
+                                    Test:epoch: 6, Top1_auxi1: 0.553242, Top1_auxi2: 0.625669, Top1: 0.629498
+Class-wise Acc:1st: 0.812671,  2nd: 0.410647, 3rd: 0.755650, 4th: 0.665128, 5th: 0.793221, 6th: 0.449157, 7th: 0.917184, 8th: 0.454250, 9th: 0.922181, 10th: 0.349408, 11th: 0.908404, 12th: 0.116078      Best Acc so far: 0.629498
+  Train:epoch: 7:[432/432], LossCE: 0.108017, LossDA: 0.331262, LossAll: 0.689821, Auxi1: 95.932800, Auxi2: 96.677879, Task: 96.737556
+                                    Test:epoch: 7, Top1_auxi1: 0.569060, Top1_auxi2: 0.623240, Top1: 0.625256
+Class-wise Acc:1st: 0.789084,  2nd: 0.375252, 3rd: 0.788273, 4th: 0.694356, 5th: 0.815604, 6th: 0.457831, 7th: 0.900621, 8th: 0.442750, 9th: 0.936689, 10th: 0.327050, 11th: 0.908876, 12th: 0.066691
+  Train:epoch: 8:[432/432], LossCE: 0.106754, LossDA: 0.388144, LossAll: 0.752003, Auxi1: 96.017799, Auxi2: 96.873192, Task: 96.934677
+                                    Test:epoch: 8, Top1_auxi1: 0.588015, Top1_auxi2: 0.640879, Top1: 0.643813
+Class-wise Acc:1st: 0.795666,  2nd: 0.383597, 3rd: 0.813220, 4th: 0.717046, 5th: 0.820507, 6th: 0.532530, 7th: 0.928399, 8th: 0.524000, 9th: 0.939107, 10th: 0.344147, 11th: 0.890227, 12th: 0.037311      Best Acc so far: 0.643813
+  Train:epoch: 9:[432/432], LossCE: 0.121737, LossDA: 0.464161, LossAll: 0.896204, Auxi1: 95.321541, Auxi2: 96.724899, Task: 96.762878
+                                    Test:epoch: 9, Top1_auxi1: 0.581725, Top1_auxi2: 0.648778, Top1: 0.649929
+Class-wise Acc:1st: 0.836259,  2nd: 0.323453, 3rd: 0.830704, 4th: 0.745890, 5th: 0.812620, 6th: 0.612530, 7th: 0.939959, 8th: 0.483750, 9th: 0.923500, 10th: 0.360807, 11th: 0.861190, 12th: 0.068493      Best Acc so far: 0.649929
+  Train:epoch: 10:[432/432], LossCE: 0.155230, LossDA: 0.573262, LossAll: 1.144709, Auxi1: 93.925423, Auxi2: 96.289062, Task: 96.397568
+                                    Test:epoch: 10, Top1_auxi1: 0.578975, Top1_auxi2: 0.639595, Top1: 0.640188
+Class-wise Acc:1st: 0.770982,  2nd: 0.204029, 3rd: 0.846055, 4th: 0.782040, 5th: 0.803667, 6th: 0.707952, 7th: 0.935473, 8th: 0.537250, 9th: 0.936689, 10th: 0.261727, 11th: 0.848442, 12th: 0.047945
+  Train:epoch: 11:[432/432], LossCE: 0.195003, LossDA: 0.679457, LossAll: 1.408910, Auxi1: 92.534721, Auxi2: 95.865883, Task: 95.970779
+                                    Test:epoch: 11, Top1_auxi1: 0.598659, Top1_auxi2: 0.633744, Top1: 0.634362
+Class-wise Acc:1st: 0.747943,  2nd: 0.161151, 3rd: 0.852452, 4th: 0.765696, 5th: 0.774035, 6th: 0.802410, 7th: 0.929262, 8th: 0.569500, 9th: 0.945922, 10th: 0.167032, 11th: 0.857649, 12th: 0.039293
+  Train:epoch: 12:[432/432], LossCE: 0.276133, LossDA: 0.919073, LossAll: 1.958803, Auxi1: 88.850914, Auxi2: 94.921875, Task: 95.059319
+                                    Test:epoch: 12, Top1_auxi1: 0.620815, Top1_auxi2: 0.620251, Top1: 0.619880
+Class-wise Acc:1st: 0.746572,  2nd: 0.076547, 3rd: 0.850107, 4th: 0.754254, 5th: 0.747602, 6th: 0.872771, 7th: 0.933230, 8th: 0.494750, 9th: 0.941306, 10th: 0.130644, 11th: 0.843012, 12th: 0.047765
+  Train:epoch: 13:[432/432], LossCE: 0.466773, LossDA: 1.285936, LossAll: 3.059765, Auxi1: 79.307724, Auxi2: 90.469475, Task: 90.984879
+                                    Test:epoch: 13, Top1_auxi1: 0.613275, Top1_auxi2: 0.607426, Top1: 0.606902
+Class-wise Acc:1st: 0.703236,  2nd: 0.015252, 3rd: 0.845842, 4th: 0.730122, 5th: 0.750160, 6th: 0.889639, 7th: 0.927536, 8th: 0.559000, 9th: 0.910969, 10th: 0.082858, 11th: 0.848206, 12th: 0.020007
+  Train:epoch: 14:[432/432], LossCE: 0.635563, LossDA: 1.691238, LossAll: 4.031582, Auxi1: 74.585869, Auxi2: 88.313805, Task: 89.067924
+                                    Test:epoch: 14, Top1_auxi1: 0.620150, Top1_auxi2: 0.614199, Top1: 0.613974
+Class-wise Acc:1st: 0.733955,  2nd: 0.008921, 3rd: 0.834328, 4th: 0.737814, 5th: 0.771264, 6th: 0.927229, 7th: 0.930987, 8th: 0.577000, 9th: 0.930754, 10th: 0.065322, 11th: 0.845609, 12th: 0.004506
+  Train:epoch: 15:[432/432], LossCE: 0.733446, LossDA: 2.057337, LossAll: 4.808968, Auxi1: 66.312210, Auxi2: 86.451103, Task: 87.324577
+                                    Test:epoch: 15, Top1_auxi1: 0.614010, Top1_auxi2: 0.599068, Top1: 0.598679
+Class-wise Acc:1st: 0.702139,  2nd: 0.009209, 3rd: 0.849680, 4th: 0.806653, 5th: 0.794287, 6th: 0.904578, 7th: 0.903209, 8th: 0.455500, 9th: 0.938448, 10th: 0.019728, 11th: 0.799811, 12th: 0.000901
+  Train:epoch: 16:[432/432], LossCE: 0.751665, LossDA: 2.200852, LossAll: 5.127678, Auxi1: 60.993561, Auxi2: 86.093025, Task: 86.816406
+                                    Test:epoch: 16, Top1_auxi1: 0.590891, Top1_auxi2: 0.594742, Top1: 0.594664
+Class-wise Acc:1st: 0.676358,  2nd: 0.008058, 3rd: 0.863966, 4th: 0.698202, 5th: 0.771477, 6th: 0.906506, 7th: 0.904934, 8th: 0.531000, 9th: 0.949220, 10th: 0.006138, 11th: 0.820113, 12th: 0.000000
+  Train:epoch: 17:[432/432], LossCE: 0.792351, LossDA: 2.478595, LossAll: 5.897261, Auxi1: 45.630787, Auxi2: 82.058380, Task: 82.910156
+                                    Test:epoch: 17, Top1_auxi1: 0.565061, Top1_auxi2: 0.559502, Top1: 0.560591
+Class-wise Acc:1st: 0.644268,  2nd: 0.002878, 3rd: 0.808742, 4th: 0.785501, 5th: 0.748881, 6th: 0.838554, 7th: 0.864044, 8th: 0.217500, 9th: 0.964168, 10th: 0.004822, 11th: 0.847734, 12th: 0.000000
+  Train:epoch: 18:[432/432], LossCE: 0.797713, LossDA: 2.717276, LossAll: 6.049871, Auxi1: 49.647354, Auxi2: 84.129051, Task: 84.626373
+                                    Test:epoch: 18, Top1_auxi1: 0.492124, Top1_auxi2: 0.500845, Top1: 0.502792
+Class-wise Acc:1st: 0.561163,  2nd: 0.003741, 3rd: 0.840512, 4th: 0.693010, 5th: 0.639736, 6th: 0.764819, 7th: 0.744306, 8th: 0.008250, 9th: 0.968784, 10th: 0.007014, 11th: 0.802172, 12th: 0.000000
+  Train:epoch: 19:[432/432], LossCE: 0.773536, LossDA: 2.856417, LossAll: 6.295553, Auxi1: 39.239727, Auxi2: 82.854095, Task: 83.499710
+                                    Test:epoch: 19, Top1_auxi1: 0.524724, Top1_auxi2: 0.514194, Top1: 0.515256
+Class-wise Acc:1st: 0.623149,  2nd: 0.001151, 3rd: 0.750320, 4th: 0.690414, 5th: 0.658069, 6th: 0.885301, 7th: 0.777605, 8th: 0.017250, 9th: 0.933392, 10th: 0.004822, 11th: 0.841596, 12th: 0.000000
+  Train:epoch: 20:[432/432], LossCE: 0.743490, LossDA: 3.128448, LossAll: 6.735455, Auxi1: 36.803749, Auxi2: 83.128983, Task: 83.888527
+                                    Test:epoch: 20, Top1_auxi1: 0.510242, Top1_auxi2: 0.493272, Top1: 0.493356
+Class-wise Acc:1st: 0.581733,  2nd: 0.000000, 3rd: 0.812580, 4th: 0.672820, 5th: 0.580900, 6th: 0.752289, 7th: 0.806763, 8th: 0.000750, 9th: 0.942405, 10th: 0.000438, 11th: 0.769594, 12th: 0.000000
+  Train:epoch: 21:[432/432], LossCE: 0.682910, LossDA: 3.053978, LossAll: 6.757576, Auxi1: 31.387442, Auxi2: 84.387657, Task: 84.384041
+                                    Test:epoch: 21, Top1_auxi1: 0.516564, Top1_auxi2: 0.482458, Top1: 0.483145
+Class-wise Acc:1st: 0.481349,  2nd: 0.000000, 3rd: 0.834328, 4th: 0.614268, 5th: 0.578981, 6th: 0.634699, 7th: 0.825569, 8th: 0.043250, 9th: 0.947241, 10th: 0.006138, 11th: 0.831917, 12th: 0.000000
+  Train:epoch: 22:[432/432], LossCE: 0.630176, LossDA: 3.047231, LossAll: 6.772143, Auxi1: 29.425276, Auxi2: 85.852501, Task: 86.253983
+                                    Test:epoch: 22, Top1_auxi1: 0.507062, Top1_auxi2: 0.495587, Top1: 0.496949
+Class-wise Acc:1st: 0.593527,  2nd: 0.000863, 3rd: 0.799787, 4th: 0.709739, 5th: 0.762524, 6th: 0.672289, 7th: 0.717909, 8th: 0.002000, 9th: 0.937789, 10th: 0.006576, 11th: 0.760387, 12th: 0.000000
+  Train:epoch: 23:[432/432], LossCE: 0.644797, LossDA: 3.195768, LossAll: 6.913801, Auxi1: 27.195457, Auxi2: 85.924843, Task: 86.121964
+                                    Test:epoch: 23, Top1_auxi1: 0.498341, Top1_auxi2: 0.515234, Top1: 0.515849
+Class-wise Acc:1st: 0.627811,  2nd: 0.000576, 3rd: 0.724307, 4th: 0.718873, 5th: 0.835856, 6th: 0.763373, 7th: 0.761560, 8th: 0.002750, 9th: 0.919323, 10th: 0.002192, 11th: 0.833569, 12th: 0.000000
+  Train:epoch: 24:[432/432], LossCE: 0.615739, LossDA: 3.288647, LossAll: 6.981106, Auxi1: 25.028934, Auxi2: 87.259476, Task: 87.295647
+                                    Test:epoch: 24, Top1_auxi1: 0.502424, Top1_auxi2: 0.512138, Top1: 0.512645
+Class-wise Acc:1st: 0.657981,  2nd: 0.000000, 3rd: 0.713433, 4th: 0.650514, 5th: 0.756342, 6th: 0.734458, 7th: 0.763458, 8th: 0.001250, 9th: 0.934271, 10th: 0.061377, 11th: 0.878659, 12th: 0.000000
+  Train:epoch: 25:[432/432], LossCE: 0.592408, LossDA: 3.323598, LossAll: 6.901297, Auxi1: 25.426794, Auxi2: 87.926796, Task: 88.011795
+                                    Test:epoch: 25, Top1_auxi1: 0.371638, Top1_auxi2: 0.440095, Top1: 0.440757
+Class-wise Acc:1st: 0.444597,  2nd: 0.000000, 3rd: 0.631770, 4th: 0.503509, 5th: 0.539970, 6th: 0.868916, 7th: 0.710145, 8th: 0.000250, 9th: 0.744559, 10th: 0.003069, 11th: 0.842304, 12th: 0.000000
+  Train:epoch: 26:[432/432], LossCE: 0.589799, LossDA: 3.281095, LossAll: 7.115754, Auxi1: 23.518881, Auxi2: 87.261284, Task: 87.360748
+                                    Test:epoch: 26, Top1_auxi1: 0.454795, Top1_auxi2: 0.461636, Top1: 0.462146
+Class-wise Acc:1st: 0.446791,  2nd: 0.000000, 3rd: 0.689339, 4th: 0.572926, 5th: 0.657003, 6th: 0.746024, 7th: 0.737060, 8th: 0.000500, 9th: 0.790064, 10th: 0.003069, 11th: 0.902974, 12th: 0.000000
+  Train:epoch: 27:[432/432], LossCE: 0.526097, LossDA: 3.370509, LossAll: 7.154431, Auxi1: 22.674335, Auxi2: 88.377098, Task: 88.433159
+                                    Test:epoch: 27, Top1_auxi1: 0.422475, Top1_auxi2: 0.471741, Top1: 0.473022
+Class-wise Acc:1st: 0.529073,  2nd: 0.000000, 3rd: 0.682942, 4th: 0.674454, 5th: 0.619271, 6th: 0.793735, 7th: 0.705487, 8th: 0.003500, 9th: 0.831831, 10th: 0.001754, 11th: 0.834042, 12th: 0.000180
+  Train:epoch: 28:[432/432], LossCE: 0.497658, LossDA: 3.268981, LossAll: 6.995864, Auxi1: 18.910952, Auxi2: 89.156540, Task: 89.250580
+                                    Test:epoch: 28, Top1_auxi1: 0.456818, Top1_auxi2: 0.475859, Top1: 0.476463
+Class-wise Acc:1st: 0.503017,  2nd: 0.000000, 3rd: 0.708955, 4th: 0.633401, 5th: 0.620763, 6th: 0.787470, 7th: 0.786232, 8th: 0.000000, 9th: 0.854254, 10th: 0.056554, 11th: 0.762040, 12th: 0.004867
+  Train:epoch: 29:[432/432], LossCE: 0.476871, LossDA: 3.211729, LossAll: 6.869399, Auxi1: 17.107929, Auxi2: 90.234375, Task: 90.236183
+                                    Test:epoch: 29, Top1_auxi1: 0.408582, Top1_auxi2: 0.431610, Top1: 0.433800
+Class-wise Acc:1st: 0.480527,  2nd: 0.000000, 3rd: 0.570362, 4th: 0.626286, 5th: 0.510339, 6th: 0.742169, 7th: 0.515183, 8th: 0.022750, 9th: 0.870741, 10th: 0.016659, 11th: 0.849858, 12th: 0.000721
+  Train:epoch: 30:[432/432], LossCE: 0.470880, LossDA: 3.210392, LossAll: 6.855093, Auxi1: 16.169344, Auxi2: 89.816628, Task: 89.973961
+                                    Test:epoch: 30, Top1_auxi1: 0.357682, Top1_auxi2: 0.433960, Top1: 0.435270
+Class-wise Acc:1st: 0.590236,  2nd: 0.000000, 3rd: 0.519616, 4th: 0.567830, 5th: 0.662332, 6th: 0.726747, 7th: 0.349896, 8th: 0.000000, 9th: 0.876456, 10th: 0.049101, 11th: 0.881020, 12th: 0.000000
+  Train:epoch: 31:[432/432], LossCE: 0.442646, LossDA: 3.316739, LossAll: 6.919984, Auxi1: 19.079138, Auxi2: 90.818504, Task: 90.890846
+                                    Test:epoch: 31, Top1_auxi1: 0.418554, Top1_auxi2: 0.454453, Top1: 0.454898
+Class-wise Acc:1st: 0.622874,  2nd: 0.002014, 3rd: 0.627505, 4th: 0.693106, 5th: 0.663611, 6th: 0.667952, 7th: 0.559524, 8th: 0.034000, 9th: 0.849417, 10th: 0.001754, 11th: 0.737016, 12th: 0.000000

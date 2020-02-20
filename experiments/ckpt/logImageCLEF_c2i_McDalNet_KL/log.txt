@@ -1,0 +1,807 @@
+
+{"DATASET": {"NUM_CLASSES": 12, "DATASET": "ImageCLEF", "DATAROOT": "/disk1/domain_adaptation/image_CLEF", "SOURCE_NAME": "c", "TARGET_NAME": "i", "VAL_NAME": "i"}, "MODEL": {"FEATURE_EXTRACTOR": "resnet50", "PRETRAINED": true}, "DATA_TRANSFORM": {"TYPE": "ours"}, "TRAIN": {"SOURCE_BATCH_SIZE": 128, "TARGET_BATCH_SIZE": 128, "BASE_LR": 0.01, "MOMENTUM": 0.9, "OPTIMIZER": "SGD", "WEIGHT_DECAY": 0.0001, "LR_SCHEDULE": "inv", "MAX_EPOCH": 400, "SAVING": false, "PROCESS_COUNTER": "iteration"}, "MCDALNET": {"DISTANCE_TYPE": "KL"}, "ADAM": {"BETA1": 0.9, "BETA2": 0.999}, "INV": {"ALPHA": 10.0, "BETA": 0.75}, "TEST": {"BATCH_SIZE": 128}, "RESUME": "", "EVAL_METRIC": "accu", "EXP_NAME": "logImageCLEF_c2i_McDalNet_KL", "SAVE_DIR": "./experiments/ckpt/logImageCLEF_c2i_McDalNet_KL", "NUM_WORKERS": 8, "PRINT_STEP": 3}
+
+  Train:epoch: 0:[4/4], LossCE: 2.295730, LossDA: -0.000325, LossAll: 6.915223, Auxi1: 25.976562, Auxi2: 30.273438, Task: 30.664062
+                                    Test:epoch: 0, Top1_auxi1: 56.000000, Top1_auxi2: 67.833336, Top1: 72.333336      Best Acc so far: 72.333336
+  Train:epoch: 1:[4/4], LossCE: 1.323787, LossDA: -0.000652, LossAll: 4.066652, Auxi1: 82.812500, Auxi2: 86.132812, Task: 88.671875
+                                    Test:epoch: 1, Top1_auxi1: 86.333336, Top1_auxi2: 85.500000, Top1: 86.833336      Best Acc so far: 86.833336
+  Train:epoch: 2:[4/4], LossCE: 0.605060, LossDA: -0.000973, LossAll: 1.896576, Auxi1: 94.335938, Auxi2: 94.140625, Task: 94.726562
+                                    Test:epoch: 2, Top1_auxi1: 89.333336, Top1_auxi2: 87.833336, Top1: 89.000000      Best Acc so far: 89.333336
+  Train:epoch: 3:[4/4], LossCE: 0.309105, LossDA: -0.001052, LossAll: 0.968164, Auxi1: 96.289062, Auxi2: 95.507812, Task: 95.703125
+                                    Test:epoch: 3, Top1_auxi1: 86.166672, Top1_auxi2: 85.833336, Top1: 86.666672
+  Train:epoch: 4:[4/4], LossCE: 0.216279, LossDA: -0.000849, LossAll: 0.670596, Auxi1: 95.703125, Auxi2: 95.898438, Task: 95.703125
+                                    Test:epoch: 4, Top1_auxi1: 85.000000, Top1_auxi2: 86.000000, Top1: 85.500000
+  Train:epoch: 5:[4/4], LossCE: 0.156874, LossDA: -0.000788, LossAll: 0.482432, Auxi1: 96.679688, Auxi2: 96.289062, Task: 96.875000
+                                    Test:epoch: 5, Top1_auxi1: 85.000000, Top1_auxi2: 86.000000, Top1: 86.000000
+  Train:epoch: 6:[4/4], LossCE: 0.128047, LossDA: -0.000711, LossAll: 0.395259, Auxi1: 97.070312, Auxi2: 97.265625, Task: 97.265625
+                                    Test:epoch: 6, Top1_auxi1: 85.666672, Top1_auxi2: 86.000000, Top1: 86.666672
+  Train:epoch: 7:[4/4], LossCE: 0.112261, LossDA: -0.000685, LossAll: 0.338253, Auxi1: 98.046875, Auxi2: 98.437500, Task: 98.242188
+                                    Test:epoch: 7, Top1_auxi1: 85.833336, Top1_auxi2: 86.500000, Top1: 87.000000
+  Train:epoch: 8:[4/4], LossCE: 0.091184, LossDA: -0.000679, LossAll: 0.281836, Auxi1: 98.437500, Auxi2: 98.242188, Task: 98.046875
+                                    Test:epoch: 8, Top1_auxi1: 86.833336, Top1_auxi2: 86.833336, Top1: 87.666672
+  Train:epoch: 9:[4/4], LossCE: 0.094797, LossDA: -0.000641, LossAll: 0.289158, Auxi1: 97.265625, Auxi2: 97.070312, Task: 97.656250
+                                    Test:epoch: 9, Top1_auxi1: 86.333336, Top1_auxi2: 86.166672, Top1: 86.333336
+  Train:epoch: 10:[4/4], LossCE: 0.061846, LossDA: -0.000807, LossAll: 0.190952, Auxi1: 98.828125, Auxi2: 99.218750, Task: 98.828125
+                                    Test:epoch: 10, Top1_auxi1: 86.333336, Top1_auxi2: 86.500000, Top1: 86.833336
+  Train:epoch: 11:[4/4], LossCE: 0.058972, LossDA: -0.000791, LossAll: 0.180660, Auxi1: 99.218750, Auxi2: 98.828125, Task: 99.414062
+                                    Test:epoch: 11, Top1_auxi1: 86.500000, Top1_auxi2: 86.333336, Top1: 86.500000
+  Train:epoch: 12:[4/4], LossCE: 0.062287, LossDA: -0.000830, LossAll: 0.188178, Auxi1: 98.437500, Auxi2: 98.242188, Task: 98.242188
+                                    Test:epoch: 12, Top1_auxi1: 86.000000, Top1_auxi2: 86.000000, Top1: 86.833336
+  Train:epoch: 13:[4/4], LossCE: 0.057350, LossDA: -0.000980, LossAll: 0.180117, Auxi1: 99.023438, Auxi2: 99.023438, Task: 99.023438
+                                    Test:epoch: 13, Top1_auxi1: 86.166672, Top1_auxi2: 86.166672, Top1: 87.166672
+  Train:epoch: 14:[4/4], LossCE: 0.061901, LossDA: -0.001026, LossAll: 0.189482, Auxi1: 98.632812, Auxi2: 98.828125, Task: 98.828125
+                                    Test:epoch: 14, Top1_auxi1: 86.500000, Top1_auxi2: 86.333336, Top1: 86.333336
+  Train:epoch: 15:[4/4], LossCE: 0.054778, LossDA: -0.001356, LossAll: 0.166446, Auxi1: 99.218750, Auxi2: 99.023438, Task: 99.023438
+                                    Test:epoch: 15, Top1_auxi1: 86.333336, Top1_auxi2: 85.833336, Top1: 86.166672
+  Train:epoch: 16:[4/4], LossCE: 0.041682, LossDA: -0.001500, LossAll: 0.126227, Auxi1: 99.609375, Auxi2: 99.414062, Task: 99.609375
+                                    Test:epoch: 16, Top1_auxi1: 86.333336, Top1_auxi2: 86.000000, Top1: 86.666672
+  Train:epoch: 17:[4/4], LossCE: 0.046996, LossDA: -0.001803, LossAll: 0.144584, Auxi1: 99.218750, Auxi2: 99.609375, Task: 99.218750
+                                    Test:epoch: 17, Top1_auxi1: 86.000000, Top1_auxi2: 86.000000, Top1: 87.000000
+  Train:epoch: 18:[4/4], LossCE: 0.045371, LossDA: -0.002402, LossAll: 0.136312, Auxi1: 99.218750, Auxi2: 99.023438, Task: 99.023438
+                                    Test:epoch: 18, Top1_auxi1: 85.833336, Top1_auxi2: 86.833336, Top1: 86.000000
+  Train:epoch: 19:[4/4], LossCE: 0.047176, LossDA: -0.002968, LossAll: 0.140664, Auxi1: 99.414062, Auxi2: 99.218750, Task: 99.218750
+                                    Test:epoch: 19, Top1_auxi1: 86.000000, Top1_auxi2: 86.666672, Top1: 86.166672
+  Train:epoch: 20:[4/4], LossCE: 0.042994, LossDA: -0.003196, LossAll: 0.128633, Auxi1: 99.218750, Auxi2: 99.609375, Task: 99.218750
+                                    Test:epoch: 20, Top1_auxi1: 86.500000, Top1_auxi2: 86.833336, Top1: 86.500000
+  Train:epoch: 21:[4/4], LossCE: 0.030573, LossDA: -0.004103, LossAll: 0.092614, Auxi1: 99.804688, Auxi2: 100.000000, Task: 99.804688
+                                    Test:epoch: 21, Top1_auxi1: 86.833336, Top1_auxi2: 86.166672, Top1: 86.333336
+  Train:epoch: 22:[4/4], LossCE: 0.043731, LossDA: -0.005374, LossAll: 0.130312, Auxi1: 99.414062, Auxi2: 98.828125, Task: 99.023438
+                                    Test:epoch: 22, Top1_auxi1: 86.500000, Top1_auxi2: 85.666672, Top1: 86.666672
+  Train:epoch: 23:[4/4], LossCE: 0.041064, LossDA: -0.005717, LossAll: 0.123765, Auxi1: 99.218750, Auxi2: 99.218750, Task: 99.218750
+                                    Test:epoch: 23, Top1_auxi1: 87.666672, Top1_auxi2: 86.500000, Top1: 87.166672
+  Train:epoch: 24:[4/4], LossCE: 0.024172, LossDA: -0.007642, LossAll: 0.070132, Auxi1: 100.000000, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 24, Top1_auxi1: 87.000000, Top1_auxi2: 85.500000, Top1: 86.666672
+  Train:epoch: 25:[4/4], LossCE: 0.030575, LossDA: -0.011024, LossAll: 0.086970, Auxi1: 99.609375, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 25, Top1_auxi1: 86.166672, Top1_auxi2: 85.333336, Top1: 86.166672
+  Train:epoch: 26:[4/4], LossCE: 0.036571, LossDA: -0.014038, LossAll: 0.105779, Auxi1: 99.414062, Auxi2: 99.218750, Task: 99.414062
+                                    Test:epoch: 26, Top1_auxi1: 86.166672, Top1_auxi2: 85.500000, Top1: 86.333336
+  Train:epoch: 27:[4/4], LossCE: 0.032223, LossDA: -0.017507, LossAll: 0.091736, Auxi1: 99.609375, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 27, Top1_auxi1: 85.833336, Top1_auxi2: 85.166672, Top1: 85.833336
+  Train:epoch: 28:[4/4], LossCE: 0.023927, LossDA: -0.020288, LossAll: 0.068549, Auxi1: 99.609375, Auxi2: 99.414062, Task: 100.000000
+                                    Test:epoch: 28, Top1_auxi1: 85.500000, Top1_auxi2: 84.500000, Top1: 84.833336
+  Train:epoch: 29:[4/4], LossCE: 0.033499, LossDA: -0.025302, LossAll: 0.090450, Auxi1: 99.414062, Auxi2: 99.609375, Task: 99.414062
+                                    Test:epoch: 29, Top1_auxi1: 85.166672, Top1_auxi2: 85.166672, Top1: 85.333336
+  Train:epoch: 30:[4/4], LossCE: 0.032451, LossDA: -0.027357, LossAll: 0.086174, Auxi1: 99.609375, Auxi2: 99.218750, Task: 99.414062
+                                    Test:epoch: 30, Top1_auxi1: 86.500000, Top1_auxi2: 85.333336, Top1: 86.333336
+  Train:epoch: 31:[4/4], LossCE: 0.026706, LossDA: -0.032831, LossAll: 0.065348, Auxi1: 98.828125, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 31, Top1_auxi1: 85.833336, Top1_auxi2: 85.666672, Top1: 85.666672
+  Train:epoch: 32:[4/4], LossCE: 0.030194, LossDA: -0.038400, LossAll: 0.069744, Auxi1: 99.414062, Auxi2: 99.218750, Task: 99.609375
+                                    Test:epoch: 32, Top1_auxi1: 85.833336, Top1_auxi2: 85.666672, Top1: 87.000000
+  Train:epoch: 33:[4/4], LossCE: 0.036127, LossDA: -0.041184, LossAll: 0.092417, Auxi1: 98.437500, Auxi2: 99.218750, Task: 99.414062
+                                    Test:epoch: 33, Top1_auxi1: 86.000000, Top1_auxi2: 85.000000, Top1: 87.166672
+  Train:epoch: 34:[4/4], LossCE: 0.030801, LossDA: -0.044007, LossAll: 0.084162, Auxi1: 98.828125, Auxi2: 99.414062, Task: 99.414062
+                                    Test:epoch: 34, Top1_auxi1: 85.166672, Top1_auxi2: 85.500000, Top1: 87.000000
+  Train:epoch: 35:[4/4], LossCE: 0.025673, LossDA: -0.044653, LossAll: 0.059676, Auxi1: 98.828125, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 35, Top1_auxi1: 84.500000, Top1_auxi2: 86.333336, Top1: 87.000000
+  Train:epoch: 36:[4/4], LossCE: 0.019544, LossDA: -0.053598, LossAll: 0.020368, Auxi1: 99.609375, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 36, Top1_auxi1: 83.666672, Top1_auxi2: 85.166672, Top1: 87.166672
+  Train:epoch: 37:[4/4], LossCE: 0.020630, LossDA: -0.058703, LossAll: 0.028086, Auxi1: 99.414062, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 37, Top1_auxi1: 82.833336, Top1_auxi2: 85.500000, Top1: 88.166672
+  Train:epoch: 38:[4/4], LossCE: 0.019342, LossDA: -0.071934, LossAll: 0.022069, Auxi1: 98.828125, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 38, Top1_auxi1: 82.000000, Top1_auxi2: 85.666672, Top1: 87.500000
+  Train:epoch: 39:[4/4], LossCE: 0.019747, LossDA: -0.081135, LossAll: 0.014284, Auxi1: 99.218750, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 39, Top1_auxi1: 82.333336, Top1_auxi2: 85.000000, Top1: 87.166672
+  Train:epoch: 40:[4/4], LossCE: 0.019974, LossDA: -0.087522, LossAll: 0.013582, Auxi1: 99.609375, Auxi2: 99.218750, Task: 99.804688
+                                    Test:epoch: 40, Top1_auxi1: 80.333336, Top1_auxi2: 85.166672, Top1: 86.666672
+  Train:epoch: 41:[4/4], LossCE: 0.023595, LossDA: -0.095603, LossAll: 0.020410, Auxi1: 98.632812, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 41, Top1_auxi1: 80.333336, Top1_auxi2: 85.500000, Top1: 87.333336
+  Train:epoch: 42:[4/4], LossCE: 0.021171, LossDA: -0.092589, LossAll: 0.030454, Auxi1: 98.046875, Auxi2: 99.414062, Task: 99.804688
+                                    Test:epoch: 42, Top1_auxi1: 80.500000, Top1_auxi2: 85.666672, Top1: 87.166672
+  Train:epoch: 43:[4/4], LossCE: 0.017768, LossDA: -0.097026, LossAll: -0.009583, Auxi1: 99.218750, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 43, Top1_auxi1: 78.666672, Top1_auxi2: 85.333336, Top1: 87.000000
+  Train:epoch: 44:[4/4], LossCE: 0.031945, LossDA: -0.091662, LossAll: 0.062760, Auxi1: 97.851562, Auxi2: 98.828125, Task: 99.218750
+                                    Test:epoch: 44, Top1_auxi1: 79.333336, Top1_auxi2: 85.500000, Top1: 86.333336
+  Train:epoch: 45:[4/4], LossCE: 0.028786, LossDA: -0.096338, LossAll: 0.047981, Auxi1: 97.656250, Auxi2: 98.828125, Task: 99.414062
+                                    Test:epoch: 45, Top1_auxi1: 79.166672, Top1_auxi2: 85.166672, Top1: 85.500000
+  Train:epoch: 46:[4/4], LossCE: 0.018352, LossDA: -0.098458, LossAll: -0.001942, Auxi1: 99.218750, Auxi2: 99.414062, Task: 100.000000
+                                    Test:epoch: 46, Top1_auxi1: 79.000000, Top1_auxi2: 85.333336, Top1: 85.333336
+  Train:epoch: 47:[4/4], LossCE: 0.021668, LossDA: -0.113049, LossAll: -0.010861, Auxi1: 99.023438, Auxi2: 99.414062, Task: 99.804688
+                                    Test:epoch: 47, Top1_auxi1: 75.666672, Top1_auxi2: 85.500000, Top1: 86.000000
+  Train:epoch: 48:[4/4], LossCE: 0.023131, LossDA: -0.131925, LossAll: -0.010891, Auxi1: 98.437500, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 48, Top1_auxi1: 74.000000, Top1_auxi2: 85.333336, Top1: 86.166672
+  Train:epoch: 49:[4/4], LossCE: 0.013356, LossDA: -0.150247, LossAll: -0.051027, Auxi1: 98.828125, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 49, Top1_auxi1: 74.166672, Top1_auxi2: 85.166672, Top1: 86.000000
+  Train:epoch: 50:[4/4], LossCE: 0.018486, LossDA: -0.142095, LossAll: 0.003563, Auxi1: 97.070312, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 50, Top1_auxi1: 77.333336, Top1_auxi2: 85.000000, Top1: 86.833336
+  Train:epoch: 51:[4/4], LossCE: 0.015875, LossDA: -0.138560, LossAll: -0.041614, Auxi1: 98.632812, Auxi2: 99.414062, Task: 100.000000
+                                    Test:epoch: 51, Top1_auxi1: 76.833336, Top1_auxi2: 84.833336, Top1: 87.500000
+  Train:epoch: 52:[4/4], LossCE: 0.021904, LossDA: -0.140902, LossAll: -0.023381, Auxi1: 98.632812, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 52, Top1_auxi1: 75.833336, Top1_auxi2: 85.000000, Top1: 87.333336
+  Train:epoch: 53:[4/4], LossCE: 0.012885, LossDA: -0.166147, LossAll: -0.072225, Auxi1: 99.414062, Auxi2: 99.218750, Task: 100.000000
+                                    Test:epoch: 53, Top1_auxi1: 73.000000, Top1_auxi2: 84.833336, Top1: 87.500000
+  Train:epoch: 54:[4/4], LossCE: 0.016761, LossDA: -0.191708, LossAll: -0.082461, Auxi1: 98.632812, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 54, Top1_auxi1: 69.500000, Top1_auxi2: 84.500000, Top1: 87.000000
+  Train:epoch: 55:[4/4], LossCE: 0.021926, LossDA: -0.189496, LossAll: -0.025574, Auxi1: 97.070312, Auxi2: 99.023438, Task: 99.609375
+                                    Test:epoch: 55, Top1_auxi1: 69.666672, Top1_auxi2: 84.166672, Top1: 86.500000
+  Train:epoch: 56:[4/4], LossCE: 0.019174, LossDA: -0.186188, LossAll: -0.048787, Auxi1: 97.460938, Auxi2: 99.023438, Task: 99.609375
+                                    Test:epoch: 56, Top1_auxi1: 71.500000, Top1_auxi2: 84.833336, Top1: 87.000000
+  Train:epoch: 57:[4/4], LossCE: 0.013357, LossDA: -0.198350, LossAll: -0.089826, Auxi1: 98.046875, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 57, Top1_auxi1: 69.500000, Top1_auxi2: 85.000000, Top1: 86.833336
+  Train:epoch: 58:[4/4], LossCE: 0.011851, LossDA: -0.216671, LossAll: -0.100465, Auxi1: 98.632812, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 58, Top1_auxi1: 69.333336, Top1_auxi2: 84.666672, Top1: 88.000000
+  Train:epoch: 59:[4/4], LossCE: 0.018684, LossDA: -0.210119, LossAll: -0.080572, Auxi1: 97.460938, Auxi2: 99.218750, Task: 99.609375
+                                    Test:epoch: 59, Top1_auxi1: 68.833336, Top1_auxi2: 84.666672, Top1: 88.166672
+  Train:epoch: 60:[4/4], LossCE: 0.016984, LossDA: -0.200285, LossAll: -0.057266, Auxi1: 98.046875, Auxi2: 99.414062, Task: 100.000000
+                                    Test:epoch: 60, Top1_auxi1: 70.666672, Top1_auxi2: 84.833336, Top1: 87.666672
+  Train:epoch: 61:[4/4], LossCE: 0.013648, LossDA: -0.197366, LossAll: -0.079324, Auxi1: 97.851562, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 61, Top1_auxi1: 71.833336, Top1_auxi2: 84.833336, Top1: 87.333336
+  Train:epoch: 62:[4/4], LossCE: 0.018885, LossDA: -0.202079, LossAll: -0.081585, Auxi1: 98.242188, Auxi2: 99.023438, Task: 99.804688
+                                    Test:epoch: 62, Top1_auxi1: 68.666672, Top1_auxi2: 85.166672, Top1: 87.666672
+  Train:epoch: 63:[4/4], LossCE: 0.020620, LossDA: -0.226920, LossAll: -0.078216, Auxi1: 96.875000, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 63, Top1_auxi1: 68.500000, Top1_auxi2: 85.000000, Top1: 87.500000
+  Train:epoch: 64:[4/4], LossCE: 0.009906, LossDA: -0.243297, LossAll: -0.149809, Auxi1: 98.632812, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 64, Top1_auxi1: 67.000000, Top1_auxi2: 84.833336, Top1: 86.666672
+  Train:epoch: 65:[4/4], LossCE: 0.014026, LossDA: -0.247623, LossAll: -0.110465, Auxi1: 97.265625, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 65, Top1_auxi1: 68.166672, Top1_auxi2: 85.166672, Top1: 88.000000
+  Train:epoch: 66:[4/4], LossCE: 0.016374, LossDA: -0.250268, LossAll: -0.132883, Auxi1: 98.632812, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 66, Top1_auxi1: 68.666672, Top1_auxi2: 85.000000, Top1: 87.333336
+  Train:epoch: 67:[4/4], LossCE: 0.009310, LossDA: -0.263874, LossAll: -0.152675, Auxi1: 98.242188, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 67, Top1_auxi1: 67.666672, Top1_auxi2: 85.000000, Top1: 86.333336
+  Train:epoch: 68:[4/4], LossCE: 0.016502, LossDA: -0.294371, LossAll: -0.134021, Auxi1: 97.851562, Auxi2: 99.218750, Task: 99.804688
+                                    Test:epoch: 68, Top1_auxi1: 66.000000, Top1_auxi2: 85.000000, Top1: 87.333336
+  Train:epoch: 69:[4/4], LossCE: 0.010320, LossDA: -0.301180, LossAll: -0.173706, Auxi1: 97.851562, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 69, Top1_auxi1: 65.500000, Top1_auxi2: 85.000000, Top1: 87.166672
+  Train:epoch: 70:[4/4], LossCE: 0.015315, LossDA: -0.303608, LossAll: -0.174834, Auxi1: 98.046875, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 70, Top1_auxi1: 65.166672, Top1_auxi2: 84.500000, Top1: 86.833336
+  Train:epoch: 71:[4/4], LossCE: 0.013370, LossDA: -0.302760, LossAll: -0.154442, Auxi1: 97.265625, Auxi2: 99.414062, Task: 100.000000
+                                    Test:epoch: 71, Top1_auxi1: 64.666672, Top1_auxi2: 85.000000, Top1: 87.166672
+  Train:epoch: 72:[4/4], LossCE: 0.015162, LossDA: -0.303081, LossAll: -0.154388, Auxi1: 97.070312, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 72, Top1_auxi1: 64.166672, Top1_auxi2: 84.166672, Top1: 87.500000
+  Train:epoch: 73:[4/4], LossCE: 0.013092, LossDA: -0.312255, LossAll: -0.153602, Auxi1: 97.265625, Auxi2: 99.414062, Task: 100.000000
+                                    Test:epoch: 73, Top1_auxi1: 64.666672, Top1_auxi2: 84.833336, Top1: 87.666672
+  Train:epoch: 74:[4/4], LossCE: 0.017518, LossDA: -0.293146, LossAll: -0.141980, Auxi1: 97.070312, Auxi2: 98.437500, Task: 99.804688
+                                    Test:epoch: 74, Top1_auxi1: 67.333336, Top1_auxi2: 84.666672, Top1: 87.500000
+  Train:epoch: 75:[4/4], LossCE: 0.015428, LossDA: -0.309843, LossAll: -0.180553, Auxi1: 96.875000, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 75, Top1_auxi1: 66.000000, Top1_auxi2: 84.500000, Top1: 89.000000
+  Train:epoch: 76:[4/4], LossCE: 0.013290, LossDA: -0.321213, LossAll: -0.185649, Auxi1: 98.046875, Auxi2: 99.023438, Task: 100.000000
+                                    Test:epoch: 76, Top1_auxi1: 64.833336, Top1_auxi2: 84.666672, Top1: 87.500000
+  Train:epoch: 77:[4/4], LossCE: 0.009633, LossDA: -0.331015, LossAll: -0.201233, Auxi1: 97.265625, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 77, Top1_auxi1: 63.666668, Top1_auxi2: 84.833336, Top1: 87.000000
+  Train:epoch: 78:[4/4], LossCE: 0.019784, LossDA: -0.347248, LossAll: -0.169454, Auxi1: 96.679688, Auxi2: 98.828125, Task: 99.804688
+                                    Test:epoch: 78, Top1_auxi1: 64.666672, Top1_auxi2: 85.000000, Top1: 87.166672
+  Train:epoch: 79:[4/4], LossCE: 0.013667, LossDA: -0.332130, LossAll: -0.189782, Auxi1: 97.460938, Auxi2: 99.218750, Task: 100.000000
+                                    Test:epoch: 79, Top1_auxi1: 65.166672, Top1_auxi2: 84.833336, Top1: 87.833336
+  Train:epoch: 80:[4/4], LossCE: 0.010274, LossDA: -0.325615, LossAll: -0.215602, Auxi1: 97.851562, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 80, Top1_auxi1: 64.833336, Top1_auxi2: 84.833336, Top1: 88.500000
+  Train:epoch: 81:[4/4], LossCE: 0.016376, LossDA: -0.314730, LossAll: -0.136165, Auxi1: 96.289062, Auxi2: 99.023438, Task: 100.000000
+                                    Test:epoch: 81, Top1_auxi1: 66.833336, Top1_auxi2: 85.000000, Top1: 88.500000
+  Train:epoch: 82:[4/4], LossCE: 0.013647, LossDA: -0.317737, LossAll: -0.188963, Auxi1: 97.656250, Auxi2: 99.414062, Task: 99.804688
+                                    Test:epoch: 82, Top1_auxi1: 65.333336, Top1_auxi2: 85.000000, Top1: 88.666672
+  Train:epoch: 83:[4/4], LossCE: 0.016880, LossDA: -0.336812, LossAll: -0.173399, Auxi1: 97.070312, Auxi2: 99.414062, Task: 99.804688
+                                    Test:epoch: 83, Top1_auxi1: 64.666672, Top1_auxi2: 85.333336, Top1: 88.833336
+  Train:epoch: 84:[4/4], LossCE: 0.012814, LossDA: -0.342817, LossAll: -0.203640, Auxi1: 97.460938, Auxi2: 99.218750, Task: 100.000000
+                                    Test:epoch: 84, Top1_auxi1: 67.166672, Top1_auxi2: 84.833336, Top1: 88.166672
+  Train:epoch: 85:[4/4], LossCE: 0.015710, LossDA: -0.362429, LossAll: -0.205603, Auxi1: 97.070312, Auxi2: 99.218750, Task: 99.804688
+                                    Test:epoch: 85, Top1_auxi1: 64.666672, Top1_auxi2: 85.166672, Top1: 88.666672
+  Train:epoch: 86:[4/4], LossCE: 0.018196, LossDA: -0.348868, LossAll: -0.179615, Auxi1: 97.656250, Auxi2: 98.437500, Task: 99.609375
+                                    Test:epoch: 86, Top1_auxi1: 65.833336, Top1_auxi2: 84.833336, Top1: 89.500000      Best Acc so far: 89.500000
+  Train:epoch: 87:[4/4], LossCE: 0.016276, LossDA: -0.342605, LossAll: -0.207333, Auxi1: 98.242188, Auxi2: 99.023438, Task: 99.804688
+                                    Test:epoch: 87, Top1_auxi1: 64.000000, Top1_auxi2: 84.833336, Top1: 89.666672      Best Acc so far: 89.666672
+  Train:epoch: 88:[4/4], LossCE: 0.025719, LossDA: -0.352678, LossAll: -0.156172, Auxi1: 96.679688, Auxi2: 98.632812, Task: 99.609375
+                                    Test:epoch: 88, Top1_auxi1: 64.833336, Top1_auxi2: 85.166672, Top1: 89.833336      Best Acc so far: 89.833336
+  Train:epoch: 89:[4/4], LossCE: 0.016852, LossDA: -0.378335, LossAll: -0.224393, Auxi1: 97.265625, Auxi2: 99.414062, Task: 99.609375
+                                    Test:epoch: 89, Top1_auxi1: 65.166672, Top1_auxi2: 85.166672, Top1: 89.666672
+  Train:epoch: 90:[4/4], LossCE: 0.015509, LossDA: -0.381280, LossAll: -0.238428, Auxi1: 96.875000, Auxi2: 98.828125, Task: 99.609375
+                                    Test:epoch: 90, Top1_auxi1: 64.000000, Top1_auxi2: 85.166672, Top1: 89.000000
+  Train:epoch: 91:[4/4], LossCE: 0.014961, LossDA: -0.400433, LossAll: -0.235893, Auxi1: 96.875000, Auxi2: 99.218750, Task: 99.804688
+                                    Test:epoch: 91, Top1_auxi1: 65.500000, Top1_auxi2: 85.166672, Top1: 89.833336
+  Train:epoch: 92:[4/4], LossCE: 0.012543, LossDA: -0.374804, LossAll: -0.228155, Auxi1: 95.703125, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 92, Top1_auxi1: 66.666672, Top1_auxi2: 85.166672, Top1: 89.333336
+  Train:epoch: 93:[4/4], LossCE: 0.020876, LossDA: -0.386382, LossAll: -0.228981, Auxi1: 97.265625, Auxi2: 98.632812, Task: 99.218750
+                                    Test:epoch: 93, Top1_auxi1: 66.000000, Top1_auxi2: 84.833336, Top1: 88.833336
+  Train:epoch: 94:[4/4], LossCE: 0.027290, LossDA: -0.385076, LossAll: -0.185183, Auxi1: 95.898438, Auxi2: 98.437500, Task: 99.218750
+                                    Test:epoch: 94, Top1_auxi1: 66.500000, Top1_auxi2: 85.000000, Top1: 89.666672
+  Train:epoch: 95:[4/4], LossCE: 0.011747, LossDA: -0.418822, LossAll: -0.278092, Auxi1: 97.070312, Auxi2: 99.414062, Task: 99.804688
+                                    Test:epoch: 95, Top1_auxi1: 62.166668, Top1_auxi2: 85.333336, Top1: 89.500000
+  Train:epoch: 96:[4/4], LossCE: 0.011273, LossDA: -0.438665, LossAll: -0.274875, Auxi1: 96.679688, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 96, Top1_auxi1: 63.666668, Top1_auxi2: 85.166672, Top1: 88.833336
+  Train:epoch: 97:[4/4], LossCE: 0.018451, LossDA: -0.426848, LossAll: -0.239388, Auxi1: 96.679688, Auxi2: 98.046875, Task: 99.609375
+                                    Test:epoch: 97, Top1_auxi1: 65.500000, Top1_auxi2: 85.333336, Top1: 89.500000
+  Train:epoch: 98:[4/4], LossCE: 0.023015, LossDA: -0.372600, LossAll: -0.141639, Auxi1: 95.898438, Auxi2: 98.437500, Task: 99.609375
+                                    Test:epoch: 98, Top1_auxi1: 67.833336, Top1_auxi2: 85.166672, Top1: 88.500000
+  Train:epoch: 99:[4/4], LossCE: 0.011972, LossDA: -0.425186, LossAll: -0.292749, Auxi1: 97.070312, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 99, Top1_auxi1: 64.333336, Top1_auxi2: 85.333336, Top1: 89.166672
+  Train:epoch: 100:[4/4], LossCE: 0.013844, LossDA: -0.409045, LossAll: -0.235428, Auxi1: 96.289062, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 100, Top1_auxi1: 66.333336, Top1_auxi2: 85.333336, Top1: 89.666672
+  Train:epoch: 101:[4/4], LossCE: 0.019093, LossDA: -0.423101, LossAll: -0.256585, Auxi1: 96.484375, Auxi2: 99.023438, Task: 99.804688
+                                    Test:epoch: 101, Top1_auxi1: 66.166672, Top1_auxi2: 85.333336, Top1: 89.833336
+  Train:epoch: 102:[4/4], LossCE: 0.019091, LossDA: -0.404468, LossAll: -0.220114, Auxi1: 96.875000, Auxi2: 98.828125, Task: 99.804688
+                                    Test:epoch: 102, Top1_auxi1: 68.000000, Top1_auxi2: 85.666672, Top1: 90.000000      Best Acc so far: 90.000000
+  Train:epoch: 103:[4/4], LossCE: 0.018153, LossDA: -0.371050, LossAll: -0.173089, Auxi1: 95.703125, Auxi2: 99.023438, Task: 99.609375
+                                    Test:epoch: 103, Top1_auxi1: 67.833336, Top1_auxi2: 85.333336, Top1: 89.666672
+  Train:epoch: 104:[4/4], LossCE: 0.025114, LossDA: -0.374244, LossAll: -0.202822, Auxi1: 96.875000, Auxi2: 98.828125, Task: 99.218750
+                                    Test:epoch: 104, Top1_auxi1: 69.333336, Top1_auxi2: 85.166672, Top1: 90.000000
+  Train:epoch: 105:[4/4], LossCE: 0.022485, LossDA: -0.359808, LossAll: -0.180123, Auxi1: 97.460938, Auxi2: 98.632812, Task: 99.414062
+                                    Test:epoch: 105, Top1_auxi1: 66.833336, Top1_auxi2: 85.500000, Top1: 90.500000      Best Acc so far: 90.500000
+  Train:epoch: 106:[4/4], LossCE: 0.022050, LossDA: -0.430999, LossAll: -0.226561, Auxi1: 95.312500, Auxi2: 98.632812, Task: 99.609375
+                                    Test:epoch: 106, Top1_auxi1: 66.166672, Top1_auxi2: 85.500000, Top1: 90.166672
+  Train:epoch: 107:[4/4], LossCE: 0.019958, LossDA: -0.359943, LossAll: -0.116160, Auxi1: 92.578125, Auxi2: 98.632812, Task: 100.000000
+                                    Test:epoch: 107, Top1_auxi1: 69.000000, Top1_auxi2: 85.833336, Top1: 90.166672
+  Train:epoch: 108:[4/4], LossCE: 0.029316, LossDA: -0.329160, LossAll: -0.110825, Auxi1: 97.460938, Auxi2: 98.046875, Task: 99.414062
+                                    Test:epoch: 108, Top1_auxi1: 70.833336, Top1_auxi2: 86.000000, Top1: 89.833336
+  Train:epoch: 109:[4/4], LossCE: 0.016229, LossDA: -0.344999, LossAll: -0.196422, Auxi1: 96.875000, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 109, Top1_auxi1: 68.833336, Top1_auxi2: 86.166672, Top1: 90.166672
+  Train:epoch: 110:[4/4], LossCE: 0.015045, LossDA: -0.366735, LossAll: -0.180893, Auxi1: 95.312500, Auxi2: 98.828125, Task: 100.000000
+                                    Test:epoch: 110, Top1_auxi1: 67.833336, Top1_auxi2: 85.666672, Top1: 90.166672
+  Train:epoch: 111:[4/4], LossCE: 0.026462, LossDA: -0.332361, LossAll: -0.099248, Auxi1: 95.898438, Auxi2: 98.437500, Task: 99.414062
+                                    Test:epoch: 111, Top1_auxi1: 71.166672, Top1_auxi2: 85.833336, Top1: 90.666672      Best Acc so far: 90.666672
+  Train:epoch: 112:[4/4], LossCE: 0.019584, LossDA: -0.360031, LossAll: -0.188766, Auxi1: 96.289062, Auxi2: 98.632812, Task: 99.609375
+                                    Test:epoch: 112, Top1_auxi1: 73.166672, Top1_auxi2: 85.500000, Top1: 90.000000
+  Train:epoch: 113:[4/4], LossCE: 0.016209, LossDA: -0.350032, LossAll: -0.199207, Auxi1: 97.070312, Auxi2: 98.828125, Task: 99.804688
+                                    Test:epoch: 113, Top1_auxi1: 70.166672, Top1_auxi2: 86.000000, Top1: 89.833336
+  Train:epoch: 114:[4/4], LossCE: 0.030147, LossDA: -0.367872, LossAll: -0.158500, Auxi1: 96.289062, Auxi2: 98.828125, Task: 99.218750
+                                    Test:epoch: 114, Top1_auxi1: 70.000000, Top1_auxi2: 85.500000, Top1: 90.500000
+  Train:epoch: 115:[4/4], LossCE: 0.024145, LossDA: -0.360969, LossAll: -0.156656, Auxi1: 94.531250, Auxi2: 99.414062, Task: 99.804688
+                                    Test:epoch: 115, Top1_auxi1: 70.333336, Top1_auxi2: 85.500000, Top1: 90.500000
+  Train:epoch: 116:[4/4], LossCE: 0.019812, LossDA: -0.347491, LossAll: -0.189970, Auxi1: 95.898438, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 116, Top1_auxi1: 71.666672, Top1_auxi2: 86.166672, Top1: 90.666672
+  Train:epoch: 117:[4/4], LossCE: 0.015256, LossDA: -0.371742, LossAll: -0.209366, Auxi1: 97.070312, Auxi2: 99.023438, Task: 100.000000
+                                    Test:epoch: 117, Top1_auxi1: 71.000000, Top1_auxi2: 86.000000, Top1: 91.000000      Best Acc so far: 91.000000
+  Train:epoch: 118:[4/4], LossCE: 0.023225, LossDA: -0.355924, LossAll: -0.170547, Auxi1: 96.093750, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 118, Top1_auxi1: 72.000000, Top1_auxi2: 85.500000, Top1: 91.333336      Best Acc so far: 91.333336
+  Train:epoch: 119:[4/4], LossCE: 0.022146, LossDA: -0.352295, LossAll: -0.179473, Auxi1: 96.289062, Auxi2: 99.023438, Task: 99.414062
+                                    Test:epoch: 119, Top1_auxi1: 72.000000, Top1_auxi2: 85.500000, Top1: 90.500000
+  Train:epoch: 120:[4/4], LossCE: 0.020390, LossDA: -0.340119, LossAll: -0.174614, Auxi1: 97.265625, Auxi2: 98.828125, Task: 99.609375
+                                    Test:epoch: 120, Top1_auxi1: 73.666672, Top1_auxi2: 85.666672, Top1: 90.166672
+  Train:epoch: 121:[4/4], LossCE: 0.034634, LossDA: -0.314155, LossAll: -0.075584, Auxi1: 96.875000, Auxi2: 97.460938, Task: 98.828125
+                                    Test:epoch: 121, Top1_auxi1: 74.666672, Top1_auxi2: 85.833336, Top1: 90.833336
+  Train:epoch: 122:[4/4], LossCE: 0.019406, LossDA: -0.299338, LossAll: -0.150724, Auxi1: 96.484375, Auxi2: 99.218750, Task: 99.609375
+                                    Test:epoch: 122, Top1_auxi1: 74.333336, Top1_auxi2: 86.000000, Top1: 90.000000
+  Train:epoch: 123:[4/4], LossCE: 0.025479, LossDA: -0.310481, LossAll: -0.113810, Auxi1: 96.679688, Auxi2: 99.218750, Task: 99.609375
+                                    Test:epoch: 123, Top1_auxi1: 74.000000, Top1_auxi2: 85.666672, Top1: 89.833336
+  Train:epoch: 124:[4/4], LossCE: 0.025548, LossDA: -0.345351, LossAll: -0.175756, Auxi1: 96.289062, Auxi2: 99.218750, Task: 99.414062
+                                    Test:epoch: 124, Top1_auxi1: 73.000000, Top1_auxi2: 85.500000, Top1: 90.000000
+  Train:epoch: 125:[4/4], LossCE: 0.024926, LossDA: -0.319452, LossAll: -0.117185, Auxi1: 95.312500, Auxi2: 98.046875, Task: 99.609375
+                                    Test:epoch: 125, Top1_auxi1: 72.666672, Top1_auxi2: 85.833336, Top1: 89.666672
+  Train:epoch: 126:[4/4], LossCE: 0.033749, LossDA: -0.303985, LossAll: -0.080657, Auxi1: 94.726562, Auxi2: 98.632812, Task: 99.023438
+                                    Test:epoch: 126, Top1_auxi1: 76.000000, Top1_auxi2: 85.833336, Top1: 89.666672
+  Train:epoch: 127:[4/4], LossCE: 0.026415, LossDA: -0.296606, LossAll: -0.143630, Auxi1: 97.460938, Auxi2: 99.023438, Task: 99.218750
+                                    Test:epoch: 127, Top1_auxi1: 75.833336, Top1_auxi2: 85.833336, Top1: 90.333336
+  Train:epoch: 128:[4/4], LossCE: 0.040760, LossDA: -0.281819, LossAll: -0.075620, Auxi1: 96.679688, Auxi2: 98.828125, Task: 99.023438
+                                    Test:epoch: 128, Top1_auxi1: 74.833336, Top1_auxi2: 85.833336, Top1: 89.500000
+  Train:epoch: 129:[4/4], LossCE: 0.019149, LossDA: -0.330525, LossAll: -0.160343, Auxi1: 95.898438, Auxi2: 99.414062, Task: 99.414062
+                                    Test:epoch: 129, Top1_auxi1: 72.833336, Top1_auxi2: 85.500000, Top1: 89.333336
+  Train:epoch: 130:[4/4], LossCE: 0.029952, LossDA: -0.286742, LossAll: -0.081476, Auxi1: 95.117188, Auxi2: 99.218750, Task: 99.414062
+                                    Test:epoch: 130, Top1_auxi1: 74.666672, Top1_auxi2: 85.500000, Top1: 89.333336
+  Train:epoch: 131:[4/4], LossCE: 0.034167, LossDA: -0.292848, LossAll: -0.059761, Auxi1: 96.484375, Auxi2: 98.437500, Task: 99.609375
+                                    Test:epoch: 131, Top1_auxi1: 76.166672, Top1_auxi2: 86.000000, Top1: 89.833336
+  Train:epoch: 132:[4/4], LossCE: 0.037052, LossDA: -0.294586, LossAll: -0.097449, Auxi1: 96.289062, Auxi2: 98.437500, Task: 99.023438
+                                    Test:epoch: 132, Top1_auxi1: 76.833336, Top1_auxi2: 86.166672, Top1: 90.000000
+  Train:epoch: 133:[4/4], LossCE: 0.019209, LossDA: -0.292184, LossAll: -0.150169, Auxi1: 96.484375, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 133, Top1_auxi1: 76.000000, Top1_auxi2: 86.000000, Top1: 89.666672
+  Train:epoch: 134:[4/4], LossCE: 0.029937, LossDA: -0.281228, LossAll: -0.096831, Auxi1: 95.898438, Auxi2: 99.218750, Task: 99.218750
+                                    Test:epoch: 134, Top1_auxi1: 77.000000, Top1_auxi2: 86.000000, Top1: 89.666672
+  Train:epoch: 135:[4/4], LossCE: 0.037292, LossDA: -0.215219, LossAll: 0.018032, Auxi1: 96.679688, Auxi2: 97.656250, Task: 99.023438
+                                    Test:epoch: 135, Top1_auxi1: 79.333336, Top1_auxi2: 86.166672, Top1: 90.000000
+  Train:epoch: 136:[4/4], LossCE: 0.033095, LossDA: -0.187527, LossAll: 0.003821, Auxi1: 97.460938, Auxi2: 98.046875, Task: 99.218750
+                                    Test:epoch: 136, Top1_auxi1: 80.666672, Top1_auxi2: 85.833336, Top1: 89.833336
+  Train:epoch: 137:[4/4], LossCE: 0.033380, LossDA: -0.230460, LossAll: -0.071856, Auxi1: 98.046875, Auxi2: 98.632812, Task: 99.218750
+                                    Test:epoch: 137, Top1_auxi1: 79.000000, Top1_auxi2: 86.000000, Top1: 89.666672
+  Train:epoch: 138:[4/4], LossCE: 0.023881, LossDA: -0.298226, LossAll: -0.141082, Auxi1: 97.656250, Auxi2: 99.218750, Task: 99.609375
+                                    Test:epoch: 138, Top1_auxi1: 75.000000, Top1_auxi2: 86.000000, Top1: 89.666672
+  Train:epoch: 139:[4/4], LossCE: 0.023064, LossDA: -0.350560, LossAll: -0.117491, Auxi1: 93.750000, Auxi2: 99.023438, Task: 99.609375
+                                    Test:epoch: 139, Top1_auxi1: 74.500000, Top1_auxi2: 85.833336, Top1: 90.000000
+  Train:epoch: 140:[4/4], LossCE: 0.024316, LossDA: -0.291876, LossAll: -0.093786, Auxi1: 96.289062, Auxi2: 99.023438, Task: 99.414062
+                                    Test:epoch: 140, Top1_auxi1: 77.500000, Top1_auxi2: 85.833336, Top1: 89.500000
+  Train:epoch: 141:[4/4], LossCE: 0.029935, LossDA: -0.244362, LossAll: -0.050915, Auxi1: 96.875000, Auxi2: 98.828125, Task: 99.414062
+                                    Test:epoch: 141, Top1_auxi1: 79.666672, Top1_auxi2: 85.666672, Top1: 90.000000
+  Train:epoch: 142:[4/4], LossCE: 0.049944, LossDA: -0.191575, LossAll: 0.079555, Auxi1: 94.726562, Auxi2: 97.656250, Task: 99.414062
+                                    Test:epoch: 142, Top1_auxi1: 81.500000, Top1_auxi2: 86.000000, Top1: 90.000000
+  Train:epoch: 143:[4/4], LossCE: 0.030642, LossDA: -0.205794, LossAll: -0.058361, Auxi1: 97.851562, Auxi2: 98.632812, Task: 99.218750
+                                    Test:epoch: 143, Top1_auxi1: 80.166672, Top1_auxi2: 85.666672, Top1: 89.166672
+  Train:epoch: 144:[4/4], LossCE: 0.016533, LossDA: -0.199733, LossAll: -0.081264, Auxi1: 97.851562, Auxi2: 99.218750, Task: 100.000000
+                                    Test:epoch: 144, Top1_auxi1: 79.333336, Top1_auxi2: 86.833336, Top1: 89.833336
+  Train:epoch: 145:[4/4], LossCE: 0.034913, LossDA: -0.240614, LossAll: -0.011889, Auxi1: 96.484375, Auxi2: 98.437500, Task: 99.804688
+                                    Test:epoch: 145, Top1_auxi1: 78.000000, Top1_auxi2: 86.666672, Top1: 89.833336
+  Train:epoch: 146:[4/4], LossCE: 0.028222, LossDA: -0.247426, LossAll: -0.049824, Auxi1: 95.507812, Auxi2: 98.632812, Task: 99.218750
+                                    Test:epoch: 146, Top1_auxi1: 77.000000, Top1_auxi2: 86.833336, Top1: 89.333336
+  Train:epoch: 147:[4/4], LossCE: 0.028489, LossDA: -0.217397, LossAll: -0.008127, Auxi1: 94.140625, Auxi2: 98.828125, Task: 99.609375
+                                    Test:epoch: 147, Top1_auxi1: 79.666672, Top1_auxi2: 86.500000, Top1: 89.666672
+  Train:epoch: 148:[4/4], LossCE: 0.028147, LossDA: -0.205517, LossAll: -0.029829, Auxi1: 97.070312, Auxi2: 99.023438, Task: 99.609375
+                                    Test:epoch: 148, Top1_auxi1: 80.000000, Top1_auxi2: 86.666672, Top1: 89.666672
+  Train:epoch: 149:[4/4], LossCE: 0.029424, LossDA: -0.205601, LossAll: -0.031669, Auxi1: 96.679688, Auxi2: 99.218750, Task: 99.609375
+                                    Test:epoch: 149, Top1_auxi1: 81.000000, Top1_auxi2: 87.333336, Top1: 90.166672
+  Train:epoch: 150:[4/4], LossCE: 0.026840, LossDA: -0.189454, LossAll: -0.046400, Auxi1: 97.070312, Auxi2: 99.218750, Task: 99.414062
+                                    Test:epoch: 150, Top1_auxi1: 80.666672, Top1_auxi2: 86.666672, Top1: 89.166672
+  Train:epoch: 151:[4/4], LossCE: 0.023600, LossDA: -0.188643, LossAll: -0.054277, Auxi1: 98.046875, Auxi2: 99.218750, Task: 99.609375
+                                    Test:epoch: 151, Top1_auxi1: 79.833336, Top1_auxi2: 86.833336, Top1: 89.333336
+  Train:epoch: 152:[4/4], LossCE: 0.039253, LossDA: -0.184043, LossAll: 0.027452, Auxi1: 96.289062, Auxi2: 98.437500, Task: 99.023438
+                                    Test:epoch: 152, Top1_auxi1: 79.500000, Top1_auxi2: 86.666672, Top1: 89.833336
+  Train:epoch: 153:[4/4], LossCE: 0.021296, LossDA: -0.258479, LossAll: -0.101699, Auxi1: 95.898438, Auxi2: 99.414062, Task: 99.609375
+                                    Test:epoch: 153, Top1_auxi1: 77.333336, Top1_auxi2: 86.500000, Top1: 89.666672
+  Train:epoch: 154:[4/4], LossCE: 0.022435, LossDA: -0.241732, LossAll: -0.064824, Auxi1: 97.070312, Auxi2: 99.023438, Task: 99.609375
+                                    Test:epoch: 154, Top1_auxi1: 78.000000, Top1_auxi2: 86.833336, Top1: 89.000000
+  Train:epoch: 155:[4/4], LossCE: 0.029201, LossDA: -0.193475, LossAll: 0.003099, Auxi1: 95.507812, Auxi2: 99.023438, Task: 99.609375
+                                    Test:epoch: 155, Top1_auxi1: 81.333336, Top1_auxi2: 86.333336, Top1: 89.333336
+  Train:epoch: 156:[4/4], LossCE: 0.023056, LossDA: -0.184832, LossAll: -0.027347, Auxi1: 98.632812, Auxi2: 98.242188, Task: 99.609375
+                                    Test:epoch: 156, Top1_auxi1: 82.500000, Top1_auxi2: 86.166672, Top1: 89.166672
+  Train:epoch: 157:[4/4], LossCE: 0.047760, LossDA: -0.184365, LossAll: 0.044303, Auxi1: 97.070312, Auxi2: 97.851562, Task: 98.437500
+                                    Test:epoch: 157, Top1_auxi1: 81.333336, Top1_auxi2: 87.166672, Top1: 90.000000
+  Train:epoch: 158:[4/4], LossCE: 0.043206, LossDA: -0.170126, LossAll: 0.048996, Auxi1: 97.265625, Auxi2: 97.460938, Task: 98.632812
+                                    Test:epoch: 158, Top1_auxi1: 81.500000, Top1_auxi2: 87.000000, Top1: 89.666672
+  Train:epoch: 159:[4/4], LossCE: 0.021594, LossDA: -0.172369, LossAll: -0.001688, Auxi1: 98.437500, Auxi2: 98.046875, Task: 99.804688
+                                    Test:epoch: 159, Top1_auxi1: 81.833336, Top1_auxi2: 86.833336, Top1: 89.000000
+  Train:epoch: 160:[4/4], LossCE: 0.042604, LossDA: -0.145484, LossAll: 0.063823, Auxi1: 96.484375, Auxi2: 98.632812, Task: 98.632812
+                                    Test:epoch: 160, Top1_auxi1: 82.500000, Top1_auxi2: 86.666672, Top1: 88.500000
+  Train:epoch: 161:[4/4], LossCE: 0.028732, LossDA: -0.148481, LossAll: -0.004233, Auxi1: 97.851562, Auxi2: 99.218750, Task: 99.218750
+                                    Test:epoch: 161, Top1_auxi1: 82.333336, Top1_auxi2: 87.333336, Top1: 89.500000
+  Train:epoch: 162:[4/4], LossCE: 0.053569, LossDA: -0.146656, LossAll: 0.077302, Auxi1: 97.460938, Auxi2: 98.046875, Task: 98.242188
+                                    Test:epoch: 162, Top1_auxi1: 82.833336, Top1_auxi2: 87.666672, Top1: 89.666672
+  Train:epoch: 163:[4/4], LossCE: 0.029193, LossDA: -0.137991, LossAll: 0.009560, Auxi1: 98.046875, Auxi2: 98.828125, Task: 99.414062
+                                    Test:epoch: 163, Top1_auxi1: 82.833336, Top1_auxi2: 87.500000, Top1: 89.000000
+  Train:epoch: 164:[4/4], LossCE: 0.048638, LossDA: -0.142373, LossAll: 0.056425, Auxi1: 97.070312, Auxi2: 99.218750, Task: 99.023438
+                                    Test:epoch: 164, Top1_auxi1: 83.000000, Top1_auxi2: 87.333336, Top1: 89.500000
+  Train:epoch: 165:[4/4], LossCE: 0.037005, LossDA: -0.167997, LossAll: -0.003985, Auxi1: 98.242188, Auxi2: 99.023438, Task: 99.218750
+                                    Test:epoch: 165, Top1_auxi1: 82.833336, Top1_auxi2: 87.000000, Top1: 89.666672
+  Train:epoch: 166:[4/4], LossCE: 0.021626, LossDA: -0.168426, LossAll: -0.026303, Auxi1: 97.851562, Auxi2: 99.218750, Task: 99.804688
+                                    Test:epoch: 166, Top1_auxi1: 81.000000, Top1_auxi2: 87.833336, Top1: 89.666672
+  Train:epoch: 167:[4/4], LossCE: 0.029572, LossDA: -0.132537, LossAll: 0.073434, Auxi1: 95.507812, Auxi2: 99.023438, Task: 99.414062
+                                    Test:epoch: 167, Top1_auxi1: 81.666672, Top1_auxi2: 87.500000, Top1: 89.166672
+  Train:epoch: 168:[4/4], LossCE: 0.023159, LossDA: -0.146993, LossAll: 0.010490, Auxi1: 98.242188, Auxi2: 99.023438, Task: 100.000000
+                                    Test:epoch: 168, Top1_auxi1: 82.000000, Top1_auxi2: 87.000000, Top1: 89.166672
+  Train:epoch: 169:[4/4], LossCE: 0.031262, LossDA: -0.155353, LossAll: -0.008134, Auxi1: 97.460938, Auxi2: 98.828125, Task: 98.828125
+                                    Test:epoch: 169, Top1_auxi1: 83.333336, Top1_auxi2: 87.666672, Top1: 89.833336
+  Train:epoch: 170:[4/4], LossCE: 0.031840, LossDA: -0.120871, LossAll: 0.045181, Auxi1: 97.265625, Auxi2: 98.437500, Task: 99.218750
+                                    Test:epoch: 170, Top1_auxi1: 83.000000, Top1_auxi2: 87.166672, Top1: 89.666672
+  Train:epoch: 171:[4/4], LossCE: 0.027012, LossDA: -0.136537, LossAll: 0.012346, Auxi1: 97.851562, Auxi2: 98.632812, Task: 99.804688
+                                    Test:epoch: 171, Top1_auxi1: 83.000000, Top1_auxi2: 87.500000, Top1: 89.666672
+  Train:epoch: 172:[4/4], LossCE: 0.026476, LossDA: -0.132858, LossAll: 0.002553, Auxi1: 98.242188, Auxi2: 99.218750, Task: 99.414062
+                                    Test:epoch: 172, Top1_auxi1: 83.333336, Top1_auxi2: 87.500000, Top1: 89.500000
+  Train:epoch: 173:[4/4], LossCE: 0.024945, LossDA: -0.133650, LossAll: 0.003856, Auxi1: 99.218750, Auxi2: 98.828125, Task: 99.609375
+                                    Test:epoch: 173, Top1_auxi1: 82.666672, Top1_auxi2: 87.833336, Top1: 89.500000
+  Train:epoch: 174:[4/4], LossCE: 0.032900, LossDA: -0.125243, LossAll: 0.077630, Auxi1: 97.656250, Auxi2: 98.437500, Task: 99.804688
+                                    Test:epoch: 174, Top1_auxi1: 82.166672, Top1_auxi2: 87.333336, Top1: 89.333336
+  Train:epoch: 175:[4/4], LossCE: 0.025571, LossDA: -0.130251, LossAll: 0.010732, Auxi1: 98.046875, Auxi2: 99.023438, Task: 99.609375
+                                    Test:epoch: 175, Top1_auxi1: 82.666672, Top1_auxi2: 87.833336, Top1: 89.666672
+  Train:epoch: 176:[4/4], LossCE: 0.021569, LossDA: -0.119134, LossAll: -0.008821, Auxi1: 98.437500, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 176, Top1_auxi1: 83.000000, Top1_auxi2: 87.666672, Top1: 90.000000
+  Train:epoch: 177:[4/4], LossCE: 0.019253, LossDA: -0.148400, LossAll: -0.031161, Auxi1: 98.437500, Auxi2: 99.218750, Task: 99.609375
+                                    Test:epoch: 177, Top1_auxi1: 83.333336, Top1_auxi2: 87.833336, Top1: 89.833336
+  Train:epoch: 178:[4/4], LossCE: 0.032939, LossDA: -0.109282, LossAll: 0.069214, Auxi1: 97.265625, Auxi2: 99.023438, Task: 99.218750
+                                    Test:epoch: 178, Top1_auxi1: 83.333336, Top1_auxi2: 87.833336, Top1: 90.000000
+  Train:epoch: 179:[4/4], LossCE: 0.018451, LossDA: -0.126933, LossAll: -0.020076, Auxi1: 98.046875, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 179, Top1_auxi1: 83.333336, Top1_auxi2: 87.500000, Top1: 90.000000
+  Train:epoch: 180:[4/4], LossCE: 0.029635, LossDA: -0.101492, LossAll: 0.051411, Auxi1: 98.046875, Auxi2: 98.828125, Task: 99.023438
+                                    Test:epoch: 180, Top1_auxi1: 84.500000, Top1_auxi2: 87.500000, Top1: 89.666672
+  Train:epoch: 181:[4/4], LossCE: 0.054491, LossDA: -0.085790, LossAll: 0.159903, Auxi1: 96.289062, Auxi2: 97.851562, Task: 98.437500
+                                    Test:epoch: 181, Top1_auxi1: 85.166672, Top1_auxi2: 87.333336, Top1: 89.500000
+  Train:epoch: 182:[4/4], LossCE: 0.044840, LossDA: -0.078416, LossAll: 0.100137, Auxi1: 97.656250, Auxi2: 98.437500, Task: 98.828125
+                                    Test:epoch: 182, Top1_auxi1: 85.666672, Top1_auxi2: 87.500000, Top1: 89.666672
+  Train:epoch: 183:[4/4], LossCE: 0.026375, LossDA: -0.079381, LossAll: 0.024669, Auxi1: 99.218750, Auxi2: 99.218750, Task: 99.609375
+                                    Test:epoch: 183, Top1_auxi1: 85.833336, Top1_auxi2: 87.666672, Top1: 89.666672
+  Train:epoch: 184:[4/4], LossCE: 0.024594, LossDA: -0.077620, LossAll: 0.023920, Auxi1: 99.609375, Auxi2: 99.414062, Task: 100.000000
+                                    Test:epoch: 184, Top1_auxi1: 85.666672, Top1_auxi2: 88.000000, Top1: 89.666672
+  Train:epoch: 185:[4/4], LossCE: 0.032112, LossDA: -0.068610, LossAll: 0.085724, Auxi1: 98.632812, Auxi2: 98.046875, Task: 99.023438
+                                    Test:epoch: 185, Top1_auxi1: 85.333336, Top1_auxi2: 88.166672, Top1: 90.000000
+  Train:epoch: 186:[4/4], LossCE: 0.040246, LossDA: -0.072876, LossAll: 0.095335, Auxi1: 97.851562, Auxi2: 98.437500, Task: 99.218750
+                                    Test:epoch: 186, Top1_auxi1: 85.666672, Top1_auxi2: 87.666672, Top1: 89.833336
+  Train:epoch: 187:[4/4], LossCE: 0.042576, LossDA: -0.080504, LossAll: 0.085078, Auxi1: 98.046875, Auxi2: 98.437500, Task: 98.828125
+                                    Test:epoch: 187, Top1_auxi1: 85.833336, Top1_auxi2: 87.666672, Top1: 89.833336
+  Train:epoch: 188:[4/4], LossCE: 0.032474, LossDA: -0.093205, LossAll: 0.042577, Auxi1: 97.851562, Auxi2: 98.828125, Task: 99.218750
+                                    Test:epoch: 188, Top1_auxi1: 85.833336, Top1_auxi2: 87.500000, Top1: 90.000000
+  Train:epoch: 189:[4/4], LossCE: 0.029060, LossDA: -0.089783, LossAll: 0.044884, Auxi1: 98.632812, Auxi2: 98.828125, Task: 99.414062
+                                    Test:epoch: 189, Top1_auxi1: 85.500000, Top1_auxi2: 87.833336, Top1: 89.833336
+  Train:epoch: 190:[4/4], LossCE: 0.022720, LossDA: -0.102284, LossAll: 0.000714, Auxi1: 99.218750, Auxi2: 99.414062, Task: 100.000000
+                                    Test:epoch: 190, Top1_auxi1: 85.000000, Top1_auxi2: 88.166672, Top1: 90.166672
+  Train:epoch: 191:[4/4], LossCE: 0.024678, LossDA: -0.093019, LossAll: 0.032488, Auxi1: 98.632812, Auxi2: 99.218750, Task: 99.804688
+                                    Test:epoch: 191, Top1_auxi1: 84.000000, Top1_auxi2: 87.833336, Top1: 89.666672
+  Train:epoch: 192:[4/4], LossCE: 0.043706, LossDA: -0.088335, LossAll: 0.107683, Auxi1: 97.070312, Auxi2: 98.242188, Task: 99.023438
+                                    Test:epoch: 192, Top1_auxi1: 85.333336, Top1_auxi2: 88.333336, Top1: 90.000000
+  Train:epoch: 193:[4/4], LossCE: 0.035125, LossDA: -0.089279, LossAll: 0.051658, Auxi1: 98.632812, Auxi2: 98.828125, Task: 98.828125
+                                    Test:epoch: 193, Top1_auxi1: 85.166672, Top1_auxi2: 87.666672, Top1: 89.333336
+  Train:epoch: 194:[4/4], LossCE: 0.027970, LossDA: -0.075274, LossAll: 0.043341, Auxi1: 98.437500, Auxi2: 99.414062, Task: 99.414062
+                                    Test:epoch: 194, Top1_auxi1: 85.166672, Top1_auxi2: 88.500000, Top1: 89.333336
+  Train:epoch: 195:[4/4], LossCE: 0.028209, LossDA: -0.074524, LossAll: 0.065718, Auxi1: 98.632812, Auxi2: 99.023438, Task: 100.000000
+                                    Test:epoch: 195, Top1_auxi1: 85.166672, Top1_auxi2: 88.166672, Top1: 89.333336
+  Train:epoch: 196:[4/4], LossCE: 0.019272, LossDA: -0.080422, LossAll: -0.002145, Auxi1: 99.609375, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 196, Top1_auxi1: 85.000000, Top1_auxi2: 87.500000, Top1: 89.500000
+  Train:epoch: 197:[4/4], LossCE: 0.046251, LossDA: -0.078894, LossAll: 0.111159, Auxi1: 98.632812, Auxi2: 98.632812, Task: 98.632812
+                                    Test:epoch: 197, Top1_auxi1: 84.833336, Top1_auxi2: 87.833336, Top1: 89.833336
+  Train:epoch: 198:[4/4], LossCE: 0.026460, LossDA: -0.069425, LossAll: 0.049271, Auxi1: 98.632812, Auxi2: 98.828125, Task: 99.804688
+                                    Test:epoch: 198, Top1_auxi1: 85.166672, Top1_auxi2: 87.666672, Top1: 89.333336
+  Train:epoch: 199:[4/4], LossCE: 0.033942, LossDA: -0.052241, LossAll: 0.115090, Auxi1: 97.460938, Auxi2: 98.828125, Task: 99.218750
+                                    Test:epoch: 199, Top1_auxi1: 85.666672, Top1_auxi2: 87.500000, Top1: 89.500000
+  Train:epoch: 200:[4/4], LossCE: 0.026418, LossDA: -0.079127, LossAll: 0.021176, Auxi1: 99.023438, Auxi2: 99.218750, Task: 99.218750
+                                    Test:epoch: 200, Top1_auxi1: 86.333336, Top1_auxi2: 87.833336, Top1: 89.166672
+  Train:epoch: 201:[4/4], LossCE: 0.033457, LossDA: -0.068456, LossAll: 0.078108, Auxi1: 98.828125, Auxi2: 98.828125, Task: 99.218750
+                                    Test:epoch: 201, Top1_auxi1: 86.333336, Top1_auxi2: 87.833336, Top1: 89.500000
+  Train:epoch: 202:[4/4], LossCE: 0.033801, LossDA: -0.061914, LossAll: 0.065621, Auxi1: 99.023438, Auxi2: 98.828125, Task: 99.218750
+                                    Test:epoch: 202, Top1_auxi1: 85.500000, Top1_auxi2: 87.666672, Top1: 88.666672
+  Train:epoch: 203:[4/4], LossCE: 0.027142, LossDA: -0.058173, LossAll: 0.059022, Auxi1: 98.632812, Auxi2: 99.023438, Task: 99.804688
+                                    Test:epoch: 203, Top1_auxi1: 85.666672, Top1_auxi2: 87.666672, Top1: 89.500000
+  Train:epoch: 204:[4/4], LossCE: 0.032218, LossDA: -0.072904, LossAll: 0.053080, Auxi1: 98.828125, Auxi2: 98.828125, Task: 99.804688
+                                    Test:epoch: 204, Top1_auxi1: 85.500000, Top1_auxi2: 88.500000, Top1: 89.833336
+  Train:epoch: 205:[4/4], LossCE: 0.029074, LossDA: -0.063401, LossAll: 0.060549, Auxi1: 98.242188, Auxi2: 98.632812, Task: 99.218750
+                                    Test:epoch: 205, Top1_auxi1: 86.500000, Top1_auxi2: 88.333336, Top1: 90.000000
+  Train:epoch: 206:[4/4], LossCE: 0.023894, LossDA: -0.058749, LossAll: 0.065530, Auxi1: 98.437500, Auxi2: 98.437500, Task: 99.804688
+                                    Test:epoch: 206, Top1_auxi1: 86.333336, Top1_auxi2: 88.500000, Top1: 89.833336
+  Train:epoch: 207:[4/4], LossCE: 0.017399, LossDA: -0.071466, LossAll: 0.005367, Auxi1: 99.609375, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 207, Top1_auxi1: 86.166672, Top1_auxi2: 88.166672, Top1: 89.500000
+  Train:epoch: 208:[4/4], LossCE: 0.019042, LossDA: -0.058712, LossAll: 0.033290, Auxi1: 99.023438, Auxi2: 99.804688, Task: 99.609375
+                                    Test:epoch: 208, Top1_auxi1: 86.000000, Top1_auxi2: 87.666672, Top1: 89.333336
+  Train:epoch: 209:[4/4], LossCE: 0.019906, LossDA: -0.050275, LossAll: 0.051699, Auxi1: 99.023438, Auxi2: 99.414062, Task: 99.804688
+                                    Test:epoch: 209, Top1_auxi1: 86.166672, Top1_auxi2: 87.833336, Top1: 90.000000
+  Train:epoch: 210:[4/4], LossCE: 0.028293, LossDA: -0.065197, LossAll: 0.039246, Auxi1: 99.218750, Auxi2: 98.828125, Task: 99.414062
+                                    Test:epoch: 210, Top1_auxi1: 86.666672, Top1_auxi2: 88.333336, Top1: 89.500000
+  Train:epoch: 211:[4/4], LossCE: 0.031008, LossDA: -0.054464, LossAll: 0.069280, Auxi1: 98.437500, Auxi2: 99.023438, Task: 98.828125
+                                    Test:epoch: 211, Top1_auxi1: 86.500000, Top1_auxi2: 87.833336, Top1: 89.166672
+  Train:epoch: 212:[4/4], LossCE: 0.021457, LossDA: -0.063793, LossAll: 0.021473, Auxi1: 99.218750, Auxi2: 99.414062, Task: 99.609375
+                                    Test:epoch: 212, Top1_auxi1: 86.000000, Top1_auxi2: 88.166672, Top1: 89.833336
+  Train:epoch: 213:[4/4], LossCE: 0.034413, LossDA: -0.040697, LossAll: 0.122606, Auxi1: 98.828125, Auxi2: 97.851562, Task: 99.023438
+                                    Test:epoch: 213, Top1_auxi1: 86.500000, Top1_auxi2: 88.333336, Top1: 90.333336
+  Train:epoch: 214:[4/4], LossCE: 0.027230, LossDA: -0.040377, LossAll: 0.087733, Auxi1: 98.632812, Auxi2: 98.632812, Task: 99.414062
+                                    Test:epoch: 214, Top1_auxi1: 87.166672, Top1_auxi2: 88.000000, Top1: 89.333336
+  Train:epoch: 215:[4/4], LossCE: 0.025429, LossDA: -0.051618, LossAll: 0.069934, Auxi1: 98.828125, Auxi2: 98.828125, Task: 99.414062
+                                    Test:epoch: 215, Top1_auxi1: 87.000000, Top1_auxi2: 87.833336, Top1: 89.500000
+  Train:epoch: 216:[4/4], LossCE: 0.037686, LossDA: -0.028258, LossAll: 0.131834, Auxi1: 97.070312, Auxi2: 99.414062, Task: 99.023438
+                                    Test:epoch: 216, Top1_auxi1: 86.666672, Top1_auxi2: 87.333336, Top1: 90.000000
+  Train:epoch: 217:[4/4], LossCE: 0.023182, LossDA: -0.040625, LossAll: 0.051352, Auxi1: 98.437500, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 217, Top1_auxi1: 87.333336, Top1_auxi2: 87.666672, Top1: 90.000000
+  Train:epoch: 218:[4/4], LossCE: 0.028347, LossDA: -0.026585, LossAll: 0.094441, Auxi1: 98.828125, Auxi2: 99.023438, Task: 99.609375
+                                    Test:epoch: 218, Top1_auxi1: 87.166672, Top1_auxi2: 87.833336, Top1: 89.333336
+  Train:epoch: 219:[4/4], LossCE: 0.037547, LossDA: -0.021527, LossAll: 0.099950, Auxi1: 98.828125, Auxi2: 99.218750, Task: 99.023438
+                                    Test:epoch: 219, Top1_auxi1: 87.500000, Top1_auxi2: 87.333336, Top1: 89.333336
+  Train:epoch: 220:[4/4], LossCE: 0.018211, LossDA: -0.020994, LossAll: 0.070641, Auxi1: 99.023438, Auxi2: 99.414062, Task: 100.000000
+                                    Test:epoch: 220, Top1_auxi1: 87.666672, Top1_auxi2: 87.500000, Top1: 89.833336
+  Train:epoch: 221:[4/4], LossCE: 0.024872, LossDA: -0.025559, LossAll: 0.079659, Auxi1: 99.414062, Auxi2: 99.023438, Task: 99.414062
+                                    Test:epoch: 221, Top1_auxi1: 88.166672, Top1_auxi2: 87.666672, Top1: 89.833336
+  Train:epoch: 222:[4/4], LossCE: 0.024021, LossDA: -0.013004, LossAll: 0.077258, Auxi1: 99.218750, Auxi2: 99.023438, Task: 99.804688
+                                    Test:epoch: 222, Top1_auxi1: 88.333336, Top1_auxi2: 87.666672, Top1: 89.500000
+  Train:epoch: 223:[4/4], LossCE: 0.023891, LossDA: -0.014844, LossAll: 0.118244, Auxi1: 98.828125, Auxi2: 98.437500, Task: 99.609375
+                                    Test:epoch: 223, Top1_auxi1: 88.333336, Top1_auxi2: 87.666672, Top1: 90.000000
+  Train:epoch: 224:[4/4], LossCE: 0.038232, LossDA: -0.028801, LossAll: 0.107276, Auxi1: 98.437500, Auxi2: 99.023438, Task: 99.023438
+                                    Test:epoch: 224, Top1_auxi1: 88.333336, Top1_auxi2: 88.166672, Top1: 90.000000
+  Train:epoch: 225:[4/4], LossCE: 0.024657, LossDA: -0.023124, LossAll: 0.053686, Auxi1: 99.414062, Auxi2: 99.218750, Task: 99.609375
+                                    Test:epoch: 225, Top1_auxi1: 88.500000, Top1_auxi2: 88.166672, Top1: 89.833336
+  Train:epoch: 226:[4/4], LossCE: 0.037064, LossDA: -0.016252, LossAll: 0.097039, Auxi1: 99.023438, Auxi2: 99.609375, Task: 99.023438
+                                    Test:epoch: 226, Top1_auxi1: 88.500000, Top1_auxi2: 88.000000, Top1: 90.166672
+  Train:epoch: 227:[4/4], LossCE: 0.023573, LossDA: -0.023600, LossAll: 0.066036, Auxi1: 99.414062, Auxi2: 98.632812, Task: 99.218750
+                                    Test:epoch: 227, Top1_auxi1: 88.000000, Top1_auxi2: 88.166672, Top1: 90.000000
+  Train:epoch: 228:[4/4], LossCE: 0.020894, LossDA: -0.016604, LossAll: 0.069043, Auxi1: 98.632812, Auxi2: 99.414062, Task: 99.804688
+                                    Test:epoch: 228, Top1_auxi1: 87.666672, Top1_auxi2: 87.166672, Top1: 89.000000
+  Train:epoch: 229:[4/4], LossCE: 0.028480, LossDA: -0.023891, LossAll: 0.081732, Auxi1: 99.218750, Auxi2: 98.828125, Task: 99.414062
+                                    Test:epoch: 229, Top1_auxi1: 87.666672, Top1_auxi2: 87.833336, Top1: 89.666672
+  Train:epoch: 230:[4/4], LossCE: 0.020197, LossDA: -0.016243, LossAll: 0.061090, Auxi1: 99.218750, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 230, Top1_auxi1: 87.666672, Top1_auxi2: 88.333336, Top1: 89.833336
+  Train:epoch: 231:[4/4], LossCE: 0.023221, LossDA: -0.019873, LossAll: 0.065357, Auxi1: 99.609375, Auxi2: 99.023438, Task: 99.804688
+                                    Test:epoch: 231, Top1_auxi1: 88.166672, Top1_auxi2: 87.833336, Top1: 89.833336
+  Train:epoch: 232:[4/4], LossCE: 0.025020, LossDA: -0.024222, LossAll: 0.066688, Auxi1: 99.218750, Auxi2: 99.804688, Task: 99.609375
+                                    Test:epoch: 232, Top1_auxi1: 88.166672, Top1_auxi2: 87.500000, Top1: 89.166672
+  Train:epoch: 233:[4/4], LossCE: 0.016748, LossDA: -0.024747, LossAll: 0.035006, Auxi1: 99.218750, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 233, Top1_auxi1: 88.166672, Top1_auxi2: 88.166672, Top1: 89.333336
+  Train:epoch: 234:[4/4], LossCE: 0.023655, LossDA: -0.027364, LossAll: 0.054832, Auxi1: 99.804688, Auxi2: 99.414062, Task: 99.804688
+                                    Test:epoch: 234, Top1_auxi1: 87.833336, Top1_auxi2: 87.500000, Top1: 89.166672
+  Train:epoch: 235:[4/4], LossCE: 0.023454, LossDA: -0.022505, LossAll: 0.060299, Auxi1: 99.609375, Auxi2: 99.218750, Task: 99.414062
+                                    Test:epoch: 235, Top1_auxi1: 87.833336, Top1_auxi2: 87.833336, Top1: 89.833336
+  Train:epoch: 236:[4/4], LossCE: 0.024350, LossDA: -0.021347, LossAll: 0.075385, Auxi1: 99.414062, Auxi2: 99.023438, Task: 99.414062
+                                    Test:epoch: 236, Top1_auxi1: 87.666672, Top1_auxi2: 87.833336, Top1: 89.833336
+  Train:epoch: 237:[4/4], LossCE: 0.031327, LossDA: -0.021609, LossAll: 0.093853, Auxi1: 98.242188, Auxi2: 99.023438, Task: 99.218750
+                                    Test:epoch: 237, Top1_auxi1: 88.500000, Top1_auxi2: 88.166672, Top1: 90.166672
+  Train:epoch: 238:[4/4], LossCE: 0.031546, LossDA: -0.014621, LossAll: 0.125542, Auxi1: 98.242188, Auxi2: 98.437500, Task: 99.023438
+                                    Test:epoch: 238, Top1_auxi1: 87.833336, Top1_auxi2: 88.500000, Top1: 90.000000
+  Train:epoch: 239:[4/4], LossCE: 0.017746, LossDA: -0.020095, LossAll: 0.048494, Auxi1: 99.218750, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 239, Top1_auxi1: 88.333336, Top1_auxi2: 88.333336, Top1: 89.833336
+  Train:epoch: 240:[4/4], LossCE: 0.020732, LossDA: -0.017296, LossAll: 0.055136, Auxi1: 99.414062, Auxi2: 99.218750, Task: 99.218750
+                                    Test:epoch: 240, Top1_auxi1: 88.000000, Top1_auxi2: 88.500000, Top1: 89.666672
+  Train:epoch: 241:[4/4], LossCE: 0.021953, LossDA: -0.015097, LossAll: 0.079504, Auxi1: 99.218750, Auxi2: 99.023438, Task: 99.804688
+                                    Test:epoch: 241, Top1_auxi1: 88.000000, Top1_auxi2: 88.166672, Top1: 89.500000
+  Train:epoch: 242:[4/4], LossCE: 0.028335, LossDA: -0.011156, LossAll: 0.106646, Auxi1: 98.632812, Auxi2: 98.437500, Task: 99.218750
+                                    Test:epoch: 242, Top1_auxi1: 87.833336, Top1_auxi2: 88.333336, Top1: 89.833336
+  Train:epoch: 243:[4/4], LossCE: 0.022633, LossDA: -0.014252, LossAll: 0.062809, Auxi1: 99.218750, Auxi2: 99.218750, Task: 99.414062
+                                    Test:epoch: 243, Top1_auxi1: 88.000000, Top1_auxi2: 88.000000, Top1: 89.500000
+  Train:epoch: 244:[4/4], LossCE: 0.032193, LossDA: -0.007152, LossAll: 0.110706, Auxi1: 99.218750, Auxi2: 99.023438, Task: 99.218750
+                                    Test:epoch: 244, Top1_auxi1: 87.666672, Top1_auxi2: 88.000000, Top1: 89.333336
+  Train:epoch: 245:[4/4], LossCE: 0.023134, LossDA: -0.009422, LossAll: 0.090037, Auxi1: 99.023438, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 245, Top1_auxi1: 88.166672, Top1_auxi2: 88.333336, Top1: 89.666672
+  Train:epoch: 246:[4/4], LossCE: 0.032531, LossDA: -0.009010, LossAll: 0.108172, Auxi1: 99.023438, Auxi2: 99.023438, Task: 99.218750
+                                    Test:epoch: 246, Top1_auxi1: 88.000000, Top1_auxi2: 88.000000, Top1: 89.500000
+  Train:epoch: 247:[4/4], LossCE: 0.019377, LossDA: -0.009934, LossAll: 0.053597, Auxi1: 99.609375, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 247, Top1_auxi1: 88.166672, Top1_auxi2: 88.500000, Top1: 90.000000
+  Train:epoch: 248:[4/4], LossCE: 0.019369, LossDA: -0.012732, LossAll: 0.051390, Auxi1: 99.609375, Auxi2: 99.414062, Task: 99.804688
+                                    Test:epoch: 248, Top1_auxi1: 88.000000, Top1_auxi2: 88.166672, Top1: 90.000000
+  Train:epoch: 249:[4/4], LossCE: 0.022891, LossDA: -0.011978, LossAll: 0.060565, Auxi1: 99.218750, Auxi2: 99.218750, Task: 99.609375
+                                    Test:epoch: 249, Top1_auxi1: 88.166672, Top1_auxi2: 88.333336, Top1: 89.166672
+  Train:epoch: 250:[4/4], LossCE: 0.020626, LossDA: -0.009299, LossAll: 0.056007, Auxi1: 99.414062, Auxi2: 99.804688, Task: 99.609375
+                                    Test:epoch: 250, Top1_auxi1: 88.333336, Top1_auxi2: 88.500000, Top1: 90.000000
+  Train:epoch: 251:[4/4], LossCE: 0.018926, LossDA: -0.011311, LossAll: 0.051267, Auxi1: 99.609375, Auxi2: 99.414062, Task: 99.609375
+                                    Test:epoch: 251, Top1_auxi1: 88.666672, Top1_auxi2: 88.833336, Top1: 90.500000
+  Train:epoch: 252:[4/4], LossCE: 0.018481, LossDA: -0.013496, LossAll: 0.060161, Auxi1: 99.023438, Auxi2: 99.023438, Task: 99.609375
+                                    Test:epoch: 252, Top1_auxi1: 87.833336, Top1_auxi2: 88.500000, Top1: 89.833336
+  Train:epoch: 253:[4/4], LossCE: 0.017945, LossDA: -0.011939, LossAll: 0.044919, Auxi1: 99.804688, Auxi2: 99.414062, Task: 99.609375
+                                    Test:epoch: 253, Top1_auxi1: 88.666672, Top1_auxi2: 88.666672, Top1: 89.666672
+  Train:epoch: 254:[4/4], LossCE: 0.020064, LossDA: -0.010292, LossAll: 0.067334, Auxi1: 99.218750, Auxi2: 99.414062, Task: 99.804688
+                                    Test:epoch: 254, Top1_auxi1: 88.833336, Top1_auxi2: 88.500000, Top1: 89.833336
+  Train:epoch: 255:[4/4], LossCE: 0.018271, LossDA: -0.014269, LossAll: 0.043468, Auxi1: 99.414062, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 255, Top1_auxi1: 88.333336, Top1_auxi2: 88.333336, Top1: 89.666672
+  Train:epoch: 256:[4/4], LossCE: 0.028463, LossDA: -0.009707, LossAll: 0.080888, Auxi1: 99.218750, Auxi2: 99.218750, Task: 99.414062
+                                    Test:epoch: 256, Top1_auxi1: 88.166672, Top1_auxi2: 88.333336, Top1: 88.833336
+  Train:epoch: 257:[4/4], LossCE: 0.020995, LossDA: -0.011052, LossAll: 0.076035, Auxi1: 99.023438, Auxi2: 99.023438, Task: 99.804688
+                                    Test:epoch: 257, Top1_auxi1: 88.500000, Top1_auxi2: 88.833336, Top1: 90.000000
+  Train:epoch: 258:[4/4], LossCE: 0.016518, LossDA: -0.013788, LossAll: 0.036334, Auxi1: 99.804688, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 258, Top1_auxi1: 88.333336, Top1_auxi2: 88.500000, Top1: 89.833336
+  Train:epoch: 259:[4/4], LossCE: 0.016958, LossDA: -0.015868, LossAll: 0.038779, Auxi1: 99.804688, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 259, Top1_auxi1: 88.333336, Top1_auxi2: 88.500000, Top1: 89.833336
+  Train:epoch: 260:[4/4], LossCE: 0.020165, LossDA: -0.014203, LossAll: 0.061284, Auxi1: 99.609375, Auxi2: 99.414062, Task: 99.414062
+                                    Test:epoch: 260, Top1_auxi1: 88.166672, Top1_auxi2: 88.666672, Top1: 89.666672
+  Train:epoch: 261:[4/4], LossCE: 0.021643, LossDA: -0.012827, LossAll: 0.055718, Auxi1: 98.828125, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 261, Top1_auxi1: 88.333336, Top1_auxi2: 88.666672, Top1: 89.833336
+  Train:epoch: 262:[4/4], LossCE: 0.024250, LossDA: -0.012144, LossAll: 0.063536, Auxi1: 99.023438, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 262, Top1_auxi1: 88.000000, Top1_auxi2: 88.666672, Top1: 89.833336
+  Train:epoch: 263:[4/4], LossCE: 0.028300, LossDA: -0.012147, LossAll: 0.095424, Auxi1: 99.023438, Auxi2: 98.828125, Task: 99.414062
+                                    Test:epoch: 263, Top1_auxi1: 88.166672, Top1_auxi2: 89.000000, Top1: 89.833336
+  Train:epoch: 264:[4/4], LossCE: 0.010274, LossDA: -0.013700, LossAll: 0.022563, Auxi1: 99.414062, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 264, Top1_auxi1: 87.833336, Top1_auxi2: 88.500000, Top1: 89.500000
+  Train:epoch: 265:[4/4], LossCE: 0.020672, LossDA: -0.014257, LossAll: 0.050507, Auxi1: 99.218750, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 265, Top1_auxi1: 88.000000, Top1_auxi2: 88.500000, Top1: 89.833336
+  Train:epoch: 266:[4/4], LossCE: 0.023062, LossDA: -0.013981, LossAll: 0.060540, Auxi1: 99.609375, Auxi2: 99.218750, Task: 99.414062
+                                    Test:epoch: 266, Top1_auxi1: 88.166672, Top1_auxi2: 89.000000, Top1: 89.833336
+  Train:epoch: 267:[4/4], LossCE: 0.022250, LossDA: -0.012882, LossAll: 0.057503, Auxi1: 99.414062, Auxi2: 99.414062, Task: 99.609375
+                                    Test:epoch: 267, Top1_auxi1: 87.833336, Top1_auxi2: 88.333336, Top1: 89.166672
+  Train:epoch: 268:[4/4], LossCE: 0.019041, LossDA: -0.013466, LossAll: 0.054763, Auxi1: 99.218750, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 268, Top1_auxi1: 87.666672, Top1_auxi2: 88.000000, Top1: 89.000000
+  Train:epoch: 269:[4/4], LossCE: 0.026260, LossDA: -0.013021, LossAll: 0.074600, Auxi1: 98.632812, Auxi2: 99.218750, Task: 99.218750
+                                    Test:epoch: 269, Top1_auxi1: 88.333336, Top1_auxi2: 88.333336, Top1: 89.500000
+  Train:epoch: 270:[4/4], LossCE: 0.017722, LossDA: -0.015667, LossAll: 0.043798, Auxi1: 99.609375, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 270, Top1_auxi1: 87.166672, Top1_auxi2: 88.500000, Top1: 89.000000
+  Train:epoch: 271:[4/4], LossCE: 0.017702, LossDA: -0.011921, LossAll: 0.041046, Auxi1: 99.023438, Auxi2: 99.804688, Task: 99.414062
+                                    Test:epoch: 271, Top1_auxi1: 87.500000, Top1_auxi2: 87.833336, Top1: 89.166672
+  Train:epoch: 272:[4/4], LossCE: 0.014055, LossDA: -0.010744, LossAll: 0.039445, Auxi1: 99.804688, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 272, Top1_auxi1: 88.333336, Top1_auxi2: 88.000000, Top1: 89.833336
+  Train:epoch: 273:[4/4], LossCE: 0.017579, LossDA: -0.014561, LossAll: 0.047283, Auxi1: 99.609375, Auxi2: 99.023438, Task: 99.609375
+                                    Test:epoch: 273, Top1_auxi1: 88.500000, Top1_auxi2: 88.166672, Top1: 89.333336
+  Train:epoch: 274:[4/4], LossCE: 0.013696, LossDA: -0.016379, LossAll: 0.026290, Auxi1: 99.804688, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 274, Top1_auxi1: 88.000000, Top1_auxi2: 88.000000, Top1: 89.500000
+  Train:epoch: 275:[4/4], LossCE: 0.014654, LossDA: -0.009860, LossAll: 0.042639, Auxi1: 100.000000, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 275, Top1_auxi1: 88.166672, Top1_auxi2: 88.000000, Top1: 89.333336
+  Train:epoch: 276:[4/4], LossCE: 0.027673, LossDA: -0.010011, LossAll: 0.089863, Auxi1: 99.414062, Auxi2: 99.023438, Task: 99.414062
+                                    Test:epoch: 276, Top1_auxi1: 88.500000, Top1_auxi2: 88.500000, Top1: 89.666672
+  Train:epoch: 277:[4/4], LossCE: 0.013698, LossDA: -0.016119, LossAll: 0.030821, Auxi1: 99.609375, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 277, Top1_auxi1: 88.666672, Top1_auxi2: 88.833336, Top1: 89.500000
+  Train:epoch: 278:[4/4], LossCE: 0.015038, LossDA: -0.012419, LossAll: 0.039617, Auxi1: 99.609375, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 278, Top1_auxi1: 88.333336, Top1_auxi2: 88.666672, Top1: 89.500000
+  Train:epoch: 279:[4/4], LossCE: 0.011537, LossDA: -0.012546, LossAll: 0.024591, Auxi1: 99.804688, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 279, Top1_auxi1: 88.500000, Top1_auxi2: 88.833336, Top1: 89.666672
+  Train:epoch: 280:[4/4], LossCE: 0.009695, LossDA: -0.012071, LossAll: 0.016180, Auxi1: 100.000000, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 280, Top1_auxi1: 88.333336, Top1_auxi2: 88.500000, Top1: 89.833336
+  Train:epoch: 281:[4/4], LossCE: 0.015813, LossDA: -0.009734, LossAll: 0.052466, Auxi1: 99.414062, Auxi2: 99.218750, Task: 99.804688
+                                    Test:epoch: 281, Top1_auxi1: 88.833336, Top1_auxi2: 88.500000, Top1: 89.500000
+  Train:epoch: 282:[4/4], LossCE: 0.018984, LossDA: -0.013571, LossAll: 0.045717, Auxi1: 99.804688, Auxi2: 99.218750, Task: 99.804688
+                                    Test:epoch: 282, Top1_auxi1: 87.500000, Top1_auxi2: 89.000000, Top1: 89.833336
+  Train:epoch: 283:[4/4], LossCE: 0.008198, LossDA: -0.013503, LossAll: 0.015032, Auxi1: 99.609375, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 283, Top1_auxi1: 88.166672, Top1_auxi2: 88.833336, Top1: 89.833336
+  Train:epoch: 284:[4/4], LossCE: 0.014553, LossDA: -0.012358, LossAll: 0.030874, Auxi1: 99.804688, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 284, Top1_auxi1: 88.666672, Top1_auxi2: 88.666672, Top1: 89.666672
+  Train:epoch: 285:[4/4], LossCE: 0.011446, LossDA: -0.010746, LossAll: 0.028101, Auxi1: 99.609375, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 285, Top1_auxi1: 88.500000, Top1_auxi2: 89.500000, Top1: 90.000000
+  Train:epoch: 286:[4/4], LossCE: 0.021015, LossDA: -0.014616, LossAll: 0.072559, Auxi1: 99.414062, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 286, Top1_auxi1: 88.666672, Top1_auxi2: 88.833336, Top1: 89.833336
+  Train:epoch: 287:[4/4], LossCE: 0.016567, LossDA: -0.014619, LossAll: 0.040136, Auxi1: 99.218750, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 287, Top1_auxi1: 88.333336, Top1_auxi2: 88.666672, Top1: 89.833336
+  Train:epoch: 288:[4/4], LossCE: 0.014343, LossDA: -0.013681, LossAll: 0.039776, Auxi1: 99.609375, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 288, Top1_auxi1: 88.666672, Top1_auxi2: 89.000000, Top1: 90.000000
+  Train:epoch: 289:[4/4], LossCE: 0.019018, LossDA: -0.015309, LossAll: 0.041801, Auxi1: 99.609375, Auxi2: 99.218750, Task: 99.414062
+                                    Test:epoch: 289, Top1_auxi1: 89.166672, Top1_auxi2: 88.833336, Top1: 89.833336
+  Train:epoch: 290:[4/4], LossCE: 0.011760, LossDA: -0.012570, LossAll: 0.024438, Auxi1: 100.000000, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 290, Top1_auxi1: 88.666672, Top1_auxi2: 88.666672, Top1: 89.166672
+  Train:epoch: 291:[4/4], LossCE: 0.008457, LossDA: -0.015313, LossAll: 0.013521, Auxi1: 99.804688, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 291, Top1_auxi1: 88.166672, Top1_auxi2: 88.333336, Top1: 89.500000
+  Train:epoch: 292:[4/4], LossCE: 0.017797, LossDA: -0.013328, LossAll: 0.040460, Auxi1: 99.414062, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 292, Top1_auxi1: 88.500000, Top1_auxi2: 88.666672, Top1: 89.166672
+  Train:epoch: 293:[4/4], LossCE: 0.011749, LossDA: -0.015590, LossAll: 0.022584, Auxi1: 99.609375, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 293, Top1_auxi1: 88.166672, Top1_auxi2: 88.666672, Top1: 89.500000
+  Train:epoch: 294:[4/4], LossCE: 0.014767, LossDA: -0.015475, LossAll: 0.033750, Auxi1: 99.804688, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 294, Top1_auxi1: 88.333336, Top1_auxi2: 88.333336, Top1: 89.500000
+  Train:epoch: 295:[4/4], LossCE: 0.018345, LossDA: -0.015367, LossAll: 0.047397, Auxi1: 99.609375, Auxi2: 99.218750, Task: 99.414062
+                                    Test:epoch: 295, Top1_auxi1: 88.166672, Top1_auxi2: 88.333336, Top1: 89.666672
+  Train:epoch: 296:[4/4], LossCE: 0.018478, LossDA: -0.016218, LossAll: 0.053936, Auxi1: 99.609375, Auxi2: 99.414062, Task: 99.804688
+                                    Test:epoch: 296, Top1_auxi1: 88.166672, Top1_auxi2: 88.500000, Top1: 90.000000
+  Train:epoch: 297:[4/4], LossCE: 0.014706, LossDA: -0.014452, LossAll: 0.036301, Auxi1: 99.609375, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 297, Top1_auxi1: 88.666672, Top1_auxi2: 88.666672, Top1: 89.666672
+  Train:epoch: 298:[4/4], LossCE: 0.013081, LossDA: -0.013423, LossAll: 0.031648, Auxi1: 99.414062, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 298, Top1_auxi1: 88.500000, Top1_auxi2: 88.833336, Top1: 89.500000
+  Train:epoch: 299:[4/4], LossCE: 0.019889, LossDA: -0.011544, LossAll: 0.056962, Auxi1: 99.414062, Auxi2: 99.414062, Task: 99.804688
+                                    Test:epoch: 299, Top1_auxi1: 88.666672, Top1_auxi2: 88.666672, Top1: 90.000000
+  Train:epoch: 300:[4/4], LossCE: 0.009498, LossDA: -0.014163, LossAll: 0.013982, Auxi1: 100.000000, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 300, Top1_auxi1: 88.833336, Top1_auxi2: 88.833336, Top1: 89.833336
+  Train:epoch: 301:[4/4], LossCE: 0.015245, LossDA: -0.013292, LossAll: 0.032009, Auxi1: 99.218750, Auxi2: 100.000000, Task: 99.804688
+                                    Test:epoch: 301, Top1_auxi1: 88.500000, Top1_auxi2: 88.833336, Top1: 89.833336
+  Train:epoch: 302:[4/4], LossCE: 0.013087, LossDA: -0.014278, LossAll: 0.029492, Auxi1: 99.804688, Auxi2: 99.414062, Task: 99.609375
+                                    Test:epoch: 302, Top1_auxi1: 88.833336, Top1_auxi2: 88.500000, Top1: 89.666672
+  Train:epoch: 303:[4/4], LossCE: 0.015733, LossDA: -0.007171, LossAll: 0.050025, Auxi1: 99.218750, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 303, Top1_auxi1: 88.000000, Top1_auxi2: 88.833336, Top1: 89.666672
+  Train:epoch: 304:[4/4], LossCE: 0.009720, LossDA: -0.013114, LossAll: 0.021690, Auxi1: 99.804688, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 304, Top1_auxi1: 88.166672, Top1_auxi2: 88.166672, Top1: 89.666672
+  Train:epoch: 305:[4/4], LossCE: 0.013895, LossDA: -0.014413, LossAll: 0.030883, Auxi1: 99.414062, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 305, Top1_auxi1: 88.333336, Top1_auxi2: 88.333336, Top1: 89.833336
+  Train:epoch: 306:[4/4], LossCE: 0.012430, LossDA: -0.012938, LossAll: 0.029908, Auxi1: 100.000000, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 306, Top1_auxi1: 88.166672, Top1_auxi2: 88.666672, Top1: 89.833336
+  Train:epoch: 307:[4/4], LossCE: 0.007195, LossDA: -0.012870, LossAll: 0.011251, Auxi1: 99.804688, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 307, Top1_auxi1: 88.333336, Top1_auxi2: 88.166672, Top1: 90.166672
+  Train:epoch: 308:[4/4], LossCE: 0.017660, LossDA: -0.014512, LossAll: 0.048809, Auxi1: 99.414062, Auxi2: 99.414062, Task: 99.804688
+                                    Test:epoch: 308, Top1_auxi1: 88.666672, Top1_auxi2: 88.666672, Top1: 89.833336
+  Train:epoch: 309:[4/4], LossCE: 0.009472, LossDA: -0.010594, LossAll: 0.022304, Auxi1: 100.000000, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 309, Top1_auxi1: 88.500000, Top1_auxi2: 88.666672, Top1: 89.833336
+  Train:epoch: 310:[4/4], LossCE: 0.013074, LossDA: -0.011845, LossAll: 0.033752, Auxi1: 99.414062, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 310, Top1_auxi1: 88.166672, Top1_auxi2: 89.000000, Top1: 90.166672
+  Train:epoch: 311:[4/4], LossCE: 0.024205, LossDA: -0.013068, LossAll: 0.070019, Auxi1: 99.609375, Auxi2: 99.414062, Task: 99.414062
+                                    Test:epoch: 311, Top1_auxi1: 88.666672, Top1_auxi2: 89.333336, Top1: 90.166672
+  Train:epoch: 312:[4/4], LossCE: 0.016561, LossDA: -0.012775, LossAll: 0.047580, Auxi1: 99.218750, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 312, Top1_auxi1: 88.500000, Top1_auxi2: 89.000000, Top1: 90.000000
+  Train:epoch: 313:[4/4], LossCE: 0.010515, LossDA: -0.015368, LossAll: 0.019626, Auxi1: 99.804688, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 313, Top1_auxi1: 88.833336, Top1_auxi2: 88.500000, Top1: 89.666672
+  Train:epoch: 314:[4/4], LossCE: 0.010503, LossDA: -0.015283, LossAll: 0.019425, Auxi1: 100.000000, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 314, Top1_auxi1: 88.833336, Top1_auxi2: 88.666672, Top1: 89.500000
+  Train:epoch: 315:[4/4], LossCE: 0.017735, LossDA: -0.014878, LossAll: 0.047693, Auxi1: 99.218750, Auxi2: 99.609375, Task: 99.414062
+                                    Test:epoch: 315, Top1_auxi1: 89.000000, Top1_auxi2: 88.666672, Top1: 90.000000
+  Train:epoch: 316:[4/4], LossCE: 0.020347, LossDA: -0.015357, LossAll: 0.051945, Auxi1: 99.218750, Auxi2: 99.414062, Task: 99.414062
+                                    Test:epoch: 316, Top1_auxi1: 88.666672, Top1_auxi2: 88.500000, Top1: 89.500000
+  Train:epoch: 317:[4/4], LossCE: 0.008376, LossDA: -0.014512, LossAll: 0.015404, Auxi1: 99.804688, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 317, Top1_auxi1: 88.166672, Top1_auxi2: 88.833336, Top1: 89.833336
+  Train:epoch: 318:[4/4], LossCE: 0.011096, LossDA: -0.016084, LossAll: 0.022488, Auxi1: 99.804688, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 318, Top1_auxi1: 88.166672, Top1_auxi2: 88.666672, Top1: 89.666672
+  Train:epoch: 319:[4/4], LossCE: 0.012854, LossDA: -0.016577, LossAll: 0.026168, Auxi1: 99.609375, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 319, Top1_auxi1: 88.666672, Top1_auxi2: 89.166672, Top1: 89.666672
+  Train:epoch: 320:[4/4], LossCE: 0.009266, LossDA: -0.017019, LossAll: 0.014305, Auxi1: 99.804688, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 320, Top1_auxi1: 88.000000, Top1_auxi2: 88.666672, Top1: 89.833336
+  Train:epoch: 321:[4/4], LossCE: 0.012939, LossDA: -0.012778, LossAll: 0.027949, Auxi1: 99.609375, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 321, Top1_auxi1: 88.333336, Top1_auxi2: 88.666672, Top1: 89.500000
+  Train:epoch: 322:[4/4], LossCE: 0.023099, LossDA: -0.012955, LossAll: 0.073921, Auxi1: 99.023438, Auxi2: 99.218750, Task: 99.414062
+                                    Test:epoch: 322, Top1_auxi1: 89.000000, Top1_auxi2: 88.833336, Top1: 90.000000
+  Train:epoch: 323:[4/4], LossCE: 0.016102, LossDA: -0.014095, LossAll: 0.036302, Auxi1: 99.414062, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 323, Top1_auxi1: 88.500000, Top1_auxi2: 88.833336, Top1: 89.333336
+  Train:epoch: 324:[4/4], LossCE: 0.014097, LossDA: -0.017093, LossAll: 0.023705, Auxi1: 99.414062, Auxi2: 99.804688, Task: 99.609375
+                                    Test:epoch: 324, Top1_auxi1: 88.666672, Top1_auxi2: 89.000000, Top1: 89.333336
+  Train:epoch: 325:[4/4], LossCE: 0.014018, LossDA: -0.009436, LossAll: 0.054287, Auxi1: 99.023438, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 325, Top1_auxi1: 88.666672, Top1_auxi2: 89.000000, Top1: 89.833336
+  Train:epoch: 326:[4/4], LossCE: 0.011938, LossDA: -0.015102, LossAll: 0.025059, Auxi1: 99.609375, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 326, Top1_auxi1: 88.500000, Top1_auxi2: 88.833336, Top1: 90.000000
+  Train:epoch: 327:[4/4], LossCE: 0.008445, LossDA: -0.013823, LossAll: 0.013760, Auxi1: 100.000000, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 327, Top1_auxi1: 88.500000, Top1_auxi2: 88.166672, Top1: 89.666672
+  Train:epoch: 328:[4/4], LossCE: 0.014073, LossDA: -0.014103, LossAll: 0.032948, Auxi1: 99.218750, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 328, Top1_auxi1: 88.166672, Top1_auxi2: 88.500000, Top1: 89.666672
+  Train:epoch: 329:[4/4], LossCE: 0.009867, LossDA: -0.015960, LossAll: 0.024990, Auxi1: 99.609375, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 329, Top1_auxi1: 88.166672, Top1_auxi2: 88.333336, Top1: 89.333336
+  Train:epoch: 330:[4/4], LossCE: 0.020042, LossDA: -0.013192, LossAll: 0.056746, Auxi1: 99.414062, Auxi2: 99.414062, Task: 99.609375
+                                    Test:epoch: 330, Top1_auxi1: 88.000000, Top1_auxi2: 87.833336, Top1: 89.000000
+  Train:epoch: 331:[4/4], LossCE: 0.011973, LossDA: -0.014511, LossAll: 0.027208, Auxi1: 99.218750, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 331, Top1_auxi1: 88.833336, Top1_auxi2: 89.000000, Top1: 90.000000
+  Train:epoch: 332:[4/4], LossCE: 0.019142, LossDA: -0.010589, LossAll: 0.049979, Auxi1: 99.609375, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 332, Top1_auxi1: 89.000000, Top1_auxi2: 88.500000, Top1: 89.500000
+  Train:epoch: 333:[4/4], LossCE: 0.013008, LossDA: -0.014964, LossAll: 0.028950, Auxi1: 99.609375, Auxi2: 100.000000, Task: 99.804688
+                                    Test:epoch: 333, Top1_auxi1: 88.500000, Top1_auxi2: 88.666672, Top1: 89.833336
+  Train:epoch: 334:[4/4], LossCE: 0.009518, LossDA: -0.018369, LossAll: 0.015976, Auxi1: 99.804688, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 334, Top1_auxi1: 88.666672, Top1_auxi2: 88.666672, Top1: 89.333336
+  Train:epoch: 335:[4/4], LossCE: 0.017301, LossDA: -0.015514, LossAll: 0.053228, Auxi1: 99.609375, Auxi2: 99.218750, Task: 100.000000
+                                    Test:epoch: 335, Top1_auxi1: 88.000000, Top1_auxi2: 87.666672, Top1: 89.000000
+  Train:epoch: 336:[4/4], LossCE: 0.019070, LossDA: -0.012936, LossAll: 0.049688, Auxi1: 99.609375, Auxi2: 99.414062, Task: 99.609375
+                                    Test:epoch: 336, Top1_auxi1: 88.166672, Top1_auxi2: 88.500000, Top1: 89.166672
+  Train:epoch: 337:[4/4], LossCE: 0.015868, LossDA: -0.013031, LossAll: 0.047310, Auxi1: 99.218750, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 337, Top1_auxi1: 88.500000, Top1_auxi2: 88.500000, Top1: 89.333336
+  Train:epoch: 338:[4/4], LossCE: 0.014490, LossDA: -0.014759, LossAll: 0.037499, Auxi1: 99.609375, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 338, Top1_auxi1: 88.500000, Top1_auxi2: 88.666672, Top1: 89.333336
+  Train:epoch: 339:[4/4], LossCE: 0.026833, LossDA: -0.015780, LossAll: 0.067504, Auxi1: 99.023438, Auxi2: 99.414062, Task: 99.023438
+                                    Test:epoch: 339, Top1_auxi1: 88.333336, Top1_auxi2: 88.833336, Top1: 89.833336
+  Train:epoch: 340:[4/4], LossCE: 0.011018, LossDA: -0.018063, LossAll: 0.014404, Auxi1: 99.804688, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 340, Top1_auxi1: 88.333336, Top1_auxi2: 89.166672, Top1: 89.833336
+  Train:epoch: 341:[4/4], LossCE: 0.011680, LossDA: -0.018625, LossAll: 0.021044, Auxi1: 99.804688, Auxi2: 100.000000, Task: 99.804688
+                                    Test:epoch: 341, Top1_auxi1: 88.500000, Top1_auxi2: 88.666672, Top1: 89.666672
+  Train:epoch: 342:[4/4], LossCE: 0.012513, LossDA: -0.010409, LossAll: 0.042444, Auxi1: 99.218750, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 342, Top1_auxi1: 88.000000, Top1_auxi2: 88.500000, Top1: 89.833336
+  Train:epoch: 343:[4/4], LossCE: 0.015032, LossDA: -0.012809, LossAll: 0.039415, Auxi1: 99.414062, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 343, Top1_auxi1: 88.666672, Top1_auxi2: 88.833336, Top1: 89.833336
+  Train:epoch: 344:[4/4], LossCE: 0.014383, LossDA: -0.014809, LossAll: 0.037605, Auxi1: 99.414062, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 344, Top1_auxi1: 87.833336, Top1_auxi2: 88.500000, Top1: 89.333336
+  Train:epoch: 345:[4/4], LossCE: 0.011588, LossDA: -0.016503, LossAll: 0.023877, Auxi1: 99.414062, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 345, Top1_auxi1: 89.166672, Top1_auxi2: 88.666672, Top1: 89.666672
+  Train:epoch: 346:[4/4], LossCE: 0.010815, LossDA: -0.016570, LossAll: 0.025238, Auxi1: 99.804688, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 346, Top1_auxi1: 89.000000, Top1_auxi2: 88.666672, Top1: 90.000000
+  Train:epoch: 347:[4/4], LossCE: 0.017176, LossDA: -0.016389, LossAll: 0.042899, Auxi1: 99.414062, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 347, Top1_auxi1: 89.000000, Top1_auxi2: 88.833336, Top1: 89.666672
+  Train:epoch: 348:[4/4], LossCE: 0.009381, LossDA: -0.014407, LossAll: 0.024903, Auxi1: 99.804688, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 348, Top1_auxi1: 88.833336, Top1_auxi2: 89.333336, Top1: 89.833336
+  Train:epoch: 349:[4/4], LossCE: 0.009168, LossDA: -0.016892, LossAll: 0.016675, Auxi1: 100.000000, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 349, Top1_auxi1: 88.000000, Top1_auxi2: 88.666672, Top1: 89.833336
+  Train:epoch: 350:[4/4], LossCE: 0.015091, LossDA: -0.015642, LossAll: 0.039048, Auxi1: 99.609375, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 350, Top1_auxi1: 88.500000, Top1_auxi2: 88.500000, Top1: 89.833336
+  Train:epoch: 351:[4/4], LossCE: 0.008364, LossDA: -0.015761, LossAll: 0.019306, Auxi1: 100.000000, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 351, Top1_auxi1: 88.333336, Top1_auxi2: 88.833336, Top1: 90.000000
+  Train:epoch: 352:[4/4], LossCE: 0.009181, LossDA: -0.013321, LossAll: 0.017890, Auxi1: 99.804688, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 352, Top1_auxi1: 88.500000, Top1_auxi2: 89.166672, Top1: 90.000000
+  Train:epoch: 353:[4/4], LossCE: 0.012402, LossDA: -0.016179, LossAll: 0.030928, Auxi1: 99.804688, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 353, Top1_auxi1: 88.833336, Top1_auxi2: 88.833336, Top1: 90.000000
+  Train:epoch: 354:[4/4], LossCE: 0.015703, LossDA: -0.021986, LossAll: 0.033845, Auxi1: 98.828125, Auxi2: 99.804688, Task: 99.609375
+                                    Test:epoch: 354, Top1_auxi1: 88.666672, Top1_auxi2: 88.833336, Top1: 89.166672
+  Train:epoch: 355:[4/4], LossCE: 0.009638, LossDA: -0.016861, LossAll: 0.015508, Auxi1: 100.000000, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 355, Top1_auxi1: 88.666672, Top1_auxi2: 88.833336, Top1: 89.500000
+  Train:epoch: 356:[4/4], LossCE: 0.009591, LossDA: -0.019482, LossAll: 0.009439, Auxi1: 99.804688, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 356, Top1_auxi1: 88.333336, Top1_auxi2: 88.833336, Top1: 89.833336
+  Train:epoch: 357:[4/4], LossCE: 0.018901, LossDA: -0.020717, LossAll: 0.042650, Auxi1: 99.218750, Auxi2: 99.023438, Task: 99.023438
+                                    Test:epoch: 357, Top1_auxi1: 88.666672, Top1_auxi2: 88.666672, Top1: 90.166672
+  Train:epoch: 358:[4/4], LossCE: 0.016757, LossDA: -0.015193, LossAll: 0.046342, Auxi1: 99.414062, Auxi2: 99.218750, Task: 99.609375
+                                    Test:epoch: 358, Top1_auxi1: 89.000000, Top1_auxi2: 89.333336, Top1: 90.166672
+  Train:epoch: 359:[4/4], LossCE: 0.011267, LossDA: -0.019537, LossAll: 0.023221, Auxi1: 99.414062, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 359, Top1_auxi1: 89.000000, Top1_auxi2: 89.500000, Top1: 90.333336
+  Train:epoch: 360:[4/4], LossCE: 0.012628, LossDA: -0.016078, LossAll: 0.035585, Auxi1: 99.414062, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 360, Top1_auxi1: 88.500000, Top1_auxi2: 89.166672, Top1: 90.166672
+  Train:epoch: 361:[4/4], LossCE: 0.010117, LossDA: -0.020986, LossAll: 0.019830, Auxi1: 99.609375, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 361, Top1_auxi1: 89.166672, Top1_auxi2: 89.166672, Top1: 90.166672
+  Train:epoch: 362:[4/4], LossCE: 0.011896, LossDA: -0.015574, LossAll: 0.025530, Auxi1: 99.804688, Auxi2: 99.414062, Task: 99.609375
+                                    Test:epoch: 362, Top1_auxi1: 89.000000, Top1_auxi2: 89.333336, Top1: 90.166672
+  Train:epoch: 363:[4/4], LossCE: 0.008584, LossDA: -0.020438, LossAll: 0.012516, Auxi1: 99.609375, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 363, Top1_auxi1: 89.000000, Top1_auxi2: 89.333336, Top1: 89.833336
+  Train:epoch: 364:[4/4], LossCE: 0.012666, LossDA: -0.020490, LossAll: 0.023885, Auxi1: 99.609375, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 364, Top1_auxi1: 89.000000, Top1_auxi2: 89.000000, Top1: 89.833336
+  Train:epoch: 365:[4/4], LossCE: 0.012990, LossDA: -0.022618, LossAll: 0.016762, Auxi1: 99.609375, Auxi2: 99.804688, Task: 99.609375
+                                    Test:epoch: 365, Top1_auxi1: 89.000000, Top1_auxi2: 88.666672, Top1: 89.500000
+  Train:epoch: 366:[4/4], LossCE: 0.009093, LossDA: -0.015856, LossAll: 0.018252, Auxi1: 99.609375, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 366, Top1_auxi1: 88.333336, Top1_auxi2: 88.333336, Top1: 89.333336
+  Train:epoch: 367:[4/4], LossCE: 0.015237, LossDA: -0.014416, LossAll: 0.040309, Auxi1: 99.414062, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 367, Top1_auxi1: 88.333336, Top1_auxi2: 88.000000, Top1: 89.000000
+  Train:epoch: 368:[4/4], LossCE: 0.009366, LossDA: -0.024614, LossAll: 0.007653, Auxi1: 99.609375, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 368, Top1_auxi1: 88.666672, Top1_auxi2: 88.166672, Top1: 89.166672
+  Train:epoch: 369:[4/4], LossCE: 0.014971, LossDA: -0.014904, LossAll: 0.039215, Auxi1: 99.218750, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 369, Top1_auxi1: 89.000000, Top1_auxi2: 88.666672, Top1: 89.500000
+  Train:epoch: 370:[4/4], LossCE: 0.010010, LossDA: -0.017576, LossAll: 0.018529, Auxi1: 99.804688, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 370, Top1_auxi1: 88.500000, Top1_auxi2: 88.666672, Top1: 89.500000
+  Train:epoch: 371:[4/4], LossCE: 0.007500, LossDA: -0.020832, LossAll: 0.007247, Auxi1: 99.804688, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 371, Top1_auxi1: 88.666672, Top1_auxi2: 88.833336, Top1: 89.500000
+  Train:epoch: 372:[4/4], LossCE: 0.007304, LossDA: -0.018173, LossAll: 0.008983, Auxi1: 99.804688, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 372, Top1_auxi1: 88.333336, Top1_auxi2: 88.666672, Top1: 89.500000
+  Train:epoch: 373:[4/4], LossCE: 0.015379, LossDA: -0.015508, LossAll: 0.039888, Auxi1: 99.414062, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 373, Top1_auxi1: 88.500000, Top1_auxi2: 88.666672, Top1: 89.500000
+  Train:epoch: 374:[4/4], LossCE: 0.010739, LossDA: -0.020579, LossAll: 0.019318, Auxi1: 99.609375, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 374, Top1_auxi1: 88.000000, Top1_auxi2: 88.666672, Top1: 89.500000
+  Train:epoch: 375:[4/4], LossCE: 0.009081, LossDA: -0.015844, LossAll: 0.018010, Auxi1: 99.804688, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 375, Top1_auxi1: 88.333336, Top1_auxi2: 88.500000, Top1: 89.333336
+  Train:epoch: 376:[4/4], LossCE: 0.013785, LossDA: -0.017498, LossAll: 0.035370, Auxi1: 99.218750, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 376, Top1_auxi1: 88.500000, Top1_auxi2: 88.833336, Top1: 90.000000
+  Train:epoch: 377:[4/4], LossCE: 0.010011, LossDA: -0.025926, LossAll: 0.012016, Auxi1: 99.804688, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 377, Top1_auxi1: 88.833336, Top1_auxi2: 89.333336, Top1: 90.166672
+  Train:epoch: 378:[4/4], LossCE: 0.008828, LossDA: -0.023728, LossAll: 0.004393, Auxi1: 100.000000, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 378, Top1_auxi1: 88.166672, Top1_auxi2: 89.000000, Top1: 89.333336
+  Train:epoch: 379:[4/4], LossCE: 0.011407, LossDA: -0.023201, LossAll: 0.022081, Auxi1: 99.414062, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 379, Top1_auxi1: 88.500000, Top1_auxi2: 89.000000, Top1: 89.833336
+  Train:epoch: 380:[4/4], LossCE: 0.015109, LossDA: -0.021556, LossAll: 0.044663, Auxi1: 99.414062, Auxi2: 99.023438, Task: 99.804688
+                                    Test:epoch: 380, Top1_auxi1: 88.500000, Top1_auxi2: 88.666672, Top1: 89.833336
+  Train:epoch: 381:[4/4], LossCE: 0.012407, LossDA: -0.019005, LossAll: 0.030349, Auxi1: 99.414062, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 381, Top1_auxi1: 88.166672, Top1_auxi2: 88.833336, Top1: 90.000000
+  Train:epoch: 382:[4/4], LossCE: 0.007082, LossDA: -0.026595, LossAll: 0.002946, Auxi1: 99.804688, Auxi2: 99.609375, Task: 100.000000
+                                    Test:epoch: 382, Top1_auxi1: 87.833336, Top1_auxi2: 88.833336, Top1: 90.000000
+  Train:epoch: 383:[4/4], LossCE: 0.015153, LossDA: -0.021556, LossAll: 0.036632, Auxi1: 99.218750, Auxi2: 99.414062, Task: 99.414062
+                                    Test:epoch: 383, Top1_auxi1: 87.833336, Top1_auxi2: 89.166672, Top1: 89.833336
+  Train:epoch: 384:[4/4], LossCE: 0.008617, LossDA: -0.019743, LossAll: 0.013637, Auxi1: 99.414062, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 384, Top1_auxi1: 88.000000, Top1_auxi2: 88.833336, Top1: 89.666672
+  Train:epoch: 385:[4/4], LossCE: 0.014427, LossDA: -0.022197, LossAll: 0.028623, Auxi1: 99.609375, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 385, Top1_auxi1: 88.333336, Top1_auxi2: 89.000000, Top1: 89.833336
+  Train:epoch: 386:[4/4], LossCE: 0.009751, LossDA: -0.023961, LossAll: 0.021848, Auxi1: 99.218750, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 386, Top1_auxi1: 88.500000, Top1_auxi2: 89.000000, Top1: 89.500000
+  Train:epoch: 387:[4/4], LossCE: 0.013724, LossDA: -0.020447, LossAll: 0.032607, Auxi1: 99.804688, Auxi2: 99.609375, Task: 99.804688
+                                    Test:epoch: 387, Top1_auxi1: 88.166672, Top1_auxi2: 88.666672, Top1: 89.833336
+  Train:epoch: 388:[4/4], LossCE: 0.008590, LossDA: -0.021342, LossAll: 0.010257, Auxi1: 99.609375, Auxi2: 100.000000, Task: 100.000000
+                                    Test:epoch: 388, Top1_auxi1: 88.666672, Top1_auxi2: 88.666672, Top1: 90.000000
+  Train:epoch: 389:[4/4], LossCE: 0.013821, LossDA: -0.021536, LossAll: 0.028481, Auxi1: 99.218750, Auxi2: 99.414062, Task: 99.414062
+                                    Test:epoch: 389, Top1_auxi1: 88.666672, Top1_auxi2: 88.833336, Top1: 89.666672
+  Train:epoch: 390:[4/4], LossCE: 0.014558, LossDA: -0.021561, LossAll: 0.032067, Auxi1: 99.414062, Auxi2: 99.804688, Task: 99.609375
+                                    Test:epoch: 390, Top1_auxi1: 88.000000, Top1_auxi2: 88.333336, Top1: 89.500000
+  Train:epoch: 391:[4/4], LossCE: 0.009542, LossDA: -0.017804, LossAll: 0.015201, Auxi1: 99.804688, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 391, Top1_auxi1: 87.833336, Top1_auxi2: 89.166672, Top1: 89.333336
+  Train:epoch: 392:[4/4], LossCE: 0.018138, LossDA: -0.022250, LossAll: 0.040169, Auxi1: 99.804688, Auxi2: 99.609375, Task: 99.609375
+                                    Test:epoch: 392, Top1_auxi1: 88.333336, Top1_auxi2: 88.500000, Top1: 89.500000
+  Train:epoch: 393:[4/4], LossCE: 0.011695, LossDA: -0.024704, LossAll: 0.019104, Auxi1: 99.804688, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 393, Top1_auxi1: 88.500000, Top1_auxi2: 88.666672, Top1: 90.000000
+  Train:epoch: 394:[4/4], LossCE: 0.010994, LossDA: -0.019599, LossAll: 0.019698, Auxi1: 99.804688, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 394, Top1_auxi1: 88.666672, Top1_auxi2: 88.833336, Top1: 89.500000
+  Train:epoch: 395:[4/4], LossCE: 0.007908, LossDA: -0.027101, LossAll: 0.006396, Auxi1: 99.804688, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 395, Top1_auxi1: 88.500000, Top1_auxi2: 89.000000, Top1: 90.000000
+  Train:epoch: 396:[4/4], LossCE: 0.015763, LossDA: -0.020220, LossAll: 0.036902, Auxi1: 99.023438, Auxi2: 99.414062, Task: 99.609375
+                                    Test:epoch: 396, Top1_auxi1: 88.500000, Top1_auxi2: 89.166672, Top1: 90.166672
+  Train:epoch: 397:[4/4], LossCE: 0.009242, LossDA: -0.020456, LossAll: 0.016135, Auxi1: 100.000000, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 397, Top1_auxi1: 88.500000, Top1_auxi2: 88.833336, Top1: 89.500000
+  Train:epoch: 398:[4/4], LossCE: 0.011399, LossDA: -0.022157, LossAll: 0.021801, Auxi1: 99.609375, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 398, Top1_auxi1: 88.166672, Top1_auxi2: 88.833336, Top1: 89.500000
+  Train:epoch: 399:[4/4], LossCE: 0.011074, LossDA: -0.015733, LossAll: 0.028667, Auxi1: 99.414062, Auxi2: 99.804688, Task: 100.000000
+                                    Test:epoch: 399, Top1_auxi1: 88.500000, Top1_auxi2: 89.166672, Top1: 89.333336
+  Train:epoch: 400:[4/4], LossCE: 0.009160, LossDA: -0.025288, LossAll: 0.009469, Auxi1: 99.609375, Auxi2: 99.804688, Task: 99.804688
+                                    Test:epoch: 400, Top1_auxi1: 88.833336, Top1_auxi2: 89.000000, Top1: 89.833336
+  Train:epoch: 401:[4/4], LossCE: 0.013836, LossDA: -0.023189, LossAll: 0.028648, Auxi1: 99.609375, Auxi2: 99.023438, Task: 99.414062
+                                    Test:epoch: 401, Top1_auxi1: 89.500000, Top1_auxi2: 89.666672, Top1: 90.000000

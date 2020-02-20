@@ -1,0 +1,22 @@
+DATASET:
+  NUM_CLASSES: 12
+  DATASET: 'VisDA'
+  DATAROOT: '/disk1/domain_adaptation/visDA'
+  SOURCE_NAME: 'train'
+  TARGET_NAME: 'validation'
+  VAL_NAME: 'validation'
+
+MODEL:
+  FEATURE_EXTRACTOR: 'resnet50'
+
+DATA_TRANSFORM:
+  TYPE: 'simple'
+
+TRAIN:
+  BASE_LR: 0.001
+  MAX_EPOCH: 30
+  LR_SCHEDULE: 'fix'
+
+EVAL_METRIC: "accu_mean"
+SAVE_DIR: "./experiments/SymmNets"
+NUM_WORKERS: 8

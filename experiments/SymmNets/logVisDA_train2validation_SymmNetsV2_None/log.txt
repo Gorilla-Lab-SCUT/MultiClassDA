@@ -1,0 +1,99 @@
+
+{"DATASET": {"NUM_CLASSES": 12, "DATASET": "VisDA", "DATAROOT": "/disk1/domain_adaptation/visDA", "SOURCE_NAME": "train", "TARGET_NAME": "validation", "VAL_NAME": "validation"}, "MODEL": {"FEATURE_EXTRACTOR": "resnet50", "PRETRAINED": true}, "DATA_TRANSFORM": {"TYPE": "simple"}, "TRAIN": {"SOURCE_BATCH_SIZE": 128, "TARGET_BATCH_SIZE": 128, "BASE_LR": 0.001, "MOMENTUM": 0.9, "OPTIMIZER": "SGD", "WEIGHT_DECAY": 0.0001, "LR_SCHEDULE": "fix", "MAX_EPOCH": 30, "SAVING": false, "PROCESS_COUNTER": "iteration"}, "MCDALNET": {"DISTANCE_TYPE": "None"}, "ADAM": {"BETA1": 0.9, "BETA2": 0.999}, "INV": {"ALPHA": 10.0, "BETA": 0.75}, "TEST": {"BATCH_SIZE": 128}, "RESUME": "", "TASK": "closed", "EVAL_METRIC": "accu_mean", "EXP_NAME": "logVisDA_train2validation_SymmNetsV2_None", "SAVE_DIR": "./experiments/SymmNets/logVisDA_train2validation_SymmNetsV2_None", "NUM_WORKERS": 8, "PRINT_STEP": 3}
+
+  Train:epoch: 0:[432/432], LossCla: 2.754657, LossFeat: 1.551413, AccFs: 85.244865, AccFt: 82.904732
+                                            Test:epoch: 0, AccFs: 0.519134, AccFt: 0.588042
+Class-wise Acc of Ft:1st: 0.738069,  2nd: 0.423309, 3rd: 0.680597, 4th: 0.608307, 5th: 0.794074, 6th: 0.342169, 7th: 0.839890, 8th: 0.527250, 9th: 0.733568, 10th: 0.301622, 11th: 0.936969, 12th: 0.130678      Best Acc so far: 0.588042
+  Train:epoch: 1:[432/432], LossCla: 1.635495, LossFeat: 1.372633, AccFs: 92.420792, AccFt: 91.610603
+                                            Test:epoch: 1, AccFs: 0.599373, AccFt: 0.639031
+Class-wise Acc of Ft:1st: 0.831322,  2nd: 0.523453, 3rd: 0.690832, 4th: 0.563311, 5th: 0.797911, 6th: 0.400482, 7th: 0.841615, 8th: 0.746250, 9th: 0.762805, 10th: 0.271372, 11th: 0.929178, 12th: 0.309841      Best Acc so far: 0.639031
+  Train:epoch: 2:[432/432], LossCla: 1.503049, LossFeat: 1.370504, AccFs: 93.858505, AccFt: 93.198425
+                                            Test:epoch: 2, AccFs: 0.647094, AccFt: 0.670877
+Class-wise Acc of Ft:1st: 0.877126,  2nd: 0.494676, 3rd: 0.696375, 4th: 0.598308, 5th: 0.872522, 6th: 0.639036, 7th: 0.883023, 8th: 0.750500, 9th: 0.813585, 10th: 0.290224, 11th: 0.925165, 12th: 0.209986      Best Acc so far: 0.670877
+  Train:epoch: 3:[432/432], LossCla: 1.420064, LossFeat: 1.361121, AccFs: 95.155167, AccFt: 94.270836
+                                            Test:epoch: 3, AccFs: 0.649891, AccFt: 0.682259
+Class-wise Acc of Ft:1st: 0.862041,  2nd: 0.507050, 3rd: 0.713859, 4th: 0.601000, 5th: 0.872735, 6th: 0.683855, 7th: 0.874741, 8th: 0.759500, 9th: 0.799077, 10th: 0.289347, 11th: 0.924693, 12th: 0.299207      Best Acc so far: 0.682259
+  Train:epoch: 4:[432/432], LossCla: 1.366017, LossFeat: 1.360252, AccFs: 95.775467, AccFt: 94.977936
+                                            Test:epoch: 4, AccFs: 0.672196, AccFt: 0.688111
+Class-wise Acc of Ft:1st: 0.859572,  2nd: 0.545324, 3rd: 0.715139, 4th: 0.648880, 5th: 0.864848, 6th: 0.631807, 7th: 0.878019, 8th: 0.801500, 9th: 0.844142, 10th: 0.299868, 11th: 0.913362, 12th: 0.254867      Best Acc so far: 0.688111
+  Train:epoch: 5:[432/432], LossCla: 1.349571, LossFeat: 1.359669, AccFs: 96.155235, AccFt: 95.668762
+                                            Test:epoch: 5, AccFs: 0.678105, AccFt: 0.690267
+Class-wise Acc of Ft:1st: 0.846133,  2nd: 0.551655, 3rd: 0.736247, 4th: 0.672531, 5th: 0.856321, 6th: 0.645301, 7th: 0.887336, 8th: 0.794250, 9th: 0.846560, 10th: 0.296361, 11th: 0.903211, 12th: 0.247296      Best Acc so far: 0.690267
+  Train:epoch: 6:[432/432], LossCla: 1.332122, LossFeat: 1.351513, AccFs: 96.715858, AccFt: 96.160660
+                                            Test:epoch: 6, AccFs: 0.690127, AccFt: 0.698896
+Class-wise Acc of Ft:1st: 0.854635,  2nd: 0.584173, 3rd: 0.750320, 4th: 0.670609, 5th: 0.884886, 6th: 0.630843, 7th: 0.902346, 8th: 0.785250, 9th: 0.858211, 10th: 0.303376, 11th: 0.886686, 12th: 0.275415      Best Acc so far: 0.698896
+  Train:epoch: 7:[432/432], LossCla: 1.328282, LossFeat: 1.341111, AccFs: 97.158928, AccFt: 96.784576
+                                            Test:epoch: 7, AccFs: 0.692217, AccFt: 0.703444
+Class-wise Acc of Ft:1st: 0.862041,  2nd: 0.560576, 3rd: 0.725586, 4th: 0.638304, 5th: 0.882115, 6th: 0.688675, 7th: 0.886128, 8th: 0.796000, 9th: 0.876017, 10th: 0.337133, 11th: 0.901086, 12th: 0.287671      Best Acc so far: 0.703444
+  Train:epoch: 8:[432/432], LossCla: 1.344697, LossFeat: 1.339598, AccFs: 97.298180, AccFt: 97.012444
+                                            Test:epoch: 8, AccFs: 0.699641, AccFt: 0.711915
+Class-wise Acc of Ft:1st: 0.874931,  2nd: 0.679712, 3rd: 0.745842, 4th: 0.639169, 5th: 0.872735, 6th: 0.667952, 7th: 0.877674, 8th: 0.811750, 9th: 0.877555, 10th: 0.335818, 11th: 0.898489, 12th: 0.261355      Best Acc so far: 0.711915
+  Train:epoch: 9:[432/432], LossCla: 1.335095, LossFeat: 1.324822, AccFs: 97.696037, AccFt: 97.350624
+                                            Test:epoch: 9, AccFs: 0.703786, AccFt: 0.711389
+Class-wise Acc of Ft:1st: 0.874657,  2nd: 0.669353, 3rd: 0.749680, 4th: 0.667820, 5th: 0.859731, 6th: 0.617831, 7th: 0.885783, 8th: 0.802250, 9th: 0.880633, 10th: 0.372205, 11th: 0.888338, 12th: 0.268385
+  Train:epoch: 10:[432/432], LossCla: 1.346777, LossFeat: 1.320226, AccFs: 97.685188, AccFt: 97.417534
+                                            Test:epoch: 10, AccFs: 0.712391, AccFt: 0.717691
+Class-wise Acc of Ft:1st: 0.873012,  2nd: 0.709065, 3rd: 0.751599, 4th: 0.666282, 5th: 0.850352, 6th: 0.635663, 7th: 0.858696, 8th: 0.784000, 9th: 0.911629, 10th: 0.432267, 11th: 0.894240, 12th: 0.245494      Best Acc so far: 0.717691
+  Train:epoch: 11:[432/432], LossCla: 1.343779, LossFeat: 1.302535, AccFs: 97.918472, AccFt: 97.652634
+                                            Test:epoch: 11, AccFs: 0.699865, AccFt: 0.707937
+Class-wise Acc of Ft:1st: 0.864783,  2nd: 0.634532, 3rd: 0.753518, 4th: 0.699164, 5th: 0.855042, 6th: 0.616386, 7th: 0.891994, 8th: 0.741750, 9th: 0.872939, 10th: 0.463393, 11th: 0.885269, 12th: 0.216474
+  Train:epoch: 12:[432/432], LossCla: 1.353641, LossFeat: 1.292348, AccFs: 97.931137, AccFt: 97.688805
+                                            Test:epoch: 12, AccFs: 0.701588, AccFt: 0.705192
+Class-wise Acc of Ft:1st: 0.844213,  2nd: 0.669640, 3rd: 0.751386, 4th: 0.692145, 5th: 0.840119, 6th: 0.666024, 7th: 0.860593, 8th: 0.762250, 9th: 0.841284, 10th: 0.443665, 11th: 0.902266, 12th: 0.188717
+  Train:epoch: 13:[432/432], LossCla: 1.342840, LossFeat: 1.280037, AccFs: 98.263893, AccFt: 97.963684
+                                            Test:epoch: 13, AccFs: 0.709544, AccFt: 0.708189
+Class-wise Acc of Ft:1st: 0.845584,  2nd: 0.605755, 3rd: 0.749680, 4th: 0.673108, 5th: 0.844383, 6th: 0.728193, 7th: 0.861111, 8th: 0.763750, 9th: 0.903495, 10th: 0.419991, 11th: 0.903683, 12th: 0.199531
+  Train:epoch: 14:[432/432], LossCla: 1.344371, LossFeat: 1.279572, AccFs: 98.209633, AccFt: 97.987198
+                                            Test:epoch: 14, AccFs: 0.716340, AccFt: 0.712602
+Class-wise Acc of Ft:1st: 0.820351,  2nd: 0.650935, 3rd: 0.768657, 4th: 0.697241, 5th: 0.832658, 6th: 0.746506, 7th: 0.849034, 8th: 0.758000, 9th: 0.880633, 10th: 0.469969, 11th: 0.888338, 12th: 0.188897
+  Train:epoch: 15:[432/432], LossCla: 1.346274, LossFeat: 1.272384, AccFs: 98.457397, AccFt: 98.126450
+                                            Test:epoch: 15, AccFs: 0.712162, AccFt: 0.708201
+Class-wise Acc of Ft:1st: 0.843664,  2nd: 0.557410, 3rd: 0.772281, 4th: 0.678396, 5th: 0.826903, 6th: 0.747952, 7th: 0.873361, 8th: 0.739750, 9th: 0.873599, 10th: 0.483560, 11th: 0.893532, 12th: 0.208003
+  Train:epoch: 16:[432/432], LossCla: 1.345689, LossFeat: 1.257215, AccFs: 98.564095, AccFt: 98.260269
+                                            Test:epoch: 16, AccFs: 0.712009, AccFt: 0.705590
+Class-wise Acc of Ft:1st: 0.797038,  2nd: 0.629353, 3rd: 0.774627, 4th: 0.679262, 5th: 0.829247, 6th: 0.701205, 7th: 0.847654, 8th: 0.751500, 9th: 0.859530, 10th: 0.508549, 11th: 0.895892, 12th: 0.193223
+  Train:epoch: 17:[432/432], LossCla: 1.348905, LossFeat: 1.249159, AccFs: 98.661751, AccFt: 98.365166
+                                            Test:epoch: 17, AccFs: 0.716529, AccFt: 0.709276
+Class-wise Acc of Ft:1st: 0.794569,  2nd: 0.633669, 3rd: 0.785501, 4th: 0.690607, 5th: 0.792368, 6th: 0.676145, 7th: 0.860766, 8th: 0.732500, 9th: 0.898000, 10th: 0.525647, 11th: 0.886686, 12th: 0.234859
+  Train:epoch: 18:[432/432], LossCla: 1.348393, LossFeat: 1.240162, AccFs: 98.710579, AccFt: 98.462822
+                                            Test:epoch: 18, AccFs: 0.714328, AccFt: 0.709291
+Class-wise Acc of Ft:1st: 0.845310,  2nd: 0.524892, 3rd: 0.768657, 4th: 0.696952, 5th: 0.825197, 6th: 0.695904, 7th: 0.893375, 8th: 0.751250, 9th: 0.864805, 10th: 0.542744, 11th: 0.885033, 12th: 0.217376
+  Train:epoch: 19:[432/432], LossCla: 1.341572, LossFeat: 1.234422, AccFs: 98.885994, AccFt: 98.594833
+                                            Test:epoch: 19, AccFs: 0.707589, AccFt: 0.696340
+Class-wise Acc of Ft:1st: 0.782501,  2nd: 0.585036, 3rd: 0.765672, 4th: 0.680127, 5th: 0.797485, 6th: 0.673735, 7th: 0.880090, 8th: 0.731500, 9th: 0.856672, 10th: 0.508110, 11th: 0.910765, 12th: 0.184391
+  Train:epoch: 20:[432/432], LossCla: 1.345093, LossFeat: 1.230574, AccFs: 98.878761, AccFt: 98.614731
+                                            Test:epoch: 20, AccFs: 0.723617, AccFt: 0.713527
+Class-wise Acc of Ft:1st: 0.818431,  2nd: 0.611511, 3rd: 0.766524, 4th: 0.696375, 5th: 0.797485, 6th: 0.732530, 7th: 0.886473, 8th: 0.718750, 9th: 0.881073, 10th: 0.539676, 11th: 0.902974, 12th: 0.210526      Best Acc so far: 0.723617
+  Train:epoch: 21:[432/432], LossCla: 1.345878, LossFeat: 1.223302, AccFs: 98.931206, AccFt: 98.656326
+                                            Test:epoch: 21, AccFs: 0.717828, AccFt: 0.709226
+Class-wise Acc of Ft:1st: 0.781953,  2nd: 0.615540, 3rd: 0.799787, 4th: 0.647918, 5th: 0.831592, 6th: 0.708434, 7th: 0.834714, 8th: 0.722250, 9th: 0.870081, 10th: 0.607628, 11th: 0.904627, 12th: 0.186193
+  Train:epoch: 22:[432/432], LossCla: 1.346019, LossFeat: 1.226002, AccFs: 99.005356, AccFt: 98.692490
+                                            Test:epoch: 22, AccFs: 0.711813, AccFt: 0.699680
+Class-wise Acc of Ft:1st: 0.801700,  2nd: 0.569784, 3rd: 0.772068, 4th: 0.677435, 5th: 0.817310, 6th: 0.704578, 7th: 0.890959, 8th: 0.687500, 9th: 0.848098, 10th: 0.524770, 11th: 0.903683, 12th: 0.198270
+  Train:epoch: 23:[432/432], LossCla: 1.345264, LossFeat: 1.223078, AccFs: 99.099396, AccFt: 98.853447
+                                            Test:epoch: 23, AccFs: 0.705851, AccFt: 0.694408
+Class-wise Acc of Ft:1st: 0.756445,  2nd: 0.572086, 3rd: 0.785501, 4th: 0.678877, 5th: 0.791729, 6th: 0.684819, 7th: 0.864044, 8th: 0.663750, 9th: 0.872060, 10th: 0.539676, 11th: 0.898961, 12th: 0.224946
+  Train:epoch: 24:[432/432], LossCla: 1.341958, LossFeat: 1.216860, AccFs: 99.148224, AccFt: 98.867912
+                                            Test:epoch: 24, AccFs: 0.723894, AccFt: 0.714709
+Class-wise Acc of Ft:1st: 0.783873,  2nd: 0.568345, 3rd: 0.778678, 4th: 0.689068, 5th: 0.829247, 6th: 0.746506, 7th: 0.884748, 8th: 0.697000, 9th: 0.883931, 10th: 0.574748, 11th: 0.889282, 12th: 0.251081      Best Acc so far: 0.723894
+  Train:epoch: 25:[432/432], LossCla: 1.332571, LossFeat: 1.214391, AccFs: 99.168114, AccFt: 98.923973
+                                            Test:epoch: 25, AccFs: 0.702965, AccFt: 0.693480
+Class-wise Acc of Ft:1st: 0.745200,  2nd: 0.549928, 3rd: 0.769723, 4th: 0.616768, 5th: 0.819868, 6th: 0.718072, 7th: 0.893720, 8th: 0.664750, 9th: 0.897780, 10th: 0.505918, 11th: 0.910765, 12th: 0.229272
+  Train:epoch: 26:[432/432], LossCla: 1.329841, LossFeat: 1.215475, AccFs: 99.144608, AccFt: 98.972801
+                                            Test:epoch: 26, AccFs: 0.718568, AccFt: 0.707460
+Class-wise Acc of Ft:1st: 0.764948,  2nd: 0.593669, 3rd: 0.784648, 4th: 0.677146, 5th: 0.791303, 6th: 0.762892, 7th: 0.869220, 8th: 0.690750, 9th: 0.903495, 10th: 0.533538, 11th: 0.875118, 12th: 0.242790
+  Train:epoch: 27:[432/432], LossCla: 1.329338, LossFeat: 1.212966, AccFs: 99.200668, AccFt: 98.956528
+                                            Test:epoch: 27, AccFs: 0.716024, AccFt: 0.706511
+Class-wise Acc of Ft:1st: 0.758914,  2nd: 0.635108, 3rd: 0.792111, 4th: 0.683300, 5th: 0.802388, 6th: 0.738795, 7th: 0.871463, 8th: 0.692500, 9th: 0.877555, 10th: 0.497589, 11th: 0.882200, 12th: 0.246215
+  Train:epoch: 28:[432/432], LossCla: 1.328192, LossFeat: 1.203063, AccFs: 99.339920, AccFt: 99.083115
+                                            Test:epoch: 28, AccFs: 0.710096, AccFt: 0.700704
+Class-wise Acc of Ft:1st: 0.802249,  2nd: 0.567770, 3rd: 0.795096, 4th: 0.675416, 5th: 0.799616, 6th: 0.671807, 7th: 0.892685, 8th: 0.663250, 9th: 0.910310, 10th: 0.530469, 11th: 0.887630, 12th: 0.212149
+  Train:epoch: 29:[432/432], LossCla: 1.329534, LossFeat: 1.206706, AccFs: 99.336304, AccFt: 99.115669
+                                            Test:epoch: 29, AccFs: 0.721606, AccFt: 0.709754
+Class-wise Acc of Ft:1st: 0.792924,  2nd: 0.633669, 3rd: 0.791045, 4th: 0.668493, 5th: 0.822000, 6th: 0.735422, 7th: 0.881125, 8th: 0.666250, 9th: 0.864586, 10th: 0.555897, 11th: 0.899433, 12th: 0.206200
+  Train:epoch: 30:[432/432], LossCla: 1.331311, LossFeat: 1.210111, AccFs: 99.381508, AccFt: 99.055992
+                                            Test:epoch: 30, AccFs: 0.710322, AccFt: 0.697093
+Class-wise Acc of Ft:1st: 0.782776,  2nd: 0.529784, 3rd: 0.742217, 4th: 0.669647, 5th: 0.795992, 6th: 0.749880, 7th: 0.891994, 8th: 0.671250, 9th: 0.843042, 10th: 0.544498, 11th: 0.919263, 12th: 0.224766
+  Train:epoch: 31:[432/432], LossCla: 1.326631, LossFeat: 1.207292, AccFs: 99.415871, AccFt: 99.198860
+                                            Test:epoch: 31, AccFs: 0.711356, AccFt: 0.698533
+Class-wise Acc of Ft:1st: 0.820351,  2nd: 0.520000, 3rd: 0.770149, 4th: 0.675320, 5th: 0.760392, 6th: 0.761928, 7th: 0.868012, 8th: 0.669250, 9th: 0.819741, 10th: 0.562473, 11th: 0.909112, 12th: 0.245674

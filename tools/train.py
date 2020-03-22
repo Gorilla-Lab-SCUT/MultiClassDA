@@ -73,10 +73,21 @@ def train(args):
         net = {'feature_extractor': feature_extractor, 'classifier': classifier}
 
     ## Algorithm proposed in our CVPR19 paper: Domain-Symnetric Networks for Adversarial Domain Adaptation
-    ## Here we implement the algorithm with a form which is different from our previous implementation:
-    ## https://github.com/YBZh/SymNets
+    ## It is the same with our previous implementation of https://github.com/YBZh/SymNets
     elif args.method == 'SymmNetsV1':
-        raise NotImplementedError
+        if cfg.DATASET.DATASET == 'Digits':
+            raise NotImplementedError
+        else:
+            from solver.SymmNetsV1_solver import SymmNetsV1Solver as Solver
+            from models.resnet_SymmNet import resnet as Model
+            from data.prepare_data import generate_dataloader as Dataloader
+        feature_extractor, classifier = Model()
+        feature_extractor = torch.nn.DataParallel(feature_extractor)
+        classifier = torch.nn.DataParallel(classifier)
+        if torch.cuda.is_available():
+            feature_extractor.cuda()
+            classifier.cuda()
+        net = {'feature_extractor': feature_extractor, 'classifier': classifier}
     else:
         raise NotImplementedError("Currently don't support the specified method: %s." % (args.method))
 

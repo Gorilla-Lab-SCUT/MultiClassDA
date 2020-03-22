@@ -114,7 +114,7 @@ def _merge_a_into_b(a, b):
 def cfg_from_file(filename):
     """Load a config file and merge it into the default options."""
     import yaml
-    filename = filename[:-1]  ## delete the  '\r' at the end of the str
+    # filename = filename[:-1]  ## delete the  '\r' at the end of the str
     with open(filename, 'r') as f:
         yaml_cfg = edict(yaml.load(f, Loader=yaml.FullLoader))
 

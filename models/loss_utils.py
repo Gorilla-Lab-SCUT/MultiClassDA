@@ -91,6 +91,25 @@ class TargetDiscrimLoss(_WeightedLoss):
             loss = -(prob[:, self.num_classes:].sum(1).log().mean())
         return loss
 
+class SourceDiscrimLoss(_WeightedLoss):
+    def __init__(self, weight=None, size_average=True, num_classes=31):
+        super(SourceDiscrimLoss, self).__init__(weight, size_average)
+        self.num_classes = num_classes
+
+    def forward(self, input):
+        batch_size = input.size(0)
+        prob = F.softmax(input, dim=1)
+
+        if (prob.data[:, :self.num_classes].sum(1) == 0).sum() != 0:  ########### in case of log(0)
+            soft_weight = torch.FloatTensor(batch_size).fill_(0)
+            soft_weight[prob[:, :self.num_classes].sum(1).data.cpu() == 0] = 1e-6
+            soft_weight_var = soft_weight.cuda()
+            loss = -((prob[:, :self.num_classes].sum(1) + soft_weight_var).log().mean())
+        else:
+            loss = -(prob[:, :self.num_classes].sum(1).log().mean())
+        return loss
+
+
 class ConcatenatedCELoss(_WeightedLoss):
     def __init__(self, weight=None, size_average=True, num_classes=31):
         super(ConcatenatedCELoss, self).__init__(weight, size_average)
@@ -105,4 +124,21 @@ class ConcatenatedCELoss(_WeightedLoss):
         prob_t = process_zero_values(prob_t)
         loss = - (prob_s.log().mul(prob_t)).sum(1).mean() - (prob_t.log().mul(prob_s)).sum(1).mean()
         loss = loss * 0.5
+        return loss
+
+
+
+class ConcatenatedEMLoss(_WeightedLoss):
+    def __init__(self, weight=None, size_average=True, num_classes=31):
+        super(ConcatenatedEMLoss, self).__init__(weight, size_average)
+        self.num_classes = num_classes
+
+    def forward(self, input):
+        prob = F.softmax(input, dim=1)
+        prob_s = prob[:, :self.num_classes]
+        prob_t = prob[:, self.num_classes:]
+        prob_sum = prob_s + prob_t
+        prob_sum = process_zero_values(prob_sum)
+        loss = - prob_sum.log().mul(prob_sum).sum(1).mean()
+
         return loss

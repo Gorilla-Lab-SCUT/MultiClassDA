@@ -1,5 +1,5 @@
 # MultiClassDA
-Code release for ["Unsupervised Multi-Class Domain Adaptation: Theory, Algorithms, and Practice"](https://github.com/YBZh/MultiClassDA), which is
+Code release for ["Unsupervised Multi-Class Domain Adaptation: Theory, Algorithms, and Practice"](https://arxiv.org/pdf/2002.08681.pdf), which is
 an extension of our preliminary work of SymmNets [[Paper](https://zpascal.net/cvpr2019/Zhang_Domain-Symmetric_Networks_for_Adversarial_Domain_Adaptation_CVPR_2019_paper.pdf)] [[Code](https://github.com/YBZh/SymNets)]
 
 ## Code to be updated:
@@ -31,6 +31,12 @@ To be updated.
       booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
       pages={5031--5040},
       year={2019}
+    }
+    @article{zhang2020unsupervised,
+      title={Unsupervised Multi-Class Domain Adaptation: Theory, Algorithms, and Practice},
+      author={Zhang, Yabin and Deng, Bin and Tang, Hui and Zhang, Lei and Jia, Kui},
+      journal={arXiv preprint arXiv:2002.08681},
+      year={2020}
     }
 
 ## Contact

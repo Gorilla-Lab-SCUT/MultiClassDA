@@ -3,16 +3,16 @@ import torch.nn as nn
 import os
 import math
 import time
-from utils.utils import to_cuda, accuracy_for_each_class, accuracy, AverageMeter, process_one_values
+from utils.utils import to_cuda, accuracy_for_each_class, recall_for_each_class, accuracy, AverageMeter, process_one_values
 from config.config import cfg
 import torch.nn.functional as F
 from models.loss_utils import TargetDiscrimLoss, ConcatenatedCELoss
 from .base_solver import BaseSolver
 import ipdb
 
-class SymmNetsV2Solver(BaseSolver):
+class SymmNetsV2OpenSolver(BaseSolver):
     def __init__(self, net, dataloaders, **kwargs):
-        super(SymmNetsV2Solver, self).__init__(net, dataloaders, **kwargs)
+        super(SymmNetsV2OpenSolver, self).__init__(net, dataloaders, **kwargs)
         self.num_classes = cfg.DATASET.NUM_CLASSES
         self.TargetDiscrimLoss = TargetDiscrimLoss(num_classes=self.num_classes).cuda()
         self.ConcatenatedCELoss = ConcatenatedCELoss(num_classes=self.num_classes).cuda()
@@ -124,12 +124,16 @@ class SymmNetsV2Solver(BaseSolver):
         counter_acc_fs = torch.FloatTensor(self.opt.DATASET.NUM_CLASSES).fill_(0)
         counter_acc_ft = torch.FloatTensor(self.opt.DATASET.NUM_CLASSES).fill_(0)
 
+        acc_recall_source = torch.zeros(self.opt.DATASET.NUM_CLASSES)  ## recall
+        acc_recall_target = torch.zeros(self.opt.DATASET.NUM_CLASSES)
+        all_recall_source = torch.zeros(self.opt.DATASET.NUM_CLASSES)
+        all_recall_target = torch.zeros(self.opt.DATASET.NUM_CLASSES)
+
         for i, (input, target) in enumerate(self.test_data['loader']):
             input, target = to_cuda(input), to_cuda(target)
             with torch.no_grad():
                 feature_test = self.feature_extractor(input)
                 output_test = self.classifier(feature_test)
-
 
             if self.opt.EVAL_METRIC == 'accu':
                 prec1_fs_iter = accuracy(output_test[:, :self.num_classes], target)
@@ -144,13 +148,28 @@ class SymmNetsV2Solver(BaseSolver):
                 prec1_ft.update(prec1_ft_iter, input.size(0))
                 counter_all_fs, counter_acc_fs = accuracy_for_each_class(output_test[:, :self.num_classes], target, counter_all_fs, counter_acc_fs)
                 counter_all_ft, counter_acc_ft = accuracy_for_each_class(output_test[:, self.num_classes:], target, counter_all_ft, counter_acc_ft)
+                ######### calculate recall
+                all_recall_source, acc_recall_source = recall_for_each_class(output_test[:, :self.num_classes], target,
+                                                                             all_recall_source,
+                                                                             acc_recall_source)
+                all_recall_target, acc_recall_target = recall_for_each_class(output_test[:, self.num_classes:], target,
+                                                                             all_recall_target,
+                                                                             acc_recall_target)
+
                 if i % self.opt.PRINT_STEP == 0:
                     print("  Test:epoch: %d:[%d/%d], Task: %3f" % \
                           (self.epoch, i, len(self.test_data['loader']), prec1_ft.avg))
             else:
                 raise NotImplementedError
+        counter_all_fs[counter_all_fs == 0] = 1
+        counter_all_ft[counter_all_ft == 0] = 1  ### results not change, avoid 0/0=nan
         acc_for_each_class_fs = counter_acc_fs / counter_all_fs
         acc_for_each_class_ft = counter_acc_ft / counter_all_ft
+        all_recall_source[all_recall_source == 0] = 1
+        all_recall_target[all_recall_target == 0] = 1  ### results not change, avoid 0/0=nan
+        acc_recall_source = acc_recall_source / all_recall_source
+        acc_recall_target = acc_recall_target / all_recall_target
+
         log = open(os.path.join(self.opt.SAVE_DIR, 'log.txt'), 'a')
         log.write("\n")
         if self.opt.EVAL_METRIC == 'accu':
@@ -163,6 +182,18 @@ class SymmNetsV2Solver(BaseSolver):
             log.write(
                 "                                            Test:epoch: %d, AccFs: %3f, AccFt: %3f" % \
                 (self.epoch,acc_for_each_class_fs.mean(), acc_for_each_class_ft.mean()))
+            log.write("\n                                                       Tc: ")
+            log.write("Unknown Rec:%3f, Pre:%3f" % (acc_recall_target[-1], acc_for_each_class_ft[-1]))
+            log.write("T Rec OS:%3f  OS Star:%3f  Pre OS:%3f  OS Star:%3f" % (
+                acc_recall_target.mean(), acc_recall_target[:-1].mean(), acc_for_each_class_ft.mean(),
+                acc_for_each_class_ft[:-1].mean()))
+
+            log.write("\n                                                       Sc: ")
+            log.write("Unknown Rec:%3f, Pre:%3f" % (acc_recall_source[-1], acc_for_each_class_fs[-1]))
+            log.write("S Rec OS:%3f  OS Star:%3f  Pre OS:%3f  OS Star:%3f" % (
+                acc_recall_source.mean(), acc_recall_source[:-1].mean(), acc_for_each_class_fs.mean(),
+                acc_for_each_class_fs[:-1].mean()))
+
             log.write("\nClass-wise Acc of Ft:")  ## based on the task classifier.
             for i in range(self.opt.DATASET.NUM_CLASSES):
                 if i == 0:

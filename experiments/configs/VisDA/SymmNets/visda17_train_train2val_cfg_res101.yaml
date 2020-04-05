@@ -1,7 +1,7 @@
 DATASET:
   NUM_CLASSES: 12
   DATASET: 'VisDA'
-  DATAROOT: '/disk1/domain_adaptation/visDA'
+  DATAROOT: '/data1/domain_adaptation/visDA'
   SOURCE_NAME: 'train'
   TARGET_NAME: 'validation'
   VAL_NAME: 'validation'
@@ -14,7 +14,7 @@ DATA_TRANSFORM:
 
 TRAIN:
   BASE_LR: 0.001
-  MAX_EPOCH: 30
+  MAX_EPOCH: 40
   LR_SCHEDULE: 'fix'
 
 EVAL_METRIC: "accu_mean"

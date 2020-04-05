@@ -43,6 +43,18 @@ def accuracy_for_each_class(output, target, total_vector, correct_vector):
 
     return total_vector, correct_vector
 
+def recall_for_each_class(output, target, total_vector, correct_vector):
+    """Computes the recall for each class"""
+    batch_size = target.size(0)
+    _, pred = output.topk(1, 1, True, True)
+    pred = pred.t()
+    correct = pred.eq(target.view(1, -1)).float().cpu().squeeze()
+    for i in range(batch_size):
+        total_vector[pred[0][i]] += 1
+        correct_vector[torch.LongTensor([pred[0][i]])] += correct[i]
+
+    return total_vector, correct_vector
+
 def process_one_values(tensor):
     if (tensor == 1).sum() != 0:
         eps = torch.FloatTensor(tensor.size()).fill_(0)
@@ -56,6 +68,9 @@ def process_zero_values(tensor):
         eps[tensor.data.cpu() == 0] = 1e-6
         tensor = tensor + eps.cuda()
     return tensor
+
+
+
 
 
 class AverageMeter(object):

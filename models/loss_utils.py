@@ -23,6 +23,17 @@ class _WeightedLoss(_Loss):
         self.register_buffer('weight', weight)
 
 
+class CrossEntropyClassWeighted(_Loss):
+
+    def __init__(self, size_average=True, ignore_index=-100, reduce=None, reduction='elementwise_mean'):
+        super(CrossEntropyClassWeighted, self).__init__(size_average)
+        self.ignore_index = ignore_index
+        self.reduction = reduction
+
+    def forward(self, input, target, weight=None):
+        return F.cross_entropy(input, target, weight, ignore_index=self.ignore_index, reduction=self.reduction)
+
+
 ### clone this function from: https://github.com/krumo/swd_pytorch/blob/master/swd_pytorch.py. [Unofficial]
 def discrepancy_slice_wasserstein(p1, p2):
     s = p1.shape
@@ -142,3 +153,22 @@ class ConcatenatedEMLoss(_WeightedLoss):
         loss = - prob_sum.log().mul(prob_sum).sum(1).mean()
 
         return loss
+
+class MinEntropyConsensusLoss(nn.Module):
+    def __init__(self, num_classes):
+        super(MinEntropyConsensusLoss, self).__init__()
+        self.num_classes = num_classes
+
+    def forward(self, x, y):
+        i = torch.eye(self.num_classes).unsqueeze(0).cuda()
+        x = F.log_softmax(x, dim=1)
+        y = F.log_softmax(y, dim=1)
+        x = x.unsqueeze(-1)
+        y = y.unsqueeze(-1)
+
+        ce_x = (- 1.0 * i * x).sum(1)
+        ce_y = (- 1.0 * i * y).sum(1)
+
+        ce = 0.5 * (ce_x + ce_y).min(1)[0].mean()
+
+        return ce

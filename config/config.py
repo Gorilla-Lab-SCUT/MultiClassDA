@@ -49,6 +49,13 @@ __C.TRAIN.PROCESS_COUNTER = 'iteration'
 # __C.TRAIN.SAVE_CKPT_INTERVAL = 1.0 # percentage of total iterations in each loop
 
 
+__C.STRENGTHEN = edict()
+__C.STRENGTHEN.DATALOAD = 'normal'  ## normal | hard | soft. The original class aware sampling adopt the hard mode.
+__C.STRENGTHEN.PERCATE = 10
+__C.STRENGTHEN.CLUSTER_FREQ = 6
+
+
+
 # optimizer options
 __C.MCDALNET = edict()
 __C.MCDALNET.DISTANCE_TYPE = ''  ## choose in L1 | KL | CE | MDD | DANN | SourceOnly
@@ -62,6 +69,8 @@ __C.INV = edict()
 __C.INV.ALPHA = 10.0
 __C.INV.BETA = 0.75
 
+__C.OPEN = edict()
+__C.OPEN.WEIGHT_UNK = 6.0
 
 # Testing options
 #

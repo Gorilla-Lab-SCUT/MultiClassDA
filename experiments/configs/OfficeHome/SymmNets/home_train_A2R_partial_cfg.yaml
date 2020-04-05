@@ -1,0 +1,20 @@
+DATASET:
+  NUM_CLASSES: 65
+  DATASET: 'OfficeHome'
+  DATAROOT: '/data1/domain_adaptation/OfficeHome'
+  SOURCE_NAME: 'Art'
+  TARGET_NAME: 'Real_World_25'
+  VAL_NAME: 'Real_World_25'
+
+MODEL:
+  FEATURE_EXTRACTOR: 'resnet50'
+
+DATA_TRANSFORM:
+  TYPE: 'ours'
+
+TRAIN:
+  MAX_EPOCH: 80
+
+EVAL_METRIC: "accu"
+SAVE_DIR: "./experiments/Partial"
+NUM_WORKERS: 8

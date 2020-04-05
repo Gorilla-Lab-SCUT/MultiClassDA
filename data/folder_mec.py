@@ -85,7 +85,7 @@ class DatasetFolder(VisionDataset):
         targets (list): The class_index value for each image in the dataset
     """
 
-    def __init__(self, root, loader, extensions=None, transform=None,
+    def __init__(self, root, loader, extensions=None, transform=None, transform_mec=None,
                  target_transform=None, is_valid_file=None):
         super(DatasetFolder, self).__init__(root, transform=transform,
                                             target_transform=target_transform)
@@ -102,6 +102,7 @@ class DatasetFolder(VisionDataset):
         self.class_to_idx = class_to_idx
         self.samples = samples
         self.targets = [s[1] for s in samples]
+        self.transform_mec = transform_mec
 
     def _find_classes(self, dir):
         """
@@ -132,11 +133,13 @@ class DatasetFolder(VisionDataset):
         path, target = self.samples[index]
         sample = self.loader(path)
         if self.transform is not None:
-            sample = self.transform(sample)
+            sample_ori = self.transform(sample)
+        if self.transform_mec is not None:
+            sample_mec = self.transform(sample)
         if self.target_transform is not None:
             target = self.target_transform(target)
 
-        return sample, target, path
+        return sample_ori, sample_mec, target, path
 
     def __len__(self):
         return len(self.samples)
@@ -169,7 +172,7 @@ def default_loader(path):
         return pil_loader(path)
 
 
-class ImageFolder_Withpath(DatasetFolder):
+class ImageFolder_MEC(DatasetFolder):
     """A generic data loader where the images are arranged in this way: ::
         root/dog/xxx.png
         root/dog/xxy.png
@@ -192,10 +195,11 @@ class ImageFolder_Withpath(DatasetFolder):
         imgs (list): List of (image path, class_index) tuples
     """
 
-    def __init__(self, root, transform=None, target_transform=None,
+    def __init__(self, root, transform=None, transform_mec=None, target_transform=None,
                  loader=default_loader, is_valid_file=None):
-        super(ImageFolder_Withpath, self).__init__(root, loader, IMG_EXTENSIONS if is_valid_file is None else None,
+        super(ImageFolder_MEC, self).__init__(root, loader, IMG_EXTENSIONS if is_valid_file is None else None,
                                           transform=transform,
+                                          transform_mec=transform_mec,
                                           target_transform=target_transform,
                                           is_valid_file=is_valid_file)
         self.imgs = self.samples

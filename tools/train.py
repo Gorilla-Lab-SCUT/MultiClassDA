@@ -27,6 +27,9 @@ def parse_args():
     parser.add_argument('--method', dest='method',
                         help='set the method to use',
                         default='McDalNet', type=str)
+    parser.add_argument('--task', dest='task',
+                        help='closed | partial | open',
+                        default='closed', type=str)
     parser.add_argument('--distance_type', dest='distance_type',
                         help='set distance type in McDalNet',
                         default='L1', type=str)
@@ -58,19 +61,58 @@ def train(args):
         if torch.cuda.is_available():
            net.cuda()
     elif args.method == 'SymmNetsV2':
-        if cfg.DATASET.DATASET == 'Digits':
-            raise NotImplementedError
-        else:
-            from solver.SymmNetsV2_solver import SymmNetsV2Solver as Solver
+        if args.task == 'closed':
+            if cfg.DATASET.DATASET == 'Digits':
+                raise NotImplementedError
+            else:
+                from solver.SymmNetsV2_solver import SymmNetsV2Solver as Solver
+                from models.resnet_SymmNet import resnet as Model
+                from data.prepare_data import generate_dataloader as Dataloader
+            feature_extractor, classifier = Model()
+            feature_extractor = torch.nn.DataParallel(feature_extractor)
+            classifier = torch.nn.DataParallel(classifier)
+            if torch.cuda.is_available():
+                feature_extractor.cuda()
+                classifier.cuda()
+            net = {'feature_extractor': feature_extractor, 'classifier': classifier}
+        elif args.task == 'partial':
+            from solver.SymmNetsV2Partial_solver import SymmNetsV2PartialSolver as Solver
             from models.resnet_SymmNet import resnet as Model
             from data.prepare_data import generate_dataloader as Dataloader
-        feature_extractor, classifier = Model()
-        feature_extractor = torch.nn.DataParallel(feature_extractor)
-        classifier = torch.nn.DataParallel(classifier)
-        if torch.cuda.is_available():
-            feature_extractor.cuda()
-            classifier.cuda()
-        net = {'feature_extractor': feature_extractor, 'classifier': classifier}
+            feature_extractor, classifier = Model()
+            feature_extractor = torch.nn.DataParallel(feature_extractor)
+            classifier = torch.nn.DataParallel(classifier)
+            if torch.cuda.is_available():
+                feature_extractor.cuda()
+                classifier.cuda()
+            net = {'feature_extractor': feature_extractor, 'classifier': classifier}
+        elif args.task == 'open':
+            from solver.SymmNetsV2Open_solver import SymmNetsV2OpenSolver as Solver
+            from models.resnet_SymmNet import resnet as Model
+            from data.prepare_data import generate_dataloader_open as Dataloader
+            feature_extractor, classifier = Model()
+            feature_extractor = torch.nn.DataParallel(feature_extractor)
+            classifier = torch.nn.DataParallel(classifier)
+            if torch.cuda.is_available():
+                feature_extractor.cuda()
+                classifier.cuda()
+            net = {'feature_extractor': feature_extractor, 'classifier': classifier}
+        elif args.task == 'closedsc':
+            if cfg.DATASET.DATASET == 'Digits':
+                raise NotImplementedError
+            else:
+                from solver.SymmNetsV2SC_solver import SymmNetsV2SolverSC as Solver
+                from models.resnet_SymmNet import resnet as Model
+                from data.prepare_data import generate_dataloader_sc as Dataloader
+            feature_extractor, classifier = Model()
+            feature_extractor = torch.nn.DataParallel(feature_extractor)
+            classifier = torch.nn.DataParallel(classifier)
+            if torch.cuda.is_available():
+                feature_extractor.cuda()
+                classifier.cuda()
+            net = {'feature_extractor': feature_extractor, 'classifier': classifier}
+        else:
+            raise NotImplementedError("Currently don't support the specified method: %s." % (args.task))
 
     ## Algorithm proposed in our CVPR19 paper: Domain-Symnetric Networks for Adversarial Domain Adaptation
     ## It is the same with our previous implementation of https://github.com/YBZh/SymNets

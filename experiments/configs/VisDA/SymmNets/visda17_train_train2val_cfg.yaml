@@ -1,7 +1,7 @@
 DATASET:
   NUM_CLASSES: 12
   DATASET: 'VisDA'
-  DATAROOT: '/disk1/domain_adaptation/visDA'
+  DATAROOT: '/data1/domain_adaptation/visDA'
   SOURCE_NAME: 'train'
   TARGET_NAME: 'validation'
   VAL_NAME: 'validation'

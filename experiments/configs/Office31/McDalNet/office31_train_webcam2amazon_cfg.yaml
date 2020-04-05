@@ -1,0 +1,18 @@
+DATASET:
+  NUM_CLASSES: 31
+  DATASET: 'Office31'
+  DATAROOT: '/data1/domain_adaptation/Office31'
+  SOURCE_NAME: 'webcam'
+  TARGET_NAME: 'amazon'
+  VAL_NAME: 'amazon'
+
+MODEL:
+  FEATURE_EXTRACTOR: 'resnet50'
+
+DATA_TRANSFORM:
+  TYPE: 'ours'
+
+
+EVAL_METRIC: "accu"
+SAVE_DIR: "./experiments/ckpt"
+NUM_WORKERS: 8

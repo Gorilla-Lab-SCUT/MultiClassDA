@@ -1,0 +1,18 @@
+DATASET:
+  NUM_CLASSES: 11
+  DATASET: 'Office31'
+  DATAROOT: '/data1/domain_adaptation/openset_Office31/'
+  SOURCE_NAME: 'amazon_s_busto'
+  TARGET_NAME: 'webcam_t_busto'
+  VAL_NAME: 'webcam_t_busto'
+
+MODEL:
+  FEATURE_EXTRACTOR: 'resnet50'
+
+DATA_TRANSFORM:
+  TYPE: 'ours'
+
+
+EVAL_METRIC: "accu_mean"
+SAVE_DIR: "./experiments/Open"
+NUM_WORKERS: 8

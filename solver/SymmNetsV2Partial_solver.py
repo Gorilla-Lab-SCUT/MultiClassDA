@@ -6,18 +6,25 @@ import time
 from utils.utils import to_cuda, accuracy_for_each_class, accuracy, AverageMeter, process_one_values
 from config.config import cfg
 import torch.nn.functional as F
-from models.loss_utils import TargetDiscrimLoss, ConcatenatedCELoss
+from models.loss_utils import TargetDiscrimLoss, ConcatenatedCELoss, CrossEntropyClassWeighted
 from .base_solver import BaseSolver
 import ipdb
 
-class SymmNetsV2Solver(BaseSolver):
+class SymmNetsV2PartialSolver(BaseSolver):
     def __init__(self, net, dataloaders, **kwargs):
-        super(SymmNetsV2Solver, self).__init__(net, dataloaders, **kwargs)
+        super(SymmNetsV2PartialSolver, self).__init__(net, dataloaders, **kwargs)
         self.num_classes = cfg.DATASET.NUM_CLASSES
         self.TargetDiscrimLoss = TargetDiscrimLoss(num_classes=self.num_classes).cuda()
         self.ConcatenatedCELoss = ConcatenatedCELoss(num_classes=self.num_classes).cuda()
         self.feature_extractor = self.net['feature_extractor']
         self.classifier = self.net['classifier']
+        self.lam = 0
+        class_weight_initial = torch.ones(self.num_classes)  ############################ class-level weight to filter out the outlier classes.
+        self.class_weight_initial = class_weight_initial.cuda()
+        class_weight = torch.ones(self.num_classes)  ############################ class-level weight to filter out the outlier classes.
+        self.class_weight = class_weight.cuda()
+        self.softweight = True
+        self.CELossWeight = CrossEntropyClassWeighted()
 
         if cfg.RESUME != '':
             resume_dict = torch.load(cfg.RESUME)
@@ -31,7 +38,14 @@ class SymmNetsV2Solver(BaseSolver):
         while not stop:
             stop = self.complete_training()
             self.update_network()
-            acc = self.test()
+            prediction_weight, acc = self.test()
+            prediction_weight = prediction_weight.cuda()
+            if self.softweight:
+                self.class_weight = prediction_weight * self.lam + self.class_weight_initial * (1 - self.lam)
+            else:
+                self.class_weight = prediction_weight
+            print('the class weight adopted in partial DA')
+            print(self.class_weight)
             if acc > self.best_prec1:
                 self.best_prec1 = acc
                 self.save_ckpt()
@@ -54,13 +68,13 @@ class SymmNetsV2Solver(BaseSolver):
         self.classifier.train()
         end = time.time()
         if self.opt.TRAIN.PROCESS_COUNTER == 'epoch':
-            lam = 2 / (1 + math.exp(-1 * 10 * self.epoch / self.opt.TRAIN.MAX_EPOCH)) - 1
+            self.lam = 2 / (1 + math.exp(-1 * 10 * self.epoch / self.opt.TRAIN.MAX_EPOCH)) - 1
             self.update_lr()
-            print('value of lam is: %3f' % (lam))
+            print('value of lam is: %3f' % (self.lam))
         while not stop:
             if self.opt.TRAIN.PROCESS_COUNTER == 'iteration':
-                lam = 2 / (1 + math.exp(-1 * 10 * self.iters / (self.opt.TRAIN.MAX_EPOCH * self.iters_per_epoch))) - 1
-                print('value of lam is: %3f' % (lam))
+                self.lam = 2 / (1 + math.exp(-1 * 10 * self.iters / (self.opt.TRAIN.MAX_EPOCH * self.iters_per_epoch))) - 1
+                print('value of lam is: %3f' % (self.lam))
                 self.update_lr()
             source_data, source_gt = self.get_samples('source')
             target_data, _ = self.get_samples('target')
@@ -74,16 +88,17 @@ class SymmNetsV2Solver(BaseSolver):
             feature_target = self.feature_extractor(target_data)
             output_target = self.classifier(feature_target)
 
-            loss_task_fs = self.CELoss(output_source[:,:self.num_classes], source_gt)
-            loss_task_ft = self.CELoss(output_source[:,self.num_classes:], source_gt)
-            loss_discrim_source = self.CELoss(output_source, source_gt)
+            weight_concate = torch.cat((self.class_weight, self.class_weight))
+            loss_task_fs = self.CELossWeight(output_source[:,:self.num_classes], source_gt, self.class_weight)
+            loss_task_ft = self.CELossWeight(output_source[:,self.num_classes:], source_gt, self.class_weight)
+            loss_discrim_source = self.CELossWeight(output_source, source_gt, weight_concate)
             loss_discrim_target = self.TargetDiscrimLoss(output_target)
             loss_summary_classifier = loss_task_fs + loss_task_ft + loss_discrim_source + loss_discrim_target
 
             source_gt_for_ft_in_fst = source_gt + self.num_classes
-            loss_confusion_source = 0.5 * self.CELoss(output_source, source_gt) + 0.5 * self.CELoss(output_source, source_gt_for_ft_in_fst)
+            loss_confusion_source = 0.5 * self.CELossWeight(output_source, source_gt, weight_concate) + 0.5 * self.CELossWeight(output_source, source_gt_for_ft_in_fst, weight_concate)
             loss_confusion_target = self.ConcatenatedCELoss(output_target)
-            loss_summary_feature_extractor = loss_confusion_source + lam * loss_confusion_target
+            loss_summary_feature_extractor = loss_confusion_source + self.lam * loss_confusion_target
 
             self.optimizer_classifier.zero_grad()
             loss_summary_classifier.backward(retain_graph=True)
@@ -113,7 +128,6 @@ class SymmNetsV2Solver(BaseSolver):
                 log.close()
                 stop = True
 
-
     def test(self):
         self.feature_extractor.eval()
         self.classifier.eval()
@@ -123,13 +137,19 @@ class SymmNetsV2Solver(BaseSolver):
         counter_all_ft = torch.FloatTensor(self.opt.DATASET.NUM_CLASSES).fill_(0)
         counter_acc_fs = torch.FloatTensor(self.opt.DATASET.NUM_CLASSES).fill_(0)
         counter_acc_ft = torch.FloatTensor(self.opt.DATASET.NUM_CLASSES).fill_(0)
+        class_weight = torch.zeros(self.num_classes)
+        class_weight = class_weight.cuda()
+        count = 0
+
 
         for i, (input, target) in enumerate(self.test_data['loader']):
             input, target = to_cuda(input), to_cuda(target)
             with torch.no_grad():
                 feature_test = self.feature_extractor(input)
                 output_test = self.classifier(feature_test)
-
+                prob = F.softmax(output_test[:, self.num_classes:], dim=1)
+                class_weight = class_weight + prob.data.sum(0)
+                count = count + input.size(0)
 
             if self.opt.EVAL_METRIC == 'accu':
                 prec1_fs_iter = accuracy(output_test[:, :self.num_classes], target)
@@ -153,12 +173,14 @@ class SymmNetsV2Solver(BaseSolver):
         acc_for_each_class_ft = counter_acc_ft / counter_all_ft
         log = open(os.path.join(self.opt.SAVE_DIR, 'log.txt'), 'a')
         log.write("\n")
+        class_weight = class_weight / count
+        class_weight = class_weight / max(class_weight)
         if self.opt.EVAL_METRIC == 'accu':
             log.write(
                 "                                                          Test:epoch: %d, AccFs: %3f, AccFt: %3f" % \
                 (self.epoch, prec1_fs.avg, prec1_ft.avg))
             log.close()
-            return max(prec1_fs.avg, prec1_ft.avg)
+            return class_weight, max(prec1_fs.avg, prec1_ft.avg)
         elif self.opt.EVAL_METRIC == 'accu_mean':
             log.write(
                 "                                            Test:epoch: %d, AccFs: %3f, AccFt: %3f" % \
@@ -174,7 +196,7 @@ class SymmNetsV2Solver(BaseSolver):
                 else:
                     log.write(", %dth: %3f" % (i + 1, acc_for_each_class_ft[i]))
             log.close()
-            return max(acc_for_each_class_ft.mean(), acc_for_each_class_fs.mean())
+            return class_weight, max(acc_for_each_class_ft.mean(), acc_for_each_class_fs.mean())
 
     def build_optimizer(self):
         if self.opt.TRAIN.OPTIMIZER == 'SGD':  ## some params may not contribute the loss_all, thus they are not updated in the training process.

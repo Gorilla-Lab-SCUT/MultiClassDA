@@ -7,16 +7,21 @@ DATASET:
   VAL_NAME: 'validation'
 
 MODEL:
-  FEATURE_EXTRACTOR: 'resnet50'
+  FEATURE_EXTRACTOR: 'resnet101'
 
 DATA_TRANSFORM:
   TYPE: 'simple'
 
+STRENGTHEN:
+  DATALOAD: 'soft'
+  PERCATE: 6
+  CLUSTER_FREQ: 4
+
 TRAIN:
   BASE_LR: 0.001
-  MAX_EPOCH: 30
+  MAX_EPOCH: 40
   LR_SCHEDULE: 'fix'
 
 EVAL_METRIC: "accu_mean"
-SAVE_DIR: "./experiments/ckpt"
+SAVE_DIR: "./experiments/ClosedSC"
 NUM_WORKERS: 8

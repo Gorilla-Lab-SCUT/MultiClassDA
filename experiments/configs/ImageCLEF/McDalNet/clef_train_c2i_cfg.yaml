@@ -1,7 +1,7 @@
 DATASET:
   NUM_CLASSES: 12
   DATASET: 'ImageCLEF'
-  DATAROOT: '/disk1/domain_adaptation/image_CLEF'
+  DATAROOT: '/data1/domain_adaptation/image_CLEF'
   SOURCE_NAME: 'c'
   TARGET_NAME: 'i'
   VAL_NAME: 'i'

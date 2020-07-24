@@ -237,7 +237,11 @@ def resnet101():
         pretrained_dict_temp = {k: v for k, v in pretrained_dict.items() if k in model_dict}
         model_dict.update(pretrained_dict_temp)
         model.load_state_dict(model_dict)
-    classifier = nn.Linear(512 * Bottleneck.expansion, cfg.DATASET.NUM_CLASSES * 2)
+    # classifier = nn.Linear(512 * Bottleneck.expansion, cfg.DATASET.NUM_CLASSES * 2)
+    classifier = nn.Sequential(nn.Linear(512 * Bottleneck.expansion, 512),
+                            nn.BatchNorm1d(512),
+                            nn.ReLU(inplace=True),
+                            nn.Linear(512, cfg.DATASET.NUM_CLASSES * 2))
     return model, classifier
 
 

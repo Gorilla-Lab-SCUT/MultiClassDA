@@ -2,17 +2,20 @@ DATASET:
   NUM_CLASSES: 31
   DATASET: 'Office31'
   DATAROOT: '/data1/domain_adaptation/Office31'
-  SOURCE_NAME: 'webcam'
-  TARGET_NAME: 'amazon'
-  VAL_NAME: 'amazon'
+  SOURCE_NAME: 'amazon'
+  TARGET_NAME: 'dslr'
+  VAL_NAME: 'dslr'
 
 MODEL:
   FEATURE_EXTRACTOR: 'resnet50'
 
 DATA_TRANSFORM:
-  TYPE: 'ours'
+  TYPE: 'longs'
 
+TRAIN:
+  MAX_EPOCH: 200
+# More training epoch is ok, but not necessary.
 
 EVAL_METRIC: "accu"
-SAVE_DIR: "./experiments/ckpt"
+SAVE_DIR: "./experiments/SymmNets"
 NUM_WORKERS: 8

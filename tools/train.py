@@ -157,7 +157,7 @@ if __name__ == '__main__':
     if args.resume is not None:
         cfg.RESUME = args.resume
     if args.exp_name is not None:
-        cfg.EXP_NAME = args.exp_name + cfg.DATASET.DATASET + '_' + cfg.DATASET.SOURCE_NAME + '2' + cfg.DATASET.VAL_NAME + '_' + args.method + '_' +args.distance_type
+        cfg.EXP_NAME = args.exp_name + cfg.DATASET.DATASET + '_' + cfg.DATASET.SOURCE_NAME + '2' + cfg.DATASET.VAL_NAME + '_' + args.method + '_' +args.distance_type + args.task
     if args.distance_type is not None:
         cfg.MCDALNET.DISTANCE_TYPE = args.distance_type
 

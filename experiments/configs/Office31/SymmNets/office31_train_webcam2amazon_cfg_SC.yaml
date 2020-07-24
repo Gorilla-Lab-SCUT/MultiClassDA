@@ -10,9 +10,18 @@ MODEL:
   FEATURE_EXTRACTOR: 'resnet50'
 
 DATA_TRANSFORM:
-  TYPE: 'ours'
+  TYPE: 'longs'
+
+STRENGTHEN:
+  DATALOAD: 'soft'
+  PERCATE: 4
+  CLUSTER_FREQ: 20
+
+TRAIN:
+  MAX_EPOCH: 200
+# More training epoch is ok, but not necessary.
 
 
 EVAL_METRIC: "accu"
-SAVE_DIR: "./experiments/ckpt"
+SAVE_DIR: "./experiments/SymmNets"
 NUM_WORKERS: 8

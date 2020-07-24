@@ -33,9 +33,25 @@
 
 #python ./tools/train.py  --distance_type None --method SymmNetsV2 --cfg ./experiments/configs/VisDA/SymmNets/visda17_train_train2val_cfg.yaml
 
+#CUDA_VISIBLE_DEVICES=4,5,6,7  python ./tools/train.py  --distance_type None --method SymmNetsV2 --cfg ./experiments/configs/Office31/SymmNets/office31_train_amazon2dslr_cfg.yaml
+
+#CUDA_VISIBLE_DEVICES=4,5,6,7  python ./tools/train.py  --distance_type None --method SymmNetsV2 --cfg ./experiments/configs/Office31/SymmNets/office31_train_webcam2amazon_cfg.yaml
+
+
+## SymmNets-SC script
+#CUDA_VISIBLE_DEVICES=4,5,6,7  python ./tools/train.py  --distance_type None --task closedsc  --method SymmNetsV2 --cfg ./experiments/configs/Office31/SymmNets/office31_train_webcam2amazon_cfg_SC.yaml
+
+#CUDA_VISIBLE_DEVICES=4,5,6,7  python ./tools/train.py  --distance_type None --task closedsc  --method SymmNetsV2 --cfg ./experiments/configs/Office31/SymmNets/office31_train_amazon2dslr_cfg_SC.yaml
+
+
+
 
 ##################################### Partial DA example #######################
-python ./tools/train.py  --distance_type None --method SymmNetsV2 --task partial --cfg ./experiments/configs/OfficeHome/SymmNets/home_train_A2R_partial_cfg.yaml
+#python ./tools/train.py  --distance_type None --method SymmNetsV2 --task partial --cfg ./experiments/configs/OfficeHome/SymmNets/home_train_A2R_partial_cfg.yaml
 
-##################################### Open set DA example #####################
-python ./tools/train.py  --distance_type None --method SymmNetsV2 --task open --cfg ./experiments/configs/Office31/SymmNets/office31_train_amazon2webcam_open_cfg.yaml
+
+
+
+###################################### Open set DA example #####################
+#python ./tools/train.py  --distance_type None --method SymmNetsV2 --task open --cfg ./experiments/configs/Office31/SymmNets/office31_train_amazon2webcam_open_cfg.yaml
+#

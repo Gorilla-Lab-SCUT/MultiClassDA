@@ -42,7 +42,7 @@ class SymmNetsV2Solver(BaseSolver):
         stop = False
         self.train_data['source']['iterator'] = iter(self.train_data['source']['loader'])
         self.train_data['target']['iterator'] = iter(self.train_data['target']['loader'])
-        self.iters_per_epoch = len(self.train_data['target']['loader'])
+        self.iters_per_epoch = max(len(self.train_data['target']['loader']), len(self.train_data['source']['loader']))
         iters_counter_within_epoch = 0
         data_time = AverageMeter()
         batch_time = AverageMeter()

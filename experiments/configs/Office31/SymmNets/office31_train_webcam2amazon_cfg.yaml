@@ -12,7 +12,10 @@ MODEL:
 DATA_TRANSFORM:
   TYPE: 'ours'
 
+TRAIN:
+  MAX_EPOCH: 200
+# More training epoch is ok, but not necessary.
 
 EVAL_METRIC: "accu"
-SAVE_DIR: "./experiments/ckpt"
+SAVE_DIR: "./experiments/SymmNets"
 NUM_WORKERS: 8

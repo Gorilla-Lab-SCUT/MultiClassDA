@@ -70,9 +70,6 @@ def process_zero_values(tensor):
     return tensor
 
 
-
-
-
 class AverageMeter(object):
     """Computes and stores the average and current value"""
     def __init__(self):

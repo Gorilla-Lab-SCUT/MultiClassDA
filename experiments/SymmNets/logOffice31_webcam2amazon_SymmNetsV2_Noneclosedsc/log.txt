@@ -1,0 +1,406 @@
+{"DATASET": {"NUM_CLASSES": 31, "DATASET": "Office31", "DATAROOT": "/data1/domain_adaptation/Office31", "SOURCE_NAME": "webcam", "TARGET_NAME": "amazon", "VAL_NAME": "amazon"}, "MODEL": {"FEATURE_EXTRACTOR": "resnet50", "PRETRAINED": true}, "DATA_TRANSFORM": {"TYPE": "longs"}, "TRAIN": {"SOURCE_BATCH_SIZE": 128, "TARGET_BATCH_SIZE": 128, "BASE_LR": 0.01, "MOMENTUM": 0.9, "OPTIMIZER": "SGD", "WEIGHT_DECAY": 0.0001, "LR_SCHEDULE": "inv", "MAX_EPOCH": 200, "SAVING": false, "PROCESS_COUNTER": "iteration"}, "STRENGTHEN": {"DATALOAD": "soft", "PERCATE": 4, "CLUSTER_FREQ": 20}, "MCDALNET": {"DISTANCE_TYPE": "None"}, "ADAM": {"BETA1": 0.9, "BETA2": 0.999}, "INV": {"ALPHA": 10.0, "BETA": 0.75}, "OPEN": {"WEIGHT_UNK": 6.0}, "TEST": {"BATCH_SIZE": 128}, "RESUME": "", "TASK": "closed", "EVAL_METRIC": "accu", "EXP_NAME": "logOffice31_webcam2amazon_SymmNetsV2_Noneclosedsc", "SAVE_DIR": "./experiments/SymmNets/logOffice31_webcam2amazon_SymmNetsV2_Noneclosedsc", "NUM_WORKERS": 8, "PRINT_STEP": 3}
+   Avg. over all sample: 0.738729
+  Train:epoch: 0:[22/22], LossCla: 7.623015, LossFeat: 2.962174, AccFs: 59.970673, AccFt: 50.989735
+                                                          Test:epoch: 0, AccFs: 61.057861, AccFt: 57.649982      Best Acc so far: 61.057861
+  Train:epoch: 1:[22/22], LossCla: 2.456460, LossFeat: 1.483606, AccFs: 93.035187, AccFt: 92.045456
+                                                          Test:epoch: 1, AccFs: 62.122826, AccFt: 62.300320      Best Acc so far: 62.300320
+  Train:epoch: 2:[22/22], LossCla: 1.606410, LossFeat: 1.337584, AccFs: 95.307915, AccFt: 93.511726
+                                                          Test:epoch: 2, AccFs: 61.270855, AccFt: 64.927223      Best Acc so far: 64.927223
+  Train:epoch: 3:[22/22], LossCla: 1.344020, LossFeat: 1.346992, AccFs: 96.590912, AccFt: 95.711143
+                                                          Test:epoch: 3, AccFs: 61.377350, AccFt: 65.566200      Best Acc so far: 65.566200
+  Train:epoch: 4:[22/22], LossCla: 1.300230, LossFeat: 1.392006, AccFs: 96.920822, AccFt: 95.197945
+                                                          Test:epoch: 4, AccFs: 62.761803, AccFt: 66.311676      Best Acc so far: 66.311676
+  Train:epoch: 5:[22/22], LossCla: 1.239129, LossFeat: 1.422081, AccFs: 97.104103, AccFt: 96.077713
+                                                          Test:epoch: 5, AccFs: 64.181755, AccFt: 66.915154      Best Acc so far: 66.915154
+  Train:epoch: 6:[22/22], LossCla: 1.269649, LossFeat: 1.446006, AccFs: 96.847504, AccFt: 94.721405
+                                                          Test:epoch: 6, AccFs: 64.572235, AccFt: 68.335106      Best Acc so far: 68.335106
+  Train:epoch: 7:[22/22], LossCla: 1.331217, LossFeat: 1.499650, AccFs: 96.884163, AccFt: 95.087975
+                                                          Test:epoch: 7, AccFs: 66.595665, AccFt: 69.329071      Best Acc so far: 69.329071
+  Train:epoch: 8:[22/22], LossCla: 1.409601, LossFeat: 1.563861, AccFs: 95.674484, AccFt: 94.134895
+                                                          Test:epoch: 8, AccFs: 66.453674, AccFt: 69.116081
+  Train:epoch: 9:[22/22], LossCla: 1.312248, LossFeat: 1.543444, AccFs: 96.627563, AccFt: 94.794724
+                                                          Test:epoch: 9, AccFs: 68.015617, AccFt: 70.429535      Best Acc so far: 70.429535
+  Train:epoch: 10:[22/22], LossCla: 1.323537, LossFeat: 1.567005, AccFs: 96.810852, AccFt: 94.611435
+                                                          Test:epoch: 10, AccFs: 69.116081, AccFt: 71.104012      Best Acc so far: 71.104012
+  Train:epoch: 11:[22/22], LossCla: 1.288923, LossFeat: 1.593822, AccFs: 96.847504, AccFt: 94.501465
+                                                          Test:epoch: 11, AccFs: 69.471069, AccFt: 71.317001      Best Acc so far: 71.317001
+  Train:epoch: 12:[22/22], LossCla: 1.251619, LossFeat: 1.562368, AccFs: 97.617302, AccFt: 95.747803
+                                                          Test:epoch: 12, AccFs: 70.997513, AccFt: 72.452965      Best Acc so far: 72.452965
+  Train:epoch: 13:[22/22], LossCla: 1.261891, LossFeat: 1.607563, AccFs: 97.324043, AccFt: 95.417885
+                                                          Test:epoch: 13, AccFs: 71.671989, AccFt: 72.914444      Best Acc so far: 72.914444
+  Train:epoch: 14:[22/22], LossCla: 1.334175, LossFeat: 1.635840, AccFs: 96.517593, AccFt: 94.318184
+                                                          Test:epoch: 14, AccFs: 72.239967, AccFt: 73.198441      Best Acc so far: 73.198441
+  Train:epoch: 15:[22/22], LossCla: 1.291305, LossFeat: 1.649623, AccFs: 97.030792, AccFt: 94.611435
+                                                          Test:epoch: 15, AccFs: 72.204468, AccFt: 74.014908      Best Acc so far: 74.014908
+  Train:epoch: 16:[22/22], LossCla: 1.256856, LossFeat: 1.627668, AccFs: 97.470673, AccFt: 95.747803
+                                                          Test:epoch: 16, AccFs: 72.736954, AccFt: 74.618385      Best Acc so far: 74.618385
+  Train:epoch: 17:[22/22], LossCla: 1.317096, LossFeat: 1.666421, AccFs: 96.920822, AccFt: 94.428154
+                                                          Test:epoch: 17, AccFs: 72.985443, AccFt: 74.298897
+  Train:epoch: 18:[22/22], LossCla: 1.300616, LossFeat: 1.659522, AccFs: 96.920822, AccFt: 95.014664
+                                                          Test:epoch: 18, AccFs: 73.482430, AccFt: 74.405396
+  Train:epoch: 19:[22/22], LossCla: 1.298129, LossFeat: 1.689479, AccFs: 97.030792, AccFt: 94.794724
+                                                          Test:epoch: 19, AccFs: 73.659920, AccFt: 74.618385
+  Train:epoch: 20:[22/22], LossCla: 1.324012, LossFeat: 1.694740, AccFs: 96.590912, AccFt: 95.124634
+                                                          Test:epoch: 20, AccFs: 74.192406, AccFt: 75.044373   Avg. over all sample: 0.754704      Best Acc so far: 75.044373
+  Train:epoch: 21:[22/22], LossCla: 1.344184, LossFeat: 1.708712, AccFs: 96.554253, AccFt: 95.197945
+                                                          Test:epoch: 21, AccFs: 74.511894, AccFt: 75.150871      Best Acc so far: 75.150871
+  Train:epoch: 22:[22/22], LossCla: 1.327314, LossFeat: 1.704081, AccFs: 96.810852, AccFt: 94.941345
+                                                          Test:epoch: 22, AccFs: 74.689384, AccFt: 75.079872
+  Train:epoch: 23:[22/22], LossCla: 1.305320, LossFeat: 1.697250, AccFs: 97.324043, AccFt: 95.344574
+                                                          Test:epoch: 23, AccFs: 74.937874, AccFt: 75.008873
+  Train:epoch: 24:[22/22], LossCla: 1.311586, LossFeat: 1.737911, AccFs: 97.214073, AccFt: 95.894424
+                                                          Test:epoch: 24, AccFs: 75.115372, AccFt: 75.328362      Best Acc so far: 75.328362
+  Train:epoch: 25:[22/22], LossCla: 1.313716, LossFeat: 1.719923, AccFs: 96.884163, AccFt: 95.307915
+                                                          Test:epoch: 25, AccFs: 75.221863, AccFt: 75.647850      Best Acc so far: 75.647850
+  Train:epoch: 26:[22/22], LossCla: 1.312714, LossFeat: 1.721404, AccFs: 97.177422, AccFt: 95.601173
+                                                          Test:epoch: 26, AccFs: 75.541351, AccFt: 75.647850
+  Train:epoch: 27:[22/22], LossCla: 1.340193, LossFeat: 1.740564, AccFs: 96.884163, AccFt: 95.747803
+                                                          Test:epoch: 27, AccFs: 75.647850, AccFt: 75.683350      Best Acc so far: 75.683350
+  Train:epoch: 28:[22/22], LossCla: 1.275393, LossFeat: 1.717935, AccFs: 97.397362, AccFt: 96.041054
+                                                          Test:epoch: 28, AccFs: 75.754349, AccFt: 75.718849      Best Acc so far: 75.754349
+  Train:epoch: 29:[22/22], LossCla: 1.300942, LossFeat: 1.759003, AccFs: 97.617302, AccFt: 96.151024
+                                                          Test:epoch: 29, AccFs: 75.825348, AccFt: 76.038338      Best Acc so far: 76.038338
+  Train:epoch: 30:[22/22], LossCla: 1.267162, LossFeat: 1.729672, AccFs: 97.837242, AccFt: 96.151024
+                                                          Test:epoch: 30, AccFs: 75.399361, AccFt: 75.612350
+  Train:epoch: 31:[22/22], LossCla: 1.297631, LossFeat: 1.742652, AccFs: 97.653961, AccFt: 96.004402
+                                                          Test:epoch: 31, AccFs: 75.931839, AccFt: 76.038338
+  Train:epoch: 32:[22/22], LossCla: 1.311832, LossFeat: 1.729872, AccFs: 96.994133, AccFt: 96.114372
+                                                          Test:epoch: 32, AccFs: 76.038338, AccFt: 75.967339
+  Train:epoch: 33:[22/22], LossCla: 1.313680, LossFeat: 1.756273, AccFs: 97.543991, AccFt: 96.114372
+                                                          Test:epoch: 33, AccFs: 76.002838, AccFt: 75.967339
+  Train:epoch: 34:[22/22], LossCla: 1.319017, LossFeat: 1.758827, AccFs: 97.580643, AccFt: 96.480942
+                                                          Test:epoch: 34, AccFs: 76.144836, AccFt: 76.144836      Best Acc so far: 76.144836
+  Train:epoch: 35:[22/22], LossCla: 1.318434, LossFeat: 1.792121, AccFs: 97.140762, AccFt: 96.077713
+                                                          Test:epoch: 35, AccFs: 76.286827, AccFt: 76.286827      Best Acc so far: 76.286827
+  Train:epoch: 36:[22/22], LossCla: 1.392114, LossFeat: 1.769783, AccFs: 96.774193, AccFt: 95.784454
+                                                          Test:epoch: 36, AccFs: 75.896339, AccFt: 76.180336
+  Train:epoch: 37:[22/22], LossCla: 1.345544, LossFeat: 1.796319, AccFs: 96.994133, AccFt: 95.931084
+                                                          Test:epoch: 37, AccFs: 75.967339, AccFt: 76.286827
+  Train:epoch: 38:[22/22], LossCla: 1.348926, LossFeat: 1.808638, AccFs: 97.250732, AccFt: 95.564514
+                                                          Test:epoch: 38, AccFs: 76.464325, AccFt: 76.322327      Best Acc so far: 76.464325
+  Train:epoch: 39:[22/22], LossCla: 1.352149, LossFeat: 1.805555, AccFs: 97.250732, AccFt: 96.041054
+                                                          Test:epoch: 39, AccFs: 76.322327, AccFt: 76.357826
+  Train:epoch: 40:[22/22], LossCla: 1.362216, LossFeat: 1.790499, AccFs: 97.104103, AccFt: 95.784454
+                                                          Test:epoch: 40, AccFs: 76.677315, AccFt: 76.464325   Avg. over all sample: 0.759318      Best Acc so far: 76.677315
+  Train:epoch: 41:[22/22], LossCla: 1.313627, LossFeat: 1.780881, AccFs: 97.580643, AccFt: 96.957481
+                                                          Test:epoch: 41, AccFs: 76.464325, AccFt: 76.357826
+  Train:epoch: 42:[22/22], LossCla: 1.319252, LossFeat: 1.777341, AccFs: 97.470673, AccFt: 96.774193
+                                                          Test:epoch: 42, AccFs: 76.464325, AccFt: 76.535316
+  Train:epoch: 43:[22/22], LossCla: 1.334247, LossFeat: 1.802747, AccFs: 97.617302, AccFt: 96.151024
+                                                          Test:epoch: 43, AccFs: 76.748314, AccFt: 76.712814      Best Acc so far: 76.748314
+  Train:epoch: 44:[22/22], LossCla: 1.324647, LossFeat: 1.779580, AccFs: 97.250732, AccFt: 96.590912
+                                                          Test:epoch: 44, AccFs: 76.357826, AccFt: 76.677315
+  Train:epoch: 45:[22/22], LossCla: 1.388145, LossFeat: 1.801662, AccFs: 96.957481, AccFt: 96.151024
+                                                          Test:epoch: 45, AccFs: 76.890305, AccFt: 76.748314      Best Acc so far: 76.890305
+  Train:epoch: 46:[22/22], LossCla: 1.374371, LossFeat: 1.793214, AccFs: 97.250732, AccFt: 95.967743
+                                                          Test:epoch: 46, AccFs: 76.535316, AccFt: 76.890305
+  Train:epoch: 47:[22/22], LossCla: 1.337280, LossFeat: 1.814427, AccFs: 97.507332, AccFt: 96.517593
+                                                          Test:epoch: 47, AccFs: 76.570816, AccFt: 76.854805
+  Train:epoch: 48:[22/22], LossCla: 1.402650, LossFeat: 1.812763, AccFs: 96.884163, AccFt: 95.894424
+                                                          Test:epoch: 48, AccFs: 76.748314, AccFt: 77.032303      Best Acc so far: 77.032303
+  Train:epoch: 49:[22/22], LossCla: 1.342484, LossFeat: 1.764017, AccFs: 97.507332, AccFt: 96.517593
+                                                          Test:epoch: 49, AccFs: 76.961304, AccFt: 77.103302      Best Acc so far: 77.103302
+  Train:epoch: 50:[22/22], LossCla: 1.293799, LossFeat: 1.779356, AccFs: 98.167152, AccFt: 96.884163
+                                                          Test:epoch: 50, AccFs: 77.209793, AccFt: 76.854805      Best Acc so far: 77.209793
+  Train:epoch: 51:[22/22], LossCla: 1.370739, LossFeat: 1.819696, AccFs: 97.067451, AccFt: 96.444283
+                                                          Test:epoch: 51, AccFs: 77.067802, AccFt: 77.245293      Best Acc so far: 77.245293
+  Train:epoch: 52:[22/22], LossCla: 1.368615, LossFeat: 1.783545, AccFs: 97.763931, AccFt: 97.030792
+                                                          Test:epoch: 52, AccFs: 76.890305, AccFt: 77.067802
+  Train:epoch: 53:[22/22], LossCla: 1.310445, LossFeat: 1.731029, AccFs: 97.983871, AccFt: 97.360703
+                                                          Test:epoch: 53, AccFs: 77.138802, AccFt: 77.209793
+  Train:epoch: 54:[22/22], LossCla: 1.367100, LossFeat: 1.779134, AccFs: 97.104103, AccFt: 96.554253
+                                                          Test:epoch: 54, AccFs: 77.245293, AccFt: 76.961304
+  Train:epoch: 55:[22/22], LossCla: 1.318103, LossFeat: 1.773830, AccFs: 97.800583, AccFt: 97.104103
+                                                          Test:epoch: 55, AccFs: 77.032303, AccFt: 77.209793
+  Train:epoch: 56:[22/22], LossCla: 1.341639, LossFeat: 1.759714, AccFs: 97.653961, AccFt: 96.884163
+                                                          Test:epoch: 56, AccFs: 77.032303, AccFt: 77.138802
+  Train:epoch: 57:[22/22], LossCla: 1.287156, LossFeat: 1.705701, AccFs: 98.240471, AccFt: 97.470673
+                                                          Test:epoch: 57, AccFs: 77.067802, AccFt: 77.032303
+  Train:epoch: 58:[22/22], LossCla: 1.324801, LossFeat: 1.767225, AccFs: 98.057182, AccFt: 97.470673
+                                                          Test:epoch: 58, AccFs: 77.209793, AccFt: 77.103302
+  Train:epoch: 59:[22/22], LossCla: 1.344995, LossFeat: 1.750945, AccFs: 97.910561, AccFt: 97.030792
+                                                          Test:epoch: 59, AccFs: 77.422791, AccFt: 77.280792      Best Acc so far: 77.422791
+  Train:epoch: 60:[22/22], LossCla: 1.403777, LossFeat: 1.762215, AccFs: 97.177422, AccFt: 96.444283
+                                                          Test:epoch: 60, AccFs: 77.174301, AccFt: 76.961304   Avg. over all sample: 0.770678
+  Train:epoch: 61:[22/22], LossCla: 1.359653, LossFeat: 1.794767, AccFs: 97.727272, AccFt: 97.177422
+                                                          Test:epoch: 61, AccFs: 77.245293, AccFt: 77.138802
+  Train:epoch: 62:[22/22], LossCla: 1.367598, LossFeat: 1.761883, AccFs: 97.470673, AccFt: 96.737534
+                                                          Test:epoch: 62, AccFs: 77.422791, AccFt: 77.422791
+  Train:epoch: 63:[22/22], LossCla: 1.313988, LossFeat: 1.726836, AccFs: 97.947212, AccFt: 97.470673
+                                                          Test:epoch: 63, AccFs: 77.316292, AccFt: 77.245293
+  Train:epoch: 64:[22/22], LossCla: 1.359613, LossFeat: 1.755465, AccFs: 97.690613, AccFt: 97.177422
+                                                          Test:epoch: 64, AccFs: 77.387291, AccFt: 77.316292
+  Train:epoch: 65:[22/22], LossCla: 1.304510, LossFeat: 1.729284, AccFs: 98.240471, AccFt: 97.873901
+                                                          Test:epoch: 65, AccFs: 77.209793, AccFt: 77.174301
+  Train:epoch: 66:[22/22], LossCla: 1.356786, LossFeat: 1.730799, AccFs: 97.543991, AccFt: 96.920822
+                                                          Test:epoch: 66, AccFs: 77.422791, AccFt: 77.316292
+  Train:epoch: 67:[22/22], LossCla: 1.385258, LossFeat: 1.732161, AccFs: 97.617302, AccFt: 97.140762
+                                                          Test:epoch: 67, AccFs: 77.351791, AccFt: 77.245293
+  Train:epoch: 68:[22/22], LossCla: 1.335217, LossFeat: 1.668536, AccFs: 97.947212, AccFt: 97.067451
+                                                          Test:epoch: 68, AccFs: 77.351791, AccFt: 77.209793
+  Train:epoch: 69:[22/22], LossCla: 1.412009, LossFeat: 1.710353, AccFs: 97.397362, AccFt: 96.810852
+                                                          Test:epoch: 69, AccFs: 77.458290, AccFt: 77.351791      Best Acc so far: 77.458290
+  Train:epoch: 70:[22/22], LossCla: 1.388225, LossFeat: 1.760771, AccFs: 97.250732, AccFt: 96.920822
+                                                          Test:epoch: 70, AccFs: 77.529282, AccFt: 77.280792      Best Acc so far: 77.529282
+  Train:epoch: 71:[22/22], LossCla: 1.318771, LossFeat: 1.697803, AccFs: 97.983871, AccFt: 97.434021
+                                                          Test:epoch: 71, AccFs: 77.387291, AccFt: 77.387291
+  Train:epoch: 72:[22/22], LossCla: 1.318164, LossFeat: 1.686602, AccFs: 98.167152, AccFt: 97.434021
+                                                          Test:epoch: 72, AccFs: 77.458290, AccFt: 77.209793
+  Train:epoch: 73:[22/22], LossCla: 1.360087, LossFeat: 1.675246, AccFs: 97.690613, AccFt: 97.324043
+                                                          Test:epoch: 73, AccFs: 77.458290, AccFt: 77.493790
+  Train:epoch: 74:[22/22], LossCla: 1.327878, LossFeat: 1.678261, AccFs: 98.387100, AccFt: 97.727272
+                                                          Test:epoch: 74, AccFs: 77.422791, AccFt: 77.280792
+  Train:epoch: 75:[22/22], LossCla: 1.353273, LossFeat: 1.684322, AccFs: 97.690613, AccFt: 97.324043
+                                                          Test:epoch: 75, AccFs: 77.529282, AccFt: 77.387291
+  Train:epoch: 76:[22/22], LossCla: 1.362531, LossFeat: 1.681021, AccFs: 97.947212, AccFt: 97.360703
+                                                          Test:epoch: 76, AccFs: 77.245293, AccFt: 77.280792
+  Train:epoch: 77:[22/22], LossCla: 1.332499, LossFeat: 1.654942, AccFs: 97.910561, AccFt: 97.580643
+                                                          Test:epoch: 77, AccFs: 77.600281, AccFt: 77.351791      Best Acc so far: 77.600281
+  Train:epoch: 78:[22/22], LossCla: 1.317330, LossFeat: 1.684570, AccFs: 97.983871, AccFt: 97.434021
+                                                          Test:epoch: 78, AccFs: 77.600281, AccFt: 77.209793
+  Train:epoch: 79:[22/22], LossCla: 1.371001, LossFeat: 1.651337, AccFs: 97.690613, AccFt: 97.140762
+                                                          Test:epoch: 79, AccFs: 77.458290, AccFt: 77.458290
+  Train:epoch: 80:[22/22], LossCla: 1.387333, LossFeat: 1.709741, AccFs: 97.470673, AccFt: 96.920822
+                                                          Test:epoch: 80, AccFs: 77.600281, AccFt: 77.671280   Avg. over all sample: 0.773518      Best Acc so far: 77.671280
+  Train:epoch: 81:[22/22], LossCla: 1.316111, LossFeat: 1.644523, AccFs: 98.277122, AccFt: 97.507332
+                                                          Test:epoch: 81, AccFs: 77.529282, AccFt: 77.529282
+  Train:epoch: 82:[22/22], LossCla: 1.371131, LossFeat: 1.684460, AccFs: 97.727272, AccFt: 97.397362
+                                                          Test:epoch: 82, AccFs: 77.671280, AccFt: 77.671280
+  Train:epoch: 83:[22/22], LossCla: 1.346968, LossFeat: 1.688010, AccFs: 97.910561, AccFt: 97.653961
+                                                          Test:epoch: 83, AccFs: 77.777779, AccFt: 77.777779      Best Acc so far: 77.777779
+  Train:epoch: 84:[22/22], LossCla: 1.325161, LossFeat: 1.647914, AccFs: 98.277122, AccFt: 97.910561
+                                                          Test:epoch: 84, AccFs: 77.777779, AccFt: 77.706779
+  Train:epoch: 85:[22/22], LossCla: 1.365791, LossFeat: 1.670403, AccFs: 97.983871, AccFt: 97.837242
+                                                          Test:epoch: 85, AccFs: 77.671280, AccFt: 77.600281
+  Train:epoch: 86:[22/22], LossCla: 1.366010, LossFeat: 1.680890, AccFs: 97.983871, AccFt: 97.250732
+                                                          Test:epoch: 86, AccFs: 77.529282, AccFt: 77.316292
+  Train:epoch: 87:[22/22], LossCla: 1.357416, LossFeat: 1.695107, AccFs: 97.837242, AccFt: 97.690613
+                                                          Test:epoch: 87, AccFs: 77.706779, AccFt: 77.671280
+  Train:epoch: 88:[22/22], LossCla: 1.333717, LossFeat: 1.640446, AccFs: 97.983871, AccFt: 97.324043
+                                                          Test:epoch: 88, AccFs: 77.635780, AccFt: 77.529282
+  Train:epoch: 89:[22/22], LossCla: 1.378516, LossFeat: 1.640131, AccFs: 97.910561, AccFt: 97.324043
+                                                          Test:epoch: 89, AccFs: 77.813278, AccFt: 77.742279      Best Acc so far: 77.813278
+  Train:epoch: 90:[22/22], LossCla: 1.342711, LossFeat: 1.650859, AccFs: 98.093842, AccFt: 97.543991
+                                                          Test:epoch: 90, AccFs: 77.848770, AccFt: 77.777779      Best Acc so far: 77.848770
+  Train:epoch: 91:[22/22], LossCla: 1.329963, LossFeat: 1.625899, AccFs: 98.020531, AccFt: 97.983871
+                                                          Test:epoch: 91, AccFs: 77.706779, AccFt: 77.564781
+  Train:epoch: 92:[22/22], LossCla: 1.353530, LossFeat: 1.656462, AccFs: 98.093842, AccFt: 97.653961
+                                                          Test:epoch: 92, AccFs: 77.671280, AccFt: 77.600281
+  Train:epoch: 93:[22/22], LossCla: 1.306639, LossFeat: 1.577344, AccFs: 98.387100, AccFt: 97.690613
+                                                          Test:epoch: 93, AccFs: 77.564781, AccFt: 77.387291
+  Train:epoch: 94:[22/22], LossCla: 1.377574, LossFeat: 1.653129, AccFs: 97.690613, AccFt: 97.250732
+                                                          Test:epoch: 94, AccFs: 77.813278, AccFt: 77.635780
+  Train:epoch: 95:[22/22], LossCla: 1.376729, LossFeat: 1.655299, AccFs: 97.800583, AccFt: 97.470673
+                                                          Test:epoch: 95, AccFs: 77.706779, AccFt: 77.493790
+  Train:epoch: 96:[22/22], LossCla: 1.306686, LossFeat: 1.612698, AccFs: 98.607040, AccFt: 98.240471
+                                                          Test:epoch: 96, AccFs: 77.635780, AccFt: 77.564781
+  Train:epoch: 97:[22/22], LossCla: 1.323804, LossFeat: 1.586562, AccFs: 98.350441, AccFt: 97.837242
+                                                          Test:epoch: 97, AccFs: 77.742279, AccFt: 77.671280
+  Train:epoch: 98:[22/22], LossCla: 1.356921, LossFeat: 1.617838, AccFs: 98.020531, AccFt: 97.800583
+                                                          Test:epoch: 98, AccFs: 77.742279, AccFt: 77.742279
+  Train:epoch: 99:[22/22], LossCla: 1.300362, LossFeat: 1.647247, AccFs: 98.460411, AccFt: 98.020531
+                                                          Test:epoch: 99, AccFs: 77.635780, AccFt: 77.493790
+  Train:epoch: 100:[22/22], LossCla: 1.367136, LossFeat: 1.595292, AccFs: 98.240471, AccFt: 97.580643
+                                                          Test:epoch: 100, AccFs: 77.422791, AccFt: 77.493790   Avg. over all sample: 0.774228
+  Train:epoch: 101:[22/22], LossCla: 1.373799, LossFeat: 1.606440, AccFs: 97.837242, AccFt: 97.397362
+                                                          Test:epoch: 101, AccFs: 77.529282, AccFt: 77.529282
+  Train:epoch: 102:[22/22], LossCla: 1.335687, LossFeat: 1.648195, AccFs: 98.093842, AccFt: 97.617302
+                                                          Test:epoch: 102, AccFs: 77.600281, AccFt: 77.529282
+  Train:epoch: 103:[22/22], LossCla: 1.319965, LossFeat: 1.566810, AccFs: 98.093842, AccFt: 97.837242
+                                                          Test:epoch: 103, AccFs: 77.635780, AccFt: 77.600281
+  Train:epoch: 104:[22/22], LossCla: 1.332760, LossFeat: 1.604434, AccFs: 98.387100, AccFt: 97.947212
+                                                          Test:epoch: 104, AccFs: 77.635780, AccFt: 77.564781
+  Train:epoch: 105:[22/22], LossCla: 1.349123, LossFeat: 1.594294, AccFs: 98.497070, AccFt: 97.947212
+                                                          Test:epoch: 105, AccFs: 77.635780, AccFt: 77.564781
+  Train:epoch: 106:[22/22], LossCla: 1.348273, LossFeat: 1.606504, AccFs: 98.057182, AccFt: 97.983871
+                                                          Test:epoch: 106, AccFs: 77.635780, AccFt: 77.600281
+  Train:epoch: 107:[22/22], LossCla: 1.369541, LossFeat: 1.614569, AccFs: 97.983871, AccFt: 97.617302
+                                                          Test:epoch: 107, AccFs: 77.564781, AccFt: 77.564781
+  Train:epoch: 108:[22/22], LossCla: 1.343715, LossFeat: 1.589758, AccFs: 98.203812, AccFt: 97.910561
+                                                          Test:epoch: 108, AccFs: 77.635780, AccFt: 77.564781
+  Train:epoch: 109:[22/22], LossCla: 1.346579, LossFeat: 1.572112, AccFs: 98.387100, AccFt: 97.983871
+                                                          Test:epoch: 109, AccFs: 77.600281, AccFt: 77.600281
+  Train:epoch: 110:[22/22], LossCla: 1.351915, LossFeat: 1.586204, AccFs: 98.387100, AccFt: 98.313782
+                                                          Test:epoch: 110, AccFs: 77.600281, AccFt: 77.600281
+  Train:epoch: 111:[22/22], LossCla: 1.371279, LossFeat: 1.568211, AccFs: 98.203812, AccFt: 97.690613
+                                                          Test:epoch: 111, AccFs: 77.564781, AccFt: 77.493790
+  Train:epoch: 112:[22/22], LossCla: 1.330593, LossFeat: 1.583545, AccFs: 98.460411, AccFt: 98.130501
+                                                          Test:epoch: 112, AccFs: 77.564781, AccFt: 77.493790
+  Train:epoch: 113:[22/22], LossCla: 1.351133, LossFeat: 1.520125, AccFs: 98.350441, AccFt: 97.763931
+                                                          Test:epoch: 113, AccFs: 77.600281, AccFt: 77.493790
+  Train:epoch: 114:[22/22], LossCla: 1.335962, LossFeat: 1.586446, AccFs: 98.313782, AccFt: 97.763931
+                                                          Test:epoch: 114, AccFs: 77.529282, AccFt: 77.564781
+  Train:epoch: 115:[22/22], LossCla: 1.360487, LossFeat: 1.564929, AccFs: 98.277122, AccFt: 97.910561
+                                                          Test:epoch: 115, AccFs: 77.529282, AccFt: 77.600281
+  Train:epoch: 116:[22/22], LossCla: 1.358755, LossFeat: 1.598450, AccFs: 98.167152, AccFt: 98.093842
+                                                          Test:epoch: 116, AccFs: 77.600281, AccFt: 77.600281
+  Train:epoch: 117:[22/22], LossCla: 1.380890, LossFeat: 1.591557, AccFs: 98.020531, AccFt: 97.250732
+                                                          Test:epoch: 117, AccFs: 77.529282, AccFt: 77.493790
+  Train:epoch: 118:[22/22], LossCla: 1.360068, LossFeat: 1.568495, AccFs: 98.130501, AccFt: 97.947212
+                                                          Test:epoch: 118, AccFs: 77.458290, AccFt: 77.564781
+  Train:epoch: 119:[22/22], LossCla: 1.290673, LossFeat: 1.529228, AccFs: 98.863640, AccFt: 98.607040
+                                                          Test:epoch: 119, AccFs: 77.458290, AccFt: 77.564781
+  Train:epoch: 120:[22/22], LossCla: 1.337937, LossFeat: 1.602116, AccFs: 98.203812, AccFt: 97.910561
+                                                          Test:epoch: 120, AccFs: 77.600281, AccFt: 77.564781   Avg. over all sample: 0.774583
+  Train:epoch: 121:[22/22], LossCla: 1.330984, LossFeat: 1.546436, AccFs: 98.533722, AccFt: 98.460411
+                                                          Test:epoch: 121, AccFs: 77.529282, AccFt: 77.564781
+  Train:epoch: 122:[22/22], LossCla: 1.370453, LossFeat: 1.581949, AccFs: 97.800583, AccFt: 97.434021
+                                                          Test:epoch: 122, AccFs: 77.600281, AccFt: 77.600281
+  Train:epoch: 123:[22/22], LossCla: 1.370145, LossFeat: 1.568616, AccFs: 98.203812, AccFt: 97.873901
+                                                          Test:epoch: 123, AccFs: 77.529282, AccFt: 77.529282
+  Train:epoch: 124:[22/22], LossCla: 1.366647, LossFeat: 1.603324, AccFs: 98.203812, AccFt: 97.763931
+                                                          Test:epoch: 124, AccFs: 77.529282, AccFt: 77.529282
+  Train:epoch: 125:[22/22], LossCla: 1.361424, LossFeat: 1.583449, AccFs: 98.277122, AccFt: 97.617302
+                                                          Test:epoch: 125, AccFs: 77.635780, AccFt: 77.564781
+  Train:epoch: 126:[22/22], LossCla: 1.338877, LossFeat: 1.545922, AccFs: 98.533722, AccFt: 98.167152
+                                                          Test:epoch: 126, AccFs: 77.706779, AccFt: 77.600281
+  Train:epoch: 127:[22/22], LossCla: 1.336759, LossFeat: 1.596533, AccFs: 98.387100, AccFt: 98.130501
+                                                          Test:epoch: 127, AccFs: 77.564781, AccFt: 77.564781
+  Train:epoch: 128:[22/22], LossCla: 1.339325, LossFeat: 1.535508, AccFs: 98.387100, AccFt: 98.057182
+                                                          Test:epoch: 128, AccFs: 77.671280, AccFt: 77.600281
+  Train:epoch: 129:[22/22], LossCla: 1.366467, LossFeat: 1.552784, AccFs: 98.167152, AccFt: 97.837242
+                                                          Test:epoch: 129, AccFs: 77.564781, AccFt: 77.529282
+  Train:epoch: 130:[22/22], LossCla: 1.398919, LossFeat: 1.548249, AccFs: 98.020531, AccFt: 97.543991
+                                                          Test:epoch: 130, AccFs: 77.600281, AccFt: 77.600281
+  Train:epoch: 131:[22/22], LossCla: 1.345331, LossFeat: 1.544805, AccFs: 98.753662, AccFt: 98.387100
+                                                          Test:epoch: 131, AccFs: 77.458290, AccFt: 77.529282
+  Train:epoch: 132:[22/22], LossCla: 1.348121, LossFeat: 1.550355, AccFs: 98.607040, AccFt: 98.277122
+                                                          Test:epoch: 132, AccFs: 77.564781, AccFt: 77.564781
+  Train:epoch: 133:[22/22], LossCla: 1.380629, LossFeat: 1.552742, AccFs: 98.277122, AccFt: 97.873901
+                                                          Test:epoch: 133, AccFs: 77.564781, AccFt: 77.564781
+  Train:epoch: 134:[22/22], LossCla: 1.345164, LossFeat: 1.549603, AccFs: 98.313782, AccFt: 97.873901
+                                                          Test:epoch: 134, AccFs: 77.493790, AccFt: 77.600281
+  Train:epoch: 135:[22/22], LossCla: 1.361107, LossFeat: 1.540500, AccFs: 98.203812, AccFt: 97.983871
+                                                          Test:epoch: 135, AccFs: 77.600281, AccFt: 77.600281
+  Train:epoch: 136:[22/22], LossCla: 1.314249, LossFeat: 1.513815, AccFs: 98.753662, AccFt: 98.460411
+                                                          Test:epoch: 136, AccFs: 77.742279, AccFt: 77.742279
+  Train:epoch: 137:[22/22], LossCla: 1.305220, LossFeat: 1.520912, AccFs: 98.900291, AccFt: 98.460411
+                                                          Test:epoch: 137, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 138:[22/22], LossCla: 1.394154, LossFeat: 1.548074, AccFs: 98.130501, AccFt: 97.690613
+                                                          Test:epoch: 138, AccFs: 77.635780, AccFt: 77.600281
+  Train:epoch: 139:[22/22], LossCla: 1.290233, LossFeat: 1.519662, AccFs: 98.973610, AccFt: 98.790321
+                                                          Test:epoch: 139, AccFs: 77.529282, AccFt: 77.635780
+  Train:epoch: 140:[22/22], LossCla: 1.332999, LossFeat: 1.505304, AccFs: 98.533722, AccFt: 98.203812
+                                                          Test:epoch: 140, AccFs: 77.529282, AccFt: 77.635780   Avg. over all sample: 0.774583
+  Train:epoch: 141:[22/22], LossCla: 1.346124, LossFeat: 1.500938, AccFs: 98.387100, AccFt: 98.093842
+                                                          Test:epoch: 141, AccFs: 77.564781, AccFt: 77.564781
+  Train:epoch: 142:[22/22], LossCla: 1.372621, LossFeat: 1.508862, AccFs: 98.350441, AccFt: 97.727272
+                                                          Test:epoch: 142, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 143:[22/22], LossCla: 1.333559, LossFeat: 1.538760, AccFs: 98.497070, AccFt: 97.910561
+                                                          Test:epoch: 143, AccFs: 77.564781, AccFt: 77.564781
+  Train:epoch: 144:[22/22], LossCla: 1.362105, LossFeat: 1.526749, AccFs: 98.350441, AccFt: 97.763931
+                                                          Test:epoch: 144, AccFs: 77.564781, AccFt: 77.635780
+  Train:epoch: 145:[22/22], LossCla: 1.339047, LossFeat: 1.532611, AccFs: 98.607040, AccFt: 98.533722
+                                                          Test:epoch: 145, AccFs: 77.671280, AccFt: 77.671280
+  Train:epoch: 146:[22/22], LossCla: 1.340441, LossFeat: 1.537903, AccFs: 98.533722, AccFt: 98.350441
+                                                          Test:epoch: 146, AccFs: 77.742279, AccFt: 77.671280
+  Train:epoch: 147:[22/22], LossCla: 1.322381, LossFeat: 1.481798, AccFs: 98.863640, AccFt: 98.643692
+                                                          Test:epoch: 147, AccFs: 77.706779, AccFt: 77.635780
+  Train:epoch: 148:[22/22], LossCla: 1.327289, LossFeat: 1.485518, AccFs: 98.717010, AccFt: 98.387100
+                                                          Test:epoch: 148, AccFs: 77.742279, AccFt: 77.600281
+  Train:epoch: 149:[22/22], LossCla: 1.351338, LossFeat: 1.512999, AccFs: 98.533722, AccFt: 98.167152
+                                                          Test:epoch: 149, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 150:[22/22], LossCla: 1.360742, LossFeat: 1.504999, AccFs: 98.020531, AccFt: 97.837242
+                                                          Test:epoch: 150, AccFs: 77.635780, AccFt: 77.564781
+  Train:epoch: 151:[22/22], LossCla: 1.325792, LossFeat: 1.512565, AccFs: 98.277122, AccFt: 98.350441
+                                                          Test:epoch: 151, AccFs: 77.564781, AccFt: 77.635780
+  Train:epoch: 152:[22/22], LossCla: 1.311797, LossFeat: 1.479295, AccFs: 98.826981, AccFt: 98.533722
+                                                          Test:epoch: 152, AccFs: 77.600281, AccFt: 77.635780
+  Train:epoch: 153:[22/22], LossCla: 1.352768, LossFeat: 1.449801, AccFs: 98.423752, AccFt: 98.203812
+                                                          Test:epoch: 153, AccFs: 77.600281, AccFt: 77.600281
+  Train:epoch: 154:[22/22], LossCla: 1.325616, LossFeat: 1.478204, AccFs: 98.790321, AccFt: 98.570381
+                                                          Test:epoch: 154, AccFs: 77.600281, AccFt: 77.564781
+  Train:epoch: 155:[22/22], LossCla: 1.332986, LossFeat: 1.508114, AccFs: 98.680351, AccFt: 98.570381
+                                                          Test:epoch: 155, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 156:[22/22], LossCla: 1.336899, LossFeat: 1.490144, AccFs: 98.497070, AccFt: 98.350441
+                                                          Test:epoch: 156, AccFs: 77.600281, AccFt: 77.600281
+  Train:epoch: 157:[22/22], LossCla: 1.321095, LossFeat: 1.456098, AccFs: 98.936951, AccFt: 98.460411
+                                                          Test:epoch: 157, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 158:[22/22], LossCla: 1.327439, LossFeat: 1.509041, AccFs: 98.460411, AccFt: 98.167152
+                                                          Test:epoch: 158, AccFs: 77.564781, AccFt: 77.564781
+  Train:epoch: 159:[22/22], LossCla: 1.338133, LossFeat: 1.536468, AccFs: 98.350441, AccFt: 98.387100
+                                                          Test:epoch: 159, AccFs: 77.529282, AccFt: 77.564781
+  Train:epoch: 160:[22/22], LossCla: 1.301810, LossFeat: 1.493009, AccFs: 98.607040, AccFt: 98.643692
+                                                          Test:epoch: 160, AccFs: 77.493790, AccFt: 77.564781   Avg. over all sample: 0.774583
+  Train:epoch: 161:[22/22], LossCla: 1.341450, LossFeat: 1.476726, AccFs: 98.680351, AccFt: 98.460411
+                                                          Test:epoch: 161, AccFs: 77.635780, AccFt: 77.600281
+  Train:epoch: 162:[22/22], LossCla: 1.354729, LossFeat: 1.522407, AccFs: 98.680351, AccFt: 98.240471
+                                                          Test:epoch: 162, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 163:[22/22], LossCla: 1.351577, LossFeat: 1.458342, AccFs: 98.497070, AccFt: 98.533722
+                                                          Test:epoch: 163, AccFs: 77.635780, AccFt: 77.600281
+  Train:epoch: 164:[22/22], LossCla: 1.373415, LossFeat: 1.533609, AccFs: 98.167152, AccFt: 97.837242
+                                                          Test:epoch: 164, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 165:[22/22], LossCla: 1.359871, LossFeat: 1.443069, AccFs: 98.387100, AccFt: 97.947212
+                                                          Test:epoch: 165, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 166:[22/22], LossCla: 1.338890, LossFeat: 1.492746, AccFs: 98.570381, AccFt: 98.167152
+                                                          Test:epoch: 166, AccFs: 77.600281, AccFt: 77.600281
+  Train:epoch: 167:[22/22], LossCla: 1.377279, LossFeat: 1.476150, AccFs: 98.203812, AccFt: 97.837242
+                                                          Test:epoch: 167, AccFs: 77.600281, AccFt: 77.600281
+  Train:epoch: 168:[22/22], LossCla: 1.376400, LossFeat: 1.486076, AccFs: 98.460411, AccFt: 98.020531
+                                                          Test:epoch: 168, AccFs: 77.600281, AccFt: 77.600281
+  Train:epoch: 169:[22/22], LossCla: 1.390842, LossFeat: 1.528835, AccFs: 98.350441, AccFt: 97.873901
+                                                          Test:epoch: 169, AccFs: 77.600281, AccFt: 77.600281
+  Train:epoch: 170:[22/22], LossCla: 1.313108, LossFeat: 1.473149, AccFs: 98.863640, AccFt: 98.387100
+                                                          Test:epoch: 170, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 171:[22/22], LossCla: 1.305524, LossFeat: 1.457159, AccFs: 98.863640, AccFt: 98.387100
+                                                          Test:epoch: 171, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 172:[22/22], LossCla: 1.335704, LossFeat: 1.453351, AccFs: 98.643692, AccFt: 98.460411
+                                                          Test:epoch: 172, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 173:[22/22], LossCla: 1.339721, LossFeat: 1.486318, AccFs: 98.643692, AccFt: 98.570381
+                                                          Test:epoch: 173, AccFs: 77.529282, AccFt: 77.600281
+  Train:epoch: 174:[22/22], LossCla: 1.360584, LossFeat: 1.461825, AccFs: 98.460411, AccFt: 98.387100
+                                                          Test:epoch: 174, AccFs: 77.493790, AccFt: 77.564781
+  Train:epoch: 175:[22/22], LossCla: 1.359979, LossFeat: 1.464933, AccFs: 98.570381, AccFt: 98.167152
+                                                          Test:epoch: 175, AccFs: 77.600281, AccFt: 77.564781
+  Train:epoch: 176:[22/22], LossCla: 1.335002, LossFeat: 1.474852, AccFs: 98.497070, AccFt: 98.387100
+                                                          Test:epoch: 176, AccFs: 77.600281, AccFt: 77.564781
+  Train:epoch: 177:[22/22], LossCla: 1.381003, LossFeat: 1.460412, AccFs: 98.130501, AccFt: 97.873901
+                                                          Test:epoch: 177, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 178:[22/22], LossCla: 1.327390, LossFeat: 1.435479, AccFs: 98.900291, AccFt: 98.643692
+                                                          Test:epoch: 178, AccFs: 77.600281, AccFt: 77.635780
+  Train:epoch: 179:[22/22], LossCla: 1.343451, LossFeat: 1.467521, AccFs: 98.643692, AccFt: 98.350441
+                                                          Test:epoch: 179, AccFs: 77.600281, AccFt: 77.635780
+  Train:epoch: 180:[22/22], LossCla: 1.329610, LossFeat: 1.494575, AccFs: 98.533722, AccFt: 98.387100
+                                                          Test:epoch: 180, AccFs: 77.600281, AccFt: 77.600281   Avg. over all sample: 0.774583
+  Train:epoch: 181:[22/22], LossCla: 1.312500, LossFeat: 1.464202, AccFs: 98.900291, AccFt: 98.973610
+                                                          Test:epoch: 181, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 182:[22/22], LossCla: 1.354313, LossFeat: 1.471437, AccFs: 98.570381, AccFt: 98.240471
+                                                          Test:epoch: 182, AccFs: 77.600281, AccFt: 77.564781
+  Train:epoch: 183:[22/22], LossCla: 1.335685, LossFeat: 1.477805, AccFs: 98.753662, AccFt: 98.533722
+                                                          Test:epoch: 183, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 184:[22/22], LossCla: 1.338616, LossFeat: 1.465301, AccFs: 98.826981, AccFt: 98.533722
+                                                          Test:epoch: 184, AccFs: 77.529282, AccFt: 77.600281
+  Train:epoch: 185:[22/22], LossCla: 1.323744, LossFeat: 1.464410, AccFs: 99.083580, AccFt: 98.826981
+                                                          Test:epoch: 185, AccFs: 77.529282, AccFt: 77.529282
+  Train:epoch: 186:[22/22], LossCla: 1.338129, LossFeat: 1.455868, AccFs: 98.753662, AccFt: 98.387100
+                                                          Test:epoch: 186, AccFs: 77.600281, AccFt: 77.564781
+  Train:epoch: 187:[22/22], LossCla: 1.333708, LossFeat: 1.492698, AccFs: 98.717010, AccFt: 98.680351
+                                                          Test:epoch: 187, AccFs: 77.564781, AccFt: 77.564781
+  Train:epoch: 188:[22/22], LossCla: 1.312969, LossFeat: 1.456832, AccFs: 98.936951, AccFt: 98.497070
+                                                          Test:epoch: 188, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 189:[22/22], LossCla: 1.351358, LossFeat: 1.436588, AccFs: 98.387100, AccFt: 98.130501
+                                                          Test:epoch: 189, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 190:[22/22], LossCla: 1.368953, LossFeat: 1.467405, AccFs: 98.387100, AccFt: 97.800583
+                                                          Test:epoch: 190, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 191:[22/22], LossCla: 1.322898, LossFeat: 1.449032, AccFs: 99.010262, AccFt: 98.900291
+                                                          Test:epoch: 191, AccFs: 77.600281, AccFt: 77.564781
+  Train:epoch: 192:[22/22], LossCla: 1.329401, LossFeat: 1.444850, AccFs: 98.863640, AccFt: 98.533722
+                                                          Test:epoch: 192, AccFs: 77.564781, AccFt: 77.600281
+  Train:epoch: 193:[22/22], LossCla: 1.349593, LossFeat: 1.450043, AccFs: 98.643692, AccFt: 98.497070
+                                                          Test:epoch: 193, AccFs: 77.529282, AccFt: 77.564781
+  Train:epoch: 194:[22/22], LossCla: 1.336318, LossFeat: 1.438212, AccFs: 98.533722, AccFt: 98.680351
+                                                          Test:epoch: 194, AccFs: 77.529282, AccFt: 77.564781
+  Train:epoch: 195:[22/22], LossCla: 1.298958, LossFeat: 1.448168, AccFs: 99.046921, AccFt: 98.533722
+                                                          Test:epoch: 195, AccFs: 77.529282, AccFt: 77.564781
+  Train:epoch: 196:[22/22], LossCla: 1.351304, LossFeat: 1.440631, AccFs: 98.607040, AccFt: 98.203812
+                                                          Test:epoch: 196, AccFs: 77.600281, AccFt: 77.600281
+  Train:epoch: 197:[22/22], LossCla: 1.304625, LossFeat: 1.410760, AccFs: 98.936951, AccFt: 98.790321
+                                                          Test:epoch: 197, AccFs: 77.529282, AccFt: 77.564781
+  Train:epoch: 198:[22/22], LossCla: 1.359012, LossFeat: 1.464684, AccFs: 98.753662, AccFt: 98.130501
+                                                          Test:epoch: 198, AccFs: 77.600281, AccFt: 77.600281
+  Train:epoch: 199:[22/22], LossCla: 1.323662, LossFeat: 1.455786, AccFs: 99.010262, AccFt: 98.717010
+                                                          Test:epoch: 199, AccFs: 77.600281, AccFt: 77.600281
+  Train:epoch: 200:[22/22], LossCla: 1.310210, LossFeat: 1.437039, AccFs: 98.826981, AccFt: 98.423752
+                                                          Test:epoch: 200, AccFs: 77.564781, AccFt: 77.600281   Avg. over all sample: 0.774938
+  Train:epoch: 201:[22/22], LossCla: 1.334277, LossFeat: 1.434689, AccFs: 98.717010, AccFt: 98.093842
+                                                          Test:epoch: 201, AccFs: 77.600281, AccFt: 77.600281

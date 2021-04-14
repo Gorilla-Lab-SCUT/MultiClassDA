@@ -2,25 +2,18 @@
 Code release for ["Unsupervised Multi-Class Domain Adaptation: Theory, Algorithms, and Practice"](https://arxiv.org/pdf/2002.08681.pdf), which is
 an extension of our preliminary work of SymmNets [[Paper](https://zpascal.net/cvpr2019/Zhang_Domain-Symmetric_Networks_for_Adversarial_Domain_Adaptation_CVPR_2019_paper.pdf)] [[Code](https://github.com/YBZh/SymNets)]
 
-## Code to be updated:
+## Included codes:
 1. Code of McDalNets
-    1. <del>For the Office-31, ImageCLEF, Office-Home, VisDA-2017 datasets (Finished)</del> 
-    2. For the Digits dataset
+    1. For the Office-31, ImageCLEF, Office-Home, VisDA-2017 datasets  -->./solver/McDalNet_solver.py
 2. Code of SymNets-V2
-    1. For the Closed Set DA
-        1. <del>Based on the ResNet (Finished)</del> 
-        2. Based on the AlexNet
-        3. For the Digits dataset
-        4. Strengthened for Closed Set UDA
-    2. For the Partial DA
-        1.  <del>Based on the ResNet (Finished)</del> 
-        2. Based on the AlexNet
-    3. For the Open Set DA
-        1.  <del>Based on the ResNet (Finished)</del> 
+    1. For the Closed Set DA -->./solver/SymmNetsV2_solver.py
+    2. For the Strongthened Closed Set DA -->./solver/SymmNetsV2SC_solver.py
+    3. For the Partial DA  -->./solver/SSymmNetsV2Partial_solver.py
+    4. For the Open Set DA  -->./solver/SymmNetsV2Open_solver.py
 
 
-## Dataset
-To be updated.
+
+
 
 
 ## Citation
